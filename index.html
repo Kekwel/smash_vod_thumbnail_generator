@@ -9,15 +9,15 @@
 
     <link rel="stylesheet" href="css/main.css">
 
-    <script src="js/thumbnail.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 </head>
 
 <body>
     <div id="menu-top">VoDs Thumbnails Generator for Smash Ultimate</div>
     <div id="main">
         <div id="thumbnail">
-            <div class="banner" id="j1"><span>J1</span></div>
-            <div class="banner" id="j2"><span>J2</span></div>
+            <div class="banner"><span id="name-j1">J1</span></div>
+            <div class="banner"><span id="name-j2">J2</span></div>
             <div class="character" id="char-j1">
                 <img src="img/char/cloud/cloud_00.png">
             </div>
@@ -37,11 +37,13 @@
     </div>
     <div id="infos">
         <h3>Joueur 1</h3>
-        <input id="j1" type="text">
+        <input id="j1" type="text" value="J1">
         <h3>Joueur 2</h3>
-        <input id="j2" type="text">
+        <input id="j2" type="text" value="J2">
         <h3>Personnage</h3>
-        <div class="select-char" id="char1"></div>
+        <div class="select-char" id="char1">
+
+        </div>
         <h3>Personnage</h3>
         <div class="select-char" id="char2"></div>
         <h3>Couleur</h3>
@@ -50,5 +52,10 @@
         <div class="select-color" id="color-char2"></div>
     </div>
 </body>
+<!--
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+-->
+<script src="js/thumbnail.js"></script>
 
 </html>
