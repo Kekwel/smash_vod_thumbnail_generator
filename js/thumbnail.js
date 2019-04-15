@@ -1,3 +1,7 @@
+window.onload = function () {
+    // TODO init grid perso ?
+}
+
 document.getElementById("j1").oninput = function () {
     changeName(this.value, "name-j1");
 };

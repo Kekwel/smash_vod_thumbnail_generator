@@ -84,6 +84,27 @@
 #infos {
     display: grid;
     grid-template-columns: 100px 1fr 100px 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-rows: auto auto auto;
+    grid-gap: 10px;
 }
+
+/* sélections perso */
+.select-char {
+    margin: 5px auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
+    grid-template-rows: 25px 25px 25px 25px 25px 25px;
+}
+
+.stocks {
+    width: 25px;
+    height: 25px;
+}
+
+.stocks:hover {
+    border: 3px outset;
+}
+
+/*TODO select stock J1 et J2 en color*/
+/*TODO onclick, select*/
