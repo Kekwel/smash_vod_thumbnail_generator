@@ -14,6 +14,7 @@ function init(player) {
     var characters = document.getElementsByClassName('stocks ' + player);
     for (var i = 0; i < characters.length; i++)(function (i) {
         characters[i].onclick = function () {
+            setImgChar(player, '00', characters[i].id);
             setStockColor(player, characters[i].id);
         };
     })(i);
