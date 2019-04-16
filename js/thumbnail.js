@@ -25,6 +25,17 @@ function init(player) {
             setImgChar(player, '0' + i, divColor.dataset.char);
         };
     })(i);
+
+    /* reverse img */
+    var reverseJ1 = 0;
+    document.getElementById('reverse-' + player).onclick = function () {
+        if (reverseJ1)
+            document.getElementById("char-" + player).style.transform = 'scaleX(1)';
+        else
+            document.getElementById("char-" + player).style.transform = 'scaleX(-1)';
+        reverseJ1 = !reverseJ1
+        //            - webkit - transform: scaleX(-1);
+    };
 }
 
 init("j1");
