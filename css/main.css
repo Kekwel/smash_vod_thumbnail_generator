@@ -168,3 +168,9 @@
     width: 50px;
     height: 50px;
 }
+
+/* reverse */
+.reverse {
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}
