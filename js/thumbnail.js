@@ -14,7 +14,13 @@ function init(player) {
     var characters = document.getElementsByClassName('stocks ' + player);
     for (var i = 0; i < characters.length; i++)(function (i) {
         characters[i].onclick = function () {
+            // delete la classe sur les autres divs
+            removeClasse('stocks ' + player, 'selected')
+            // toggle classe pour garder border actif
+            this.classList.toggle('selected')
+            // on met la 1ere couleur par defaut
             setImgChar(player, '00', characters[i].id);
+            // on modifie les icones couleurs du perso
             setStockColor(player, characters[i].id);
         };
     })(i);
@@ -23,6 +29,11 @@ function init(player) {
     for (var i = 0; i < 8; i++)(function (i) {
         var divColor = document.querySelector('#' + player + '-0' + i);
         divColor.onclick = function () {
+            // delete la classe sur les autres
+            removeClasse('color-stocks ' + player, 'selected')
+            // toggle classe pour garder border actif
+            divColor.classList.toggle('selected')
+            // met la couleur du perso sélectionné dans le thumbnail
             setImgChar(player, '0' + i, divColor.dataset.char);
         };
     })(i);
@@ -56,6 +67,13 @@ function setStockColor(player, name) {
 function setImgChar(player, idColor, name) {
     var stockName = name + '_' + idColor;
     document.getElementById("char-" + player).src = 'img/char/' + name + '/' + stockName + '.png';
+}
+
+function removeClasse(className, classToRemove) {
+    var elems = document.getElementsByClassName(className);
+    [].forEach.call(elems, function (el) {
+        el.classList.remove(classToRemove);
+    });
 }
 
 //Et quand init devient trop grosse, tu peux faire un : 
