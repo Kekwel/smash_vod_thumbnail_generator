@@ -18,6 +18,13 @@ function init(player) {
             removeClasse('stocks ' + player, 'selected')
             // toggle classe pour garder border actif
             this.classList.toggle('selected')
+
+            var divColor = document.querySelector('#' + player + '-00');
+            // delete la classe sur les autres
+            removeClasse('color-stocks ' + player, 'selected')
+            // toggle classe pour garder border actif
+            if (divColor) divColor.classList.toggle('selected')
+
             // on met la 1ere couleur par defaut
             setImgChar(player, '00', characters[i].id);
             // on modifie les icones couleurs du perso
@@ -54,20 +61,38 @@ function changeName(tag, inputId) {
 function setStockColor(player, name) {
     for (var i = 0; i < 8; i++)(function (i) {
         var divColor = document.querySelector('#' + player + '-0' + i);
+        // TODO param dans string
+        var src = 'img/char/';
         if (name.includes('mii')) {
-            // TODO
-            divColor.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D';
+            if (i < 1) {
+                divColor.dataset.char = name;
+                src += 'mii/stock_' + name + '.png';
+            } else {
+                // TODO enlever hover
+                src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D';
+            }
         } else {
             divColor.dataset.char = name;
-            divColor.src = 'img/char/' + name + '/stock_' + name + '_0' + i + '.png';
+            src += name + '/stock_' + name + '_0' + i + '.png';
         }
+        divColor.src = src;
     })(i);
 }
 
 function setImgChar(player, idColor, name) {
-    var stockName = name + '_' + idColor;
-    document.getElementById("char-" + player).src = 'img/char/' + name + '/' + stockName + '.png';
+    var stockname = name + '_';
+    var src = 'img/char/';
+    if (name.includes('mii')) {
+        stockName = name + '_00';
+        src += 'mii/';
+    } else
+        src += name + '/';
+
+    stockName = stockname + idColor;
+    document.getElementById("char-" + player).src = src + stockName + '.png';
 }
+
+// --- UTILS ---
 
 function removeClasse(className, classToRemove) {
     var elems = document.getElementsByClassName(className);
