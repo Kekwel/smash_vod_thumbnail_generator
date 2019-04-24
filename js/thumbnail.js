@@ -49,10 +49,32 @@ function init(player) {
     document.getElementById('reverse-' + player).onclick = function () {
         document.getElementById("char-" + player).classList.toggle('reverse');
     };
+
+    /* listener changement de phase */
+    setPhaseListener('form_type_phase', 'type_phase', 'phase');
+    setPhaseListener('form_select_phase', 'phase', 'phase2');
 }
 
 init("j1");
 init("j2");
+
+function setPhaseListener(nameForm, nameElem, idPhase) {
+    var radios = document.forms[nameForm].elements[nameElem];
+    for (var i = 0, max = radios.length; i < max; i++) {
+        radios[i].onclick = function () {
+            if ('Round' == this.value)
+                var nbRound = document.getElementById('nb_round').value;
+            document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = this.value + (nbRound ? ' ' + nbRound : '');
+        }
+    }
+
+    // evenement sur l'input du nb de round
+    if ('phase2' == idPhase) {
+        document.getElementById('nb_round').oninput = function () {
+            document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = 'Round ' + (this.value ? this.value : '');
+        }
+    }
+}
 
 function changeName(tag, inputId) {
     document.getElementById(inputId).innerHTML = tag;
