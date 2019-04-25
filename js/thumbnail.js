@@ -50,6 +50,11 @@ function init(player) {
         document.getElementById("char-" + player).classList.toggle('reverse');
     };
 
+    /* rotate tag */
+    document.getElementById('rotate-' + player).onclick = function () {
+        document.getElementById("banner-" + player).classList.toggle('rotate-' + player);
+    }
+
     /* listener changement de phase */
     setPhaseListener('form_type_phase', 'type_phase', 'phase');
     setPhaseListener('form_select_phase', 'phase', 'phase2');

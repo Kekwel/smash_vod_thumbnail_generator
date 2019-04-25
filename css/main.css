@@ -12,6 +12,7 @@
 }
 
 #thumbnail {
+    overflow: hidden;
     border: 1px solid black;
     width: 1280px;
     height: 720px;
@@ -52,6 +53,16 @@
     grid-row-start: 1;
     grid-row-end: 1;
     z-index: 2;
+}
+
+.rotate-j1 {
+    transform: rotate(-5deg) translate(-20px, 25px);
+    width: 105%;
+}
+
+.rotate-j2 {
+    transform: translate(-20px, 25px) rotate(5deg);
+    width: 105%;
 }
 
 #banner-j1 {
