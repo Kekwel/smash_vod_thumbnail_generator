@@ -65,6 +65,24 @@ function initOther() {
     var emptyimg = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D';
     document.getElementById('logo_haut').getElementsByTagName('img')[0].src = emptyimg;
     document.getElementById('logo_bas').getElementsByTagName('img')[0].src = emptyimg;
+
+    /* btn download image */
+    document.getElementById('download').onclick = function () {
+        //        html2canvas(document.querySelector("#thumbnail")).then(canvas => {
+        //            document.body.appendChild(canvas)
+        //        });
+        var node = document.getElementById('thumbnail');
+
+        domtoimage.toPng(node)
+            .then(function (dataUrl) {
+                var img = new Image();
+                img.src = dataUrl;
+                document.body.appendChild(img);
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+    }
 }
 
 init("j1");
