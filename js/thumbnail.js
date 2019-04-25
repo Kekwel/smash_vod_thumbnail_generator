@@ -58,6 +58,23 @@ function init(player) {
 init("j1");
 init("j2");
 
+function previewFile(logo, idInput) {
+    var preview = document.getElementById(logo).getElementsByTagName('img')[0];
+    //    var file = document.querySelector('input[type=file]').files[0]; //sames as here
+    var file = document.getElementById(idInput).files[0]; //sames as here
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+        preview.src = reader.result;
+    }
+
+    if (file) {
+        reader.readAsDataURL(file); //reads the data as a URL
+    } else {
+        preview.src = "";
+    }
+}
+
 function setPhaseListener(nameForm, nameElem, idPhase) {
     var radios = document.forms[nameForm].elements[nameElem];
     for (var i = 0, max = radios.length; i < max; i++) {
