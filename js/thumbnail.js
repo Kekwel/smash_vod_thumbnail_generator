@@ -54,6 +54,20 @@ function init(player) {
     document.getElementById('rotate-' + player).onclick = function () {
         document.getElementById("banner-" + player).classList.toggle('rotate-' + player);
     }
+
+    /* background color */
+    var radios = document.forms['form_background_color_' + player].elements['background_color'];
+    for (var i = 0, max = radios.length; i < max; i++) {
+        radios[i].onclick = function () {
+            // this.value = numero de la couleur
+            var nbColor = this.value;
+            // delete la classe sur les autres
+            var elems = document.querySelectorAll('div[class^="character background-' + player + '-"]');
+            [].forEach.call(elems, function (el) {
+                el.className = 'character background-' + player + '-' + nbColor;
+            });
+        }
+    }
 }
 
 function initOther() {
@@ -68,16 +82,19 @@ function initOther() {
 
     /* btn download image */
     document.getElementById('download').onclick = function () {
-        //        html2canvas(document.querySelector("#thumbnail")).then(canvas => {
-        //            document.body.appendChild(canvas)
-        //        });
         var node = document.getElementById('thumbnail');
 
+        // on enleve le margin pour ne pas qu'il soit pris en compte
+        node.style.margin = '';
         domtoimage.toPng(node)
             .then(function (dataUrl) {
-                var img = new Image();
-                img.src = dataUrl;
-                document.body.appendChild(img);
+                var link = document.createElement('a');
+                link.download = 'j1_vs_j2.png';
+                link.href = dataUrl;
+                simulateClick(link);
+
+                // on remet le margin
+                node.style.margin = 'auto';
             })
             .catch(function (error) {
                 console.error('oops, something went wrong!', error);
@@ -170,6 +187,22 @@ function removeClasse(className, classToRemove) {
         el.classList.remove(classToRemove);
     });
 }
+
+/**
+ * Simulate a click event.
+ * @public
+ * @param {Element} elem  the element to simulate a click on
+ */
+var simulateClick = function (elem) {
+    // Create our event (with options)
+    var evt = new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+        view: window
+    });
+    // If cancelled, don't dispatch our event
+    var canceled = !elem.dispatchEvent(evt);
+};
 
 //Et quand init devient trop grosse, tu peux faire un : 
 //function init(name){
