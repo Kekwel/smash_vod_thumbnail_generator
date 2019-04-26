@@ -117,22 +117,29 @@
     font-size: 5em;
 }
 
-#logo_haut {
+#dom-wrap-haut {
     grid-row-start: 1;
     grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 3;
     z-index: 2;
     text-align: center;
-    margin: 0 auto auto auto;
 }
 
-#logo_bas {
+#dom-wrap-bas {
     grid-row-start: 1;
     grid-row-end: 4;
     grid-column-start: 1;
     grid-column-end: 3;
     z-index: 2;
+    text-align: center;
+}
+
+#logo_haut {
+    margin: 0 auto auto auto;
+}
+
+#logo_bas {
     margin: auto auto 0 auto;
 }
 

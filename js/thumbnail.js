@@ -71,6 +71,10 @@ function init(player) {
 }
 
 function initOther() {
+    document.getElementById('nb_round').onclick = function () {
+        this.setSelectionRange(0, this.value.length)
+    };
+
     /* listener changement de phase */
     setPhaseListener('form_type_phase', 'type_phase', 'phase');
     setPhaseListener('form_select_phase', 'phase', 'phase2');
