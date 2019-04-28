@@ -11,4 +11,5 @@ button,
 .nes-radio:checked:focus + span::before,
 .nes-radio:checked:hover + span::before {
     animation: none;
+    color: #212529;
 }
