@@ -1,0 +1,7 @@
+html {
+    cursor: url(../img/mouse/cursor.png), auto;
+}
+
+.nes-radio + span {
+    cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
+}
