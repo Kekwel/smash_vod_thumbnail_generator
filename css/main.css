@@ -124,6 +124,8 @@
     grid-column-end: 3;
     z-index: 2;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 #dom-wrap-bas {
