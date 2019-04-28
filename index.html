@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <div id="menu-top">VoDs Thumbnails Generator for Smash Ultimate</div>
+    <div class="center"><span id="menu-top" class="center nes-text">VoDs Thumbnails Generator for Smash Ultimate</span></div>
     <div id="main">
         <div id="thumbnail" style="margin: auto;">
             <div class="banner rotate-j1" id="banner-j1"><span id="name-j1">J1</span></div>
@@ -342,7 +342,7 @@
             <img class="color-stocks j2" data-char="ganon" id="j2-07" src="img/char/ganon/stock_ganon_07.png">
         </div>
         <span class="center nes-text">Phase</span>
-        <div id="type_phase">
+        <div id="type_phase" class="center">
             <form name="form_type_phase">
                 <label class="radio">
                     <input type="radio" class="nes-radio" name="type_phase" value="Pools"><span>Pools</span></label>
@@ -354,7 +354,7 @@
                     <input type="radio" class="nes-radio" name="type_phase" value="Grand"><span>Grand</span></label>
             </form>
         </div>
-        <div id="select_phase">
+        <div id="select_phase" class="center">
             <form name="form_select_phase">
                 <label class="radio"><input type="radio" class="nes-radio" name="phase" value="Round" checked><span>Round </span><input id="nb_round" type="text" name="nb_round" maxlength="2" size="1" value="1" /><br></label>
                 <label class="radio"><input type="radio" class="nes-radio" name="phase" value="Quarters"><span>Quarters</span></label>
@@ -363,11 +363,15 @@
             </form>
         </div>
         <div class="select_logos" id="select_logo_haut">
-            <span class="center nes-text">Logo haut : </span>
+            <label for="down_file" class="custom-file-upload">
+                <i class="material-icons">attachment</i> Logo (haut)
+            </label><br>
             <input id="up_file" type="file" onchange="previewFile('logo_haut', 'up_file')" accept='image/*'><br>
         </div>
         <div class="select_logos" id="select_logo_bas">
-            <span class="center nes-text">Logo bas : </span>
+            <label for="down_file" class="custom-file-upload">
+                <i class="material-icons">attachment</i> Logo (bas)
+            </label><br>
             <input id="down_file" type="file" onchange="previewFile('logo_bas', 'down_file')" accept='image/*'><br>
         </div>
     </div>

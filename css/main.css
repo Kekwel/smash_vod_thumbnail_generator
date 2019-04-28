@@ -6,7 +6,12 @@
     src: url('../fonts/8-bit_pusab.ttf') format('truetype');
 }
 
+#menu-top {
+    font-size: 1.5em;
+}
+
 #main {
+    background-color: black;
     position: relative;
     margin-bottom: 10px;
 }
@@ -91,6 +96,7 @@
     grid-column-end: 4;
 }
 
+/* type phase */
 #phase {
     background-color: white;
     grid-row-start: 3;
@@ -160,9 +166,9 @@
     display: grid;
     grid-template-columns: 100px 1fr 100px 1fr;
     grid-template-rows: auto auto auto auto;
-    grid-gap: 10px;
+    grid-gap: 15px;
     margin: auto;
-    width: 75%;
+    /*    width: 85%;*/
 }
 
 #infos > span {
@@ -170,10 +176,23 @@
 }
 
 /* sélections perso */
+@media only screen and (max-width: 1400px) {
+    .select-char {
+        grid-template-columns: repeat(13, 30px) !important;
+        grid-template-rows: repeat(6, 30px) !important;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .select-color {
+        width: 50% !important;
+        text-align: center;
+    }
+}
+
 .select-char {
     margin: 5px auto;
     display: grid;
-    /*    grid-gap: 5px;*/
     grid-template-columns: repeat(13, 45px);
     grid-template-rows: repeat(6, 45px);
 }
@@ -232,6 +251,11 @@
 }
 
 /* select color background */
+#color-background-j1,
+#color-background-j2 {
+    width: 50%;
+}
+
 #color-background-j1,
 #color-background-j2,
 .center {
