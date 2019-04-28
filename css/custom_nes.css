@@ -2,6 +2,13 @@ html {
     cursor: url(../img/mouse/cursor.png), auto;
 }
 
+a,
+button,
 .nes-radio + span {
     cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
+}
+
+.nes-radio:checked:focus + span::before,
+.nes-radio:checked:hover + span::before {
+    animation: none;
 }
