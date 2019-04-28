@@ -169,17 +169,11 @@ function setStockColor(player, name) {
         // TODO param dans string
         var src = 'img/char/';
         if (name.includes('mii')) {
-            if (i < 1) {
-                divColor.dataset.char = name;
-                src += 'mii/stock_' + name + '.png';
-            } else {
-                // TODO enlever hover
-                src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D';
-            }
+            src += 'mii/stock_' + name + '.png';
         } else {
-            divColor.dataset.char = name;
             src += name + '/stock_' + name + '_0' + i + '.png';
         }
+        divColor.dataset.char = name;
         divColor.src = src;
     }
 }
@@ -188,12 +182,14 @@ function setImgChar(player, idColor, name) {
     var stockname = name + '_';
     var src = 'img/char/';
     if (name.includes('mii')) {
+        // TODO autre mii ?
         stockname = name + '_00';
         src += 'mii/';
-    } else
+    } else {
         src += name + '/';
+        stockname = stockname + idColor;
+    }
 
-    stockname = stockname + idColor;
     document.getElementById("char-" + player).src = src + stockname + '.png';
 }
 
