@@ -1,3 +1,6 @@
+/*jslint browser: true */
+/*global window */
+/*eslint-env browser*/
 window.onload = function () {
     // TODO init grid perso ?
 }
@@ -150,7 +153,8 @@ function changeName(tag, inputId) {
 }
 
 function setStockColor(player, name) {
-    for (var i = 0; i < 8; i++)(function (i) {
+    var i;
+    for (i = 0; i < 8; i++) {
         var divColor = document.querySelector('#' + player + '-0' + i);
         // TODO param dans string
         var src = 'img/char/';
@@ -167,20 +171,20 @@ function setStockColor(player, name) {
             src += name + '/stock_' + name + '_0' + i + '.png';
         }
         divColor.src = src;
-    })(i);
+    }
 }
 
 function setImgChar(player, idColor, name) {
     var stockname = name + '_';
     var src = 'img/char/';
     if (name.includes('mii')) {
-        stockName = name + '_00';
+        stockname = name + '_00';
         src += 'mii/';
     } else
         src += name + '/';
 
-    stockName = stockname + idColor;
-    document.getElementById("char-" + player).src = src + stockName + '.png';
+    stockname = stockname + idColor;
+    document.getElementById("char-" + player).src = src + stockname + '.png';
 }
 
 // --- UTILS ---
