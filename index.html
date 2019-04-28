@@ -346,23 +346,24 @@
         <span class="center nes-text">Phase</span>
         <div id="type_phase" class="center">
             <form name="form_type_phase">
+                <!--
+                <label class="radio"><input id="pool" type="radio" class="nes-radio" name="type_phase" value="Pools"><span>Pools</span></label>
+-->
                 <label class="radio">
-                    <input type="radio" class="nes-radio" name="type_phase" value="Pools"><span>Pools</span></label>
+                    <input id="winner" type="radio" class="nes-radio" name="type_phase" value="Winners" checked><span>Winners</span></label>
                 <label class="radio">
-                    <input type="radio" class="nes-radio" name="type_phase" value="Winners" checked><span>Winners</span></label>
+                    <input id="loser" type="radio" class="nes-radio" name="type_phase" value="Losers"><span>Losers</span></label>
                 <label class="radio">
-                    <input type="radio" class="nes-radio" name="type_phase" value="Losers"><span>Losers</span></label>
-                <label class="radio">
-                    <input type="radio" class="nes-radio" name="type_phase" value="Grand"><span>Grand</span></label>
+                    <input id="grand" type="radio" class="nes-radio" name="type_phase" value="Grand"><span>Grand</span></label>
             </form>
         </div>
         <div id="select_phase" class="center">
             <form name="form_select_phase">
                 <!--                TODO autoriser que number-->
-                <label class="radio"><input type="radio" class="nes-radio" name="phase" value="Round" checked><span>Round </span><input id="nb_round" type="text" name="nb_round" maxlength="2" size="1" value="1" /><br></label>
-                <label class="radio"><input type="radio" class="nes-radio" name="phase" value="Quarters"><span>Quarters</span></label>
-                <label class="radio"><input type="radio" class="nes-radio" name="phase" value="Semis"><span>Semis</span></label>
-                <label class="radio"><input type="radio" class="nes-radio" name="phase" value="Finals"><span>Finals</span></label>
+                <label class="radio"><input id="round" type="radio" class="nes-radio" name="phase" value="Round" checked><span>Round </span><input id="nb_round" type="text" name="nb_round" maxlength="2" size="1" value="1" /><br></label>
+                <label class="radio"><input id="quarter" type="radio" class="nes-radio" name="phase" value="Quarters"><span>Quarters</span></label>
+                <label class="radio"><input id="semi" type="radio" class="nes-radio" name="phase" value="Semis"><span>Semis</span></label>
+                <label class="radio"><input id="final" type="radio" class="nes-radio" name="phase" value="Finals"><span>Finals</span></label>
             </form>
         </div>
         <div class="select_logos" id="select_logo_haut">

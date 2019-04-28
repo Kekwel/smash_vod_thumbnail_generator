@@ -95,8 +95,12 @@ function initOther() {
         node.style.margin = '';
         domtoimage.toPng(node)
             .then(function (dataUrl) {
+                var player1 = document.getElementById('j1').value;
+                var player2 = document.getElementById('j2').value;
+                var filename = player1 + '_vs_' + player2 + '.png';
+
                 var link = document.createElement('a');
-                link.download = 'j1_vs_j2.png';
+                link.download = filename;
                 link.href = dataUrl;
                 simulateClick(link);
 
@@ -137,6 +141,12 @@ function setPhaseListener(nameForm, nameElem, idPhase) {
             if ('Round' == this.value)
                 var nbRound = document.getElementById('nb_round').value;
             document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = this.value + (nbRound ? ' ' + nbRound : '');
+
+            // si on appuie sur "Grand", met automatiquement "Finals"
+            if ('Grand' == this.value) {
+                document.getElementById('final').checked = true;
+                document.getElementById('phase2').getElementsByTagName('span')[0].innerHTML = document.getElementById('final').value;
+            }
         }
     }
 
