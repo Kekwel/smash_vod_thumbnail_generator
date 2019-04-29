@@ -1,7 +1,7 @@
 @font-face {
     font-family: '8-bit_pusab';
     /*IE*/
-    /*    src: url('../fonts/ie/dfgothic-su-wing-rksj-h-webfont.eot');*/
+    src: url('../fonts/8-bit_pusab.ttf');
     /*Non-IE*/
     src: url('../fonts/8-bit_pusab.ttf') format('truetype');
 }
@@ -64,9 +64,7 @@
 .character,
 .character > img {
     width: 100%;
-    /* height: 100%; */
     overflow: hidden;
-    /*    border: 1px solid red*/
 }
 
 #char-j1,
