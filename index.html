@@ -23,6 +23,8 @@
 </head>
 
 <body>
+    <!-- TODO nouveau miis -->
+    <!-- TODO FR / EN -->
     <div class="center"><span id="menu-top" class="center nes-text">VoDs Thumbnails Generator for Smash Ultimate</span></div>
     <div id="main">
         <div id="thumbnail" style="margin: auto;">
@@ -45,35 +47,27 @@
                 </div>
             </div>
             <div class="banner" id="versus"><span>VS</span></div>
-            <!--
-            <div id="dom-wrap-bas">
-                <div class="logo" id="logo_bas">
-                    <img src="">
-                </div>
-            </div>
--->
         </div>
     </div>
     <!--    TODO btn plus gros/coloré-->
-    <div class="center" style="margin-bottom: 10px; "><button type="button" id="download"><i class="material-icons">save_alt</i> Récupérer l'image</button>
+    <div class="center back-color" style="padding: 10px 0; "><button class="nes-btn is-success" type="button" id="download"><i class="material-icons">save_alt</i> Récupérer l'image</button>
     </div>
-    <!--    TODO trop a droite-->
-    <div id="infos">
+    <div id="infos" class="back-color">
         <div class="center">
-            <button type="button" id="rotate-j1"><i class="material-icons">cached</i></button>
+            <button class="nes-btn is-primary" type="button" id="rotate-j1"><i class="material-icons">cached</i></button>
         </div>
         <div class="nes-field is-inline">
             <input class="nes-input" id="j1" type="text" value="J1">
         </div>
         <div class="center">
-            <button type="button" id="rotate-j2"><i class="material-icons">cached</i></button>
+            <button class="nes-btn is-primary" type="button" id="rotate-j2"><i class="material-icons">cached</i></button>
         </div>
         <div class="nes-field is-inline">
             <input class="nes-input" id="j2" type="text" value="J2">
         </div>
         <span class="center nes-text">Couleur fond</span>
-        <div id="color-background-j1">
-            <form name="form_background_color_j1">
+        <div class="panel-color">
+            <form id="form_background_color_j1" name="form_background_color_j1">
                 <label class="background-j1-1">
                     <input type="radio" class="nes-radio is-dark" name="background_color" value="1" checked />
                     <span>1</span>
@@ -109,8 +103,8 @@
             </form>
         </div>
         <span class="center nes-text">Couleur fond</span>
-        <div id="color-background-j2">
-            <form name="form_background_color_j2">
+        <div class="panel-color">
+            <form id="form_background_color_j1" name="form_background_color_j2">
                 <label class="background-j2-1">
                     <input type="radio" class="nes-radio is-dark" name="background_color" value="1" />
                     <span>1</span>
@@ -146,10 +140,9 @@
             </form>
         </div>
         <div class="center">
-            <!--            <span class="nes-text">Personnage</span>-->
-            <button type="button" id="reverse-j1"><i class="material-icons">compare_arrows</i></button>
+            <button class="nes-btn is-primary" type="button" id="reverse-j1"><i class="material-icons">compare_arrows</i></button>
         </div>
-        <div class="select-char" id="char1">
+        <div class="panel-color select-char" id="char1">
             <!-- first line-->
             <img class="stocks j1" id="mario" src="img/char/mario/stock_mario_00.png">
             <img class="stocks j1" id="donkey" src="img/char/donkey/stock_donkey_00.png">
@@ -221,7 +214,7 @@
             <img class="stocks j1" id="bayonetta" src="img/char/bayonetta/stock_bayonetta_00.png">
             <img class="stocks j1" id="inkling" src="img/char/inkling/stock_inkling_00.png">
             <!-- last line -->
-            <div class="reserved"></div>
+            <!--            <div class="reserved"></div>-->
             <div class="reserved"></div>
             <img class="stocks j1" id="ridley" src="img/char/ridley/stock_ridley_00.png">
             <img class="stocks j1" id="simon" src="img/char/simon/stock_simon_00.png">
@@ -236,10 +229,9 @@
             <img class="stocks j1" id="miigunner" src="img/char/mii/stock_miigunner.png">
         </div>
         <div class="center">
-            <!--            <span class="nes-text">Personnage</span>-->
-            <button type="button" id="reverse-j2"><i class="material-icons">compare_arrows</i></button>
+            <button class="nes-btn is-primary" type="button" id="reverse-j2"><i class="material-icons">compare_arrows</i></button>
         </div>
-        <div class="select-char" id="char2">
+        <div class="panel-color select-char" id="char2">
             <!-- first line-->
             <img class="stocks j2" id="mario" src="img/char/mario/stock_mario_00.png">
             <img class="stocks j2" id="donkey" src="img/char/donkey/stock_donkey_00.png">
@@ -311,7 +303,7 @@
             <img class="stocks j2" id="bayonetta" src="img/char/bayonetta/stock_bayonetta_00.png">
             <img class="stocks j2" id="inkling" src="img/char/inkling/stock_inkling_00.png">
             <!-- last line -->
-            <div class="reserved"></div>
+            <!--            <div class="reserved"></div>-->
             <div class="reserved"></div>
             <img class="stocks j2" id="ridley" src="img/char/ridley/stock_ridley_00.png">
             <img class="stocks j2" id="simon" src="img/char/simon/stock_simon_00.png">
@@ -326,7 +318,7 @@
             <img class="stocks j2" id="miigunner" src="img/char/mii/stock_miigunner.png">
         </div>
         <span class="center nes-text">Costume</span>
-        <div class="select-color" id="color-char1">
+        <div class="panel-color select-color" id="color-char1">
             <img class="color-stocks j1" data-char="link" id="j1-00" src="img/char/link/stock_link_00.png">
             <img class="color-stocks j1" data-char="link" id="j1-01" src="img/char/link/stock_link_01.png">
             <img class="color-stocks j1 selected" data-char="link" id="j1-02" src="img/char/link/stock_link_02.png">
@@ -337,7 +329,7 @@
             <img class="color-stocks j1" data-char="link" id="j1-07" src="img/char/link/stock_link_07.png">
         </div>
         <span class="center nes-text">Costume</span>
-        <div class="select-color" id="color-char2">
+        <div class="panel-color select-color" id="color-char2">
             <img class="color-stocks j2" data-char="ganon" id="j2-00" src="img/char/ganon/stock_ganon_00.png">
             <img class="color-stocks j2" data-char="ganon" id="j2-01" src="img/char/ganon/stock_ganon_01.png">
             <img class="color-stocks j2" data-char="ganon" id="j2-02" src="img/char/ganon/stock_ganon_02.png">
@@ -348,7 +340,7 @@
             <img class="color-stocks j2" data-char="ganon" id="j2-07" src="img/char/ganon/stock_ganon_07.png">
         </div>
         <span class="center nes-text">Phase</span>
-        <div id="type_phase" class="center">
+        <div id="type_phase" class="panel-color">
             <form name="form_type_phase">
                 <!--
                 <label class="radio"><input id="pool" type="radio" class="nes-radio" name="type_phase" value="Pools"><span>Pools</span></label>
@@ -361,7 +353,7 @@
                     <input id="grand" type="radio" class="nes-radio" name="type_phase" value="Grand"><span>Grand</span></label>
             </form>
         </div>
-        <div id="select_phase" class="center">
+        <div id="select_phase" class="panel-color">
             <form name="form_select_phase">
                 <!--                TODO autoriser que number-->
                 <label class="radio"><input id="round" type="radio" class="nes-radio" name="phase" value="Round" checked><span>Round </span><input id="nb_round" type="text" name="nb_round" maxlength="2" size="1" value="1" /><br></label>
@@ -370,13 +362,13 @@
                 <label class="radio"><input id="final" type="radio" class="nes-radio" name="phase" value="Finals"><span>Finals</span></label>
             </form>
         </div>
-        <div class="select_logos" id="select_logo_haut">
+        <div class="select_logos panel-color" id="select_logo_haut">
             <label for="down_file" class="custom-file-upload">
                 <i class="material-icons">attachment</i> Logo (haut)
             </label><br>
             <input id="up_file" type="file" onchange="previewFile('logo_haut', 'up_file')" accept='image/*'><br>
         </div>
-        <div class="select_logos" id="select_logo_bas">
+        <div class="select_logos panel-color" id="select_logo_bas">
             <label for="down_file" class="custom-file-upload">
                 <i class="material-icons">attachment</i> Logo (bas)
             </label><br>

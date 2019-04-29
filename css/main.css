@@ -10,10 +10,19 @@
     font-size: 1.5em;
 }
 
+.back-color {
+    background-color: gainsboro;
+}
+
+.panel-color {
+    background-color: whitesmoke;
+}
+
 #main {
     background-color: black;
     position: relative;
-    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #thumbnail {
@@ -185,14 +194,16 @@
 
 @media only screen and (max-width: 1280px) {
     .select-color {
-        width: 50% !important;
+        /*        width: 50% !important;*/
         text-align: center;
     }
 }
 
 .select-char {
+    width: 100%;
     margin: 5px auto;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(13, 45px);
     grid-template-rows: repeat(6, 45px);
 }
@@ -212,6 +223,8 @@
 
 /* couleur */
 .select-color {
+    width: 100%;
+    text-align: center;
     margin: auto;
 }
 
@@ -236,24 +249,32 @@
 }
 
 /* select logos */
+#type_phase {
+    text-align: center;
+}
+
 #select_logo_bas {
-    grid-column-start: 3;
+    text-align: center;
+    grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 6;
     grid-row-end: 6;
 }
 
 #select_logo_haut {
-    grid-column-start: 1;
-    grid-column-end: 5;
+    text-align: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 6;
     grid-row-end: 6;
 }
 
 /* select color background */
-#color-background-j1,
-#color-background-j2 {
+#form_background_color_j1,
+#form_background_color_j2 {
+    padding-top: 5px;
     width: 50%;
+    margin: auto;
 }
 
 #color-background-j1,
