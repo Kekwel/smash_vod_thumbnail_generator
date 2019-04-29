@@ -6,6 +6,10 @@
     src: url('../fonts/8-bit_pusab.ttf') format('truetype');
 }
 
+.footer {
+    height: 25px;
+}
+
 #menu-top {
     font-size: 1.5em;
 }
