@@ -23,7 +23,7 @@
 <body>
     <!-- TODO nouveau miis -->
     <!-- TODO FR / EN -->
-    <div class="center"><span id="menu-top" class="center nes-text">VoDs Thumbnails Generator for Smash Ultimate</span></div>
+    <div class="center margin-auto"><span id="menu-top" class="center margin-auto nes-text">VoDs Thumbnails Generator for Smash Ultimate</span></div>
     <div id="main">
         <div id="thumbnail" style="margin: auto;">
             <div class="banner rotate-left" id="banner-j1"><span id="name-j1">J1</span></div>
@@ -47,10 +47,10 @@
             <div class="banner" id="versus"><span>VS</span></div>
         </div>
     </div>
-    <div class="center back-color" style="padding: 10px 0; "><button class="nes-btn is-success" type="button" id="download"><i class="material-icons">save_alt</i> Récupérer l'image</button>
+    <div class="center margin-auto back-color" style="padding: 10px 0; "><button class="nes-btn is-success" type="button" id="download"><i class="material-icons">save_alt</i> Récupérer l'image</button>
     </div>
     <div id="infos" class="back-color">
-        <div class="center tag-j1">
+        <div class="center margin-auto tag-j1">
             <div class="buttons-rotate">
                 <button class="nes-btn is-primary" type="button" id="rotate-left-j1"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
@@ -64,7 +64,7 @@
         <div class="nes-field is-inline">
 </div>
 -->
-        <div class="center tag-j2">
+        <div class="center margin-auto tag-j2">
             <div class="buttons-rotate">
                 <button class="nes-btn is-primary" type="button" id="rotate-left-j2"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
@@ -78,7 +78,7 @@
         <div class="nes-field is-inline">
         </div>
 -->
-        <span class="center nes-text">Couleur fond</span>
+        <span class="center margin-auto nes-text">Couleur fond</span>
         <div class="panel-color">
             <form id="form_background_color_j1" name="form_background_color_j1">
                 <label class="background-j1-1">
@@ -115,7 +115,7 @@
                 </label>
             </form>
         </div>
-        <span class="center nes-text">Couleur fond</span>
+        <span class="center margin-auto nes-text">Couleur fond</span>
         <div class="panel-color">
             <form id="form_background_color_j1" name="form_background_color_j2">
                 <label class="background-j2-1">
@@ -152,7 +152,7 @@
                 </label>
             </form>
         </div>
-        <div class="center">
+        <div class="center margin-auto">
             <button class="nes-btn is-primary" type="button" id="reverse-j1"><i class="material-icons">compare_arrows</i></button>
         </div>
         <div class="panel-color select-char" id="char1">
@@ -240,7 +240,7 @@
             <img class="stocks j1" id="miiswordsman" src="img/char/mii/stock_miiswordsman.png">
             <img class="stocks j1" id="miigunner" src="img/char/mii/stock_miigunner.png">
         </div>
-        <div class="center">
+        <div class="center margin-auto">
             <button class="nes-btn is-primary" type="button" id="reverse-j2"><i class="material-icons">compare_arrows</i></button>
         </div>
         <div class="panel-color select-char" id="char2">
@@ -328,7 +328,7 @@
             <img class="stocks j2" id="miiswordsman" src="img/char/mii/stock_miiswordsman.png">
             <img class="stocks j2" id="miigunner" src="img/char/mii/stock_miigunner.png">
         </div>
-        <span class="center nes-text">Costume</span>
+        <span class="center margin-auto nes-text">Costume</span>
         <div class="panel-color select-color" id="color-char1">
             <img class="color-stocks j1" data-char="link" id="j1-00" src="img/char/link/stock_link_00.png">
             <img class="color-stocks j1" data-char="link" id="j1-01" src="img/char/link/stock_link_01.png">
@@ -339,7 +339,7 @@
             <img class="color-stocks j1" data-char="link" id="j1-06" src="img/char/link/stock_link_06.png">
             <img class="color-stocks j1" data-char="link" id="j1-07" src="img/char/link/stock_link_07.png">
         </div>
-        <span class="center nes-text">Costume</span>
+        <span class="center margin-auto nes-text">Costume</span>
         <div class="panel-color select-color" id="color-char2">
             <img class="color-stocks j2" data-char="ganon" id="j2-00" src="img/char/ganon/stock_ganon_00.png">
             <img class="color-stocks j2" data-char="ganon" id="j2-01" src="img/char/ganon/stock_ganon_01.png">
@@ -350,12 +350,13 @@
             <img class="color-stocks j2" data-char="ganon" id="j2-06" src="img/char/ganon/stock_ganon_06.png">
             <img class="color-stocks j2" data-char="ganon" id="j2-07" src="img/char/ganon/stock_ganon_07.png">
         </div>
-        <span class="center nes-text">Phase</span>
+        <div class="center">
+            <span class="nes-text" style="font-size: 12px;">Phase</span>
+            <button class="nes-btn is-success" type="button" id="phase_visible" style="padding: 0;"><i class="material-icons" style="font-size: 20px;">visibility_off</i></button>
+        </div>
         <div id="type_phase" class="panel-color">
             <form name="form_type_phase">
-                <!--
                 <label class="radio"><input id="pool" type="radio" class="nes-radio" name="type_phase" value="Pools"><span>Pools</span></label>
--->
                 <label class="radio">
                     <input id="winner" type="radio" class="nes-radio" name="type_phase" value="Winners" checked><span>Winners</span></label>
                 <label class="radio">
@@ -364,10 +365,11 @@
                     <input id="grand" type="radio" class="nes-radio" name="type_phase" value="Grand"><span>Grand</span></label>
             </form>
         </div>
-        <div id="select_phase" class="panel-color">
+        <div id="select_phase" class="panel-color center">
             <form name="form_select_phase">
+                <label class="radio"><input id="custom" type="radio" class="nes-radio" name="phase" value=""><span>Custom : </span><input id="custom_phase" type="text" name="custome_phase" size="10" /></label><br>
                 <!--                TODO autoriser que number-->
-                <label class="radio"><input id="round" type="radio" class="nes-radio" name="phase" value="Round" checked><span>Round </span><input id="nb_round" type="text" name="nb_round" maxlength="2" size="1" value="1" /><br></label>
+                <label class="radio"><input id="round" type="radio" class="nes-radio" name="phase" value="Round" checked><span>Round </span><input id="nb_round" type="text" name="nb_round" maxlength="2" size="1" value="1" /></label>
                 <label class="radio"><input id="quarter" type="radio" class="nes-radio" name="phase" value="Quarters"><span>Quarters</span></label>
                 <label class="radio"><input id="semi" type="radio" class="nes-radio" name="phase" value="Semis"><span>Semis</span></label>
                 <label class="radio"><input id="final" type="radio" class="nes-radio" name="phase" value="Finals"><span>Finals</span></label>

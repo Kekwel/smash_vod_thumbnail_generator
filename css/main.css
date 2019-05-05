@@ -140,7 +140,7 @@
 #div-j1,
 #div-j2 {
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 4;
 }
 
 #div-j1 {
@@ -296,10 +296,14 @@
     grid-row-end: 5;
 }
 
-/* select logos */
 #type_phase {
     text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
+
+/* select logos */
 
 #select_logo_bas {
     text-align: center;
@@ -330,6 +334,11 @@
 #color-background-j2,
 .center {
     text-align: center;
+}
+
+#color-background-j1,
+#color-background-j2,
+.margin-auto {
     margin: auto;
 }
 

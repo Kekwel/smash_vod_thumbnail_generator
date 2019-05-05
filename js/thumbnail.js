@@ -57,17 +57,14 @@ function init(player) {
     document.getElementById('rotate-left-' + player).onclick = function () {
         document.getElementById("banner-" + player).classList.remove('rotate-right');
         document.getElementById("banner-" + player).classList.add('rotate-left');
-        //        document.getElementById("banner-" + player).classList.toggle('rotate-' + player);
     }
     document.getElementById('rotate-center-' + player).onclick = function () {
         document.getElementById("banner-" + player).classList.remove('rotate-right');
         document.getElementById("banner-" + player).classList.remove('rotate-left');
-        //        document.getElementById("banner-" + player).classList.toggle('rotate-' + player);
     }
     document.getElementById('rotate-right-' + player).onclick = function () {
         document.getElementById("banner-" + player).classList.remove('rotate-left');
         document.getElementById("banner-" + player).classList.add('rotate-right');
-        //        document.getElementById("banner-" + player).classList.toggle('rotate-' + player);
     }
 
     /* background color */
@@ -91,6 +88,21 @@ function initOther() {
     };
 
     /* listener changement de phase */
+    document.getElementById('phase_visible').onclick = function () {
+        if (!this.checked) {
+            document.getElementById('phase_visible').getElementsByClassName('material-icons')[0].innerHTML = 'visibility';
+
+            document.getElementById('phase').style.display = 'none';
+            document.getElementById('phase2').style.display = 'none';
+            this.checked = true;
+        } else {
+            document.getElementById('phase_visible').getElementsByClassName('material-icons')[0].innerHTML = 'visibility_off'
+
+            document.getElementById('phase').style.display = '';
+            document.getElementById('phase2').style.display = '';
+            this.checked = false;
+        }
+    }
     setPhaseListener('form_type_phase', 'type_phase', 'phase');
     setPhaseListener('form_select_phase', 'phase', 'phase2');
 
@@ -150,12 +162,14 @@ function setPhaseListener(nameForm, nameElem, idPhase) {
     var radios = document.forms[nameForm].elements[nameElem];
     for (var i = 0, max = radios.length; i < max; i++) {
         radios[i].onclick = function () {
-            if ('Round' == this.value)
+            if ('round' == this.id)
                 var nbRound = document.getElementById('nb_round').value;
+            else if ('custom' == this.id)
+                var nbRound = document.getElementById('custom_phase').value;
             document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = this.value + (nbRound ? ' ' + nbRound : '');
 
             // si on appuie sur "Grand", met automatiquement "Finals"
-            if ('Grand' == this.value) {
+            if ('grand' == this.id) {
                 document.getElementById('final').checked = true;
                 document.getElementById('phase2').getElementsByTagName('span')[0].innerHTML = document.getElementById('final').value;
             }
@@ -164,6 +178,9 @@ function setPhaseListener(nameForm, nameElem, idPhase) {
 
     // evenement sur l'input du nb de round
     if ('phase2' == idPhase) {
+        document.getElementById('custom_phase').oninput = function () {
+            document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = this.value ? this.value : '';
+        }
         document.getElementById('nb_round').oninput = function () {
             document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = 'Round ' + (this.value ? this.value : '');
         }
