@@ -26,8 +26,8 @@
     <div class="center"><span id="menu-top" class="center nes-text">VoDs Thumbnails Generator for Smash Ultimate</span></div>
     <div id="main">
         <div id="thumbnail" style="margin: auto;">
-            <div class="banner rotate-j1" id="banner-j1"><span id="name-j1">J1</span></div>
-            <div class="banner rotate-j2" id="banner-j2"><span id="name-j2">J2</span></div>
+            <div class="banner rotate-left" id="banner-j1"><span id="name-j1">J1</span></div>
+            <div class="banner rotate-left" id="banner-j2"><span id="name-j2">J2</span></div>
             <div class="character background-j1-1" id="div-j1">
                 <img id="char-j1" class="" src="img/char/link/link_02.png">
             </div>
@@ -50,18 +50,34 @@
     <div class="center back-color" style="padding: 10px 0; "><button class="nes-btn is-success" type="button" id="download"><i class="material-icons">save_alt</i> Récupérer l'image</button>
     </div>
     <div id="infos" class="back-color">
-        <div class="center">
-            <button class="nes-btn is-primary" type="button" id="rotate-j1"><i class="material-icons">cached</i></button>
+        <div class="center tag-j1">
+            <div class="buttons-rotate">
+                <button class="nes-btn is-primary" type="button" id="rotate-left-j1"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary" type="button" id="rotate-right-j1"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
+            </div>
+            <div>
+                <input class="nes-input" id="j1" type="text" value="J1">
+            </div>
         </div>
+        <!--
         <div class="nes-field is-inline">
-            <input class="nes-input" id="j1" type="text" value="J1">
+</div>
+-->
+        <div class="center tag-j2">
+            <div class="buttons-rotate">
+                <button class="nes-btn is-primary" type="button" id="rotate-left-j2"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary" type="button" id="rotate-right-j2"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
+            </div>
+            <div>
+                <input class="nes-input" id="j2" type="text" value="J2">
+            </div>
         </div>
-        <div class="center">
-            <button class="nes-btn is-primary" type="button" id="rotate-j2"><i class="material-icons">cached</i></button>
-        </div>
+        <!--
         <div class="nes-field is-inline">
-            <input class="nes-input" id="j2" type="text" value="J2">
         </div>
+-->
         <span class="center nes-text">Couleur fond</span>
         <div class="panel-color">
             <form id="form_background_color_j1" name="form_background_color_j1">

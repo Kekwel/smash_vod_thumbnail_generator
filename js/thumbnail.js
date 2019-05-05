@@ -54,14 +54,26 @@ function init(player) {
     };
 
     /* rotate tag */
-    document.getElementById('rotate-' + player).onclick = function () {
-        document.getElementById("banner-" + player).classList.toggle('rotate-' + player);
+    document.getElementById('rotate-left-' + player).onclick = function () {
+        document.getElementById("banner-" + player).classList.remove('rotate-right');
+        document.getElementById("banner-" + player).classList.add('rotate-left');
+        //        document.getElementById("banner-" + player).classList.toggle('rotate-' + player);
+    }
+    document.getElementById('rotate-center-' + player).onclick = function () {
+        document.getElementById("banner-" + player).classList.remove('rotate-right');
+        document.getElementById("banner-" + player).classList.remove('rotate-left');
+        //        document.getElementById("banner-" + player).classList.toggle('rotate-' + player);
+    }
+    document.getElementById('rotate-right-' + player).onclick = function () {
+        document.getElementById("banner-" + player).classList.remove('rotate-left');
+        document.getElementById("banner-" + player).classList.add('rotate-right');
+        //        document.getElementById("banner-" + player).classList.toggle('rotate-' + player);
     }
 
     /* background color */
     var radios = document.forms['form_background_color_' + player].elements['background_color'];
-    for (var i = 0, max = radios.length; i < max; i++) {
-        radios[i].onclick = function () {
+    for (var k = 0, max = radios.length; k < max; k++) {
+        radios[k].onclick = function () {
             // this.value = numero de la couleur
             var nbColor = this.value;
             // delete la classe sur les autres
