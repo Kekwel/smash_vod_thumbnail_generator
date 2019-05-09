@@ -1,9 +1,13 @@
 @font-face {
-    font-family: '8-bit_pusab';
+    /*    font-family: '8-bit_pusab';*/
     /*IE*/
-    src: url('../fonts/8-bit_pusab.ttf');
+    /*    src: url('../fonts/8-bit_pusab.ttf');*/
     /*Non-IE*/
-    src: url('../fonts/8-bit_pusab.ttf') format('truetype');
+    /*    src: url('../fonts/8-bit_pusab.ttf') format('truetype');*/
+}
+
+.icons-only {
+    padding: 0 !important;
 }
 
 .footer {
@@ -52,7 +56,6 @@
 
 .banner {
     text-align: center;
-    font-family: '8-bit_pusab';
     font-size: 2.75em;
     display: flex;
 }
@@ -223,7 +226,7 @@
     display: grid;
     grid-template-columns: 100px 1fr 100px 1fr;
     grid-template-rows: auto auto auto auto;
-    grid-gap: 15px;
+    grid-gap: 10px;
     margin: auto;
     overflow: scroll auto;
 }
@@ -307,7 +310,7 @@
 
 #select_logo_bas {
     text-align: center;
-    grid-column-start: 4;
+    grid-column-start: 3;
     grid-column-end: 5;
     grid-row-start: 6;
     grid-row-end: 6;
@@ -315,7 +318,7 @@
 
 #select_logo_haut {
     text-align: center;
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 6;
     grid-row-end: 6;

@@ -2,7 +2,76 @@
 /*global window */
 /*eslint-env browser*/
 window.onload = function () {
+
     // TODO init grid perso ?
+
+    $('#font_select').select2({
+        closeOnSelect: true
+    });
+    $('#font_select').on('select2:select', function (e) {
+        var fontname;
+        if (e.params.data.text)
+            fontname = e.params.data.text;
+        else
+            fontname = e.params.data;
+        previewAndLoadFont(fontname);
+    });
+}
+
+// listen for keyups in both input widget AND dropdown
+//$("body ").on('keydown', ".select2, .select2 - dropdown ", function (e) {
+//    var KEYS = {
+//        UP: 38,
+//        DOWN: 40
+//    };
+//    var $sel2 = $(this).closest(".select2");
+//    // if we can't find it by traveersing the dom, search page for an open container
+//    // ASSUMES only one open at a time - 
+//    // don't really know how to cross walk from dropdown back to coresponding element
+//    if ($sel2.length == 0) {
+//        $sel2 = $(".select2.select2-container--open");
+//    }
+//
+//    // make sure we found the <select> el
+//    var $sel = $sel2.data("element")
+//    if ($sel.length) {
+//        var newValue
+//
+//        if (e.keyCode === KEYS.DOWN && !e.altKey) {
+//            newValue = $sel.find('option:selected').nextAll(":enabled").first().val();
+//        } else if (e.keyCode === KEYS.UP) {
+//            newValue = $sel.find('option:selected').prevAll(":enabled").first().val();
+//        }
+//
+//        // if we got a value, set it and update
+//        if (newValue != undefined) {
+//            $sel.val(newValue);
+//            loadFont(newValue);
+//            document.getElementById('label_police').innerHTML = newValue;
+//            document.getElementById('label_police').style.fontFamily = newValue;
+//        }
+//    }
+//});
+
+function previewAndLoadFont(fontname) {
+    loadFont(fontname);
+
+    fontname = '"' + fontname + '"';
+    // change font of banner + VS + phases
+    document.getElementById('name-j1').style.fontFamily = fontname;
+    document.getElementById('name-j2').style.fontFamily = fontname;
+    document.getElementById('versus').style.fontFamily = fontname;
+    document.getElementById('phase').style.fontFamily = fontname;
+    document.getElementById('phase2').style.fontFamily = fontname;
+
+    document.getElementById('j1').style.fontFamily = fontname;
+    document.getElementById('j2').style.fontFamily = fontname;
+    document.getElementById('type_phase').style.fontFamily = fontname;
+    document.getElementById('select_phase').style.fontFamily = fontname;
+    //        document.getElementById('custom_phase ').style.fontFamily = fontname;
+    //        document.getElementById('custom_phase2').style.fontFamily = fontname;
+    document.getElementById('label_font').innerHTML = fontname;
+    document.getElementById('label_font').style.fontFamily = fontname;
 }
 
 function init(player) {
@@ -141,6 +210,14 @@ init("j1");
 init("j2");
 initOther();
 
+function showHelp(param) {
+    console.log('help_' + param);
+    // TODO
+    if ('font' == param) {
+        console.log("pouet")
+    }
+}
+
 function previewFile(logo, idInput) {
     var preview = document.getElementById(logo).getElementsByTagName('img')[0];
     //    var file = document.querySelector('input[type=file]').files[0]; //sames as here
@@ -165,7 +242,7 @@ function setPhaseListener(nameForm, nameElem, idPhase) {
             if ('round' == this.id)
                 var nbRound = document.getElementById('nb_round').value;
             else if ('custom' == this.id)
-                var nbRound = document.getElementById('custom_phase').value;
+                var nbRound = document.getElementById('custom_' + idPhase).value;
             document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = this.value + (nbRound ? ' ' + nbRound : '');
 
             // si on appuie sur "Grand", met automatiquement "Finals"
@@ -177,10 +254,10 @@ function setPhaseListener(nameForm, nameElem, idPhase) {
     }
 
     // evenement sur l'input du nb de round
+    document.getElementById('custom_' + idPhase).oninput = function () {
+        document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = this.value ? this.value : '';
+    }
     if ('phase2' == idPhase) {
-        document.getElementById('custom_phase').oninput = function () {
-            document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = this.value ? this.value : '';
-        }
         document.getElementById('nb_round').oninput = function () {
             document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = 'Round ' + (this.value ? this.value : '');
         }

@@ -4,7 +4,8 @@ html {
 
 a,
 button,
-.nes-radio + span {
+.nes-radio + span,
+.pointer-click {
     cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
 }
 

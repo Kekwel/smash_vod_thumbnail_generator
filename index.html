@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>Smash Thumbnail Generator</title>
 
-    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 
@@ -23,19 +22,19 @@
 <body>
     <!-- TODO nouveau miis -->
     <!-- TODO FR / EN -->
-    <div class="center margin-auto"><span id="menu-top" class="center margin-auto nes-text">VoDs Thumbnails Generator for Smash Ultimate</span></div>
+    <div class="center margin-auto"><span id="menu-top" class="center margin-auto nes-text">VoDs Thumbnails Generator for Smash Ultimate</span> | <a href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter"><i class="nes-icon is-medium twitter"></i></a></div>
     <div id="main">
         <div id="thumbnail" style="margin: auto;">
-            <div class="banner rotate-left" id="banner-j1"><span id="name-j1">J1</span></div>
-            <div class="banner rotate-left" id="banner-j2"><span id="name-j2">J2</span></div>
+            <div class="banner rotate-left" id="banner-j1"><span class="nes-text" id="name-j1">J1</span></div>
+            <div class="banner rotate-left" id="banner-j2"><span class="nes-text" id="name-j2">J2</span></div>
             <div class="character background-j1-1" id="div-j1">
                 <img id="char-j1" class="" src="img/char/link/link_02.png">
             </div>
             <div class="character background-j2-2" id="div-j2">
                 <img id="char-j2" class="" src="img/char/ganon/ganon_03.png">
             </div>
-            <div class="banner" id="phase"><span>Winners</span></div>
-            <div class="banner" id="phase2"><span>Round 1</span></div>
+            <div class="banner" id="phase"><span class="nes-text">Winners</span></div>
+            <div class="banner" id="phase2"><span class="nes-text">Round 1</span></div>
             <div id="dom-wrap-haut">
                 <div class="logo" id="logo_haut">
                     <img src="">
@@ -49,12 +48,36 @@
     </div>
     <div class="center margin-auto back-color" style="padding: 10px 0; "><button class="nes-btn is-success" type="button" id="download"><i class="material-icons">save_alt</i> Récupérer l'image</button>
     </div>
+    <div class="center margin-auto back-color">
+        <!--        <label id="fontSize"><input type="number" name="fontSize" min="1" max="100" value="44">px,</label>-->
+        <label id="label_font" for="font">Police d'écriture</label>
+        <section style="display: inline-block">
+            <button type="button" class="nes-btn is-primary icons-only" onclick="document.getElementById('dialog-dark').showModal();">
+                <i class="material-icons" id="help_font">help_outline</i>
+            </button>
+            <dialog class="nes-dialog is-dark" id="dialog-dark">
+                <form method="dialog">
+                    <!--                    <p class="title">Polices d'écritures</p>-->
+                    <p>Retrouvez les polices utilisées ici : </p>
+                    <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>
+                    <menu class="dialog-menu">
+                        <button class="nes-btn is-primary">Fermer</button>
+                    </menu>
+                </form>
+            </dialog>
+        </section>
+        <div class="nes-select" style="width: 50%; margin: auto; padding-bottom: 10px">
+            <select required id="font_select" name="font">
+                <option value="" disabled selected hidden>...</option>
+            </select>
+        </div>
+    </div>
     <div id="infos" class="back-color">
         <div class="center margin-auto tag-j1">
             <div class="buttons-rotate">
-                <button class="nes-btn is-primary" type="button" id="rotate-left-j1"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary" type="button" id="rotate-right-j1"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
             </div>
             <div>
                 <input class="nes-input" id="j1" type="text" value="J1">
@@ -66,9 +89,9 @@
 -->
         <div class="center margin-auto tag-j2">
             <div class="buttons-rotate">
-                <button class="nes-btn is-primary" type="button" id="rotate-left-j2"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary" type="button" id="rotate-right-j2"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
             </div>
             <div>
                 <input class="nes-input" id="j2" type="text" value="J2">
@@ -153,7 +176,7 @@
             </form>
         </div>
         <div class="center margin-auto">
-            <button class="nes-btn is-primary" type="button" id="reverse-j1"><i class="material-icons">compare_arrows</i></button>
+            <button class="nes-btn is-primary icons-only" type="button" id="reverse-j1"><i class="material-icons">compare_arrows</i></button>
         </div>
         <div class="panel-color select-char" id="char1">
             <!-- first line-->
@@ -241,7 +264,7 @@
             <img class="stocks j1" id="miigunner" src="img/char/mii/stock_miigunner.png">
         </div>
         <div class="center margin-auto">
-            <button class="nes-btn is-primary" type="button" id="reverse-j2"><i class="material-icons">compare_arrows</i></button>
+            <button class="nes-btn is-primary icons-only" type="button" id="reverse-j2"><i class="material-icons">compare_arrows</i></button>
         </div>
         <div class="panel-color select-char" id="char2">
             <!-- first line-->
@@ -352,10 +375,11 @@
         </div>
         <div class="center">
             <span class="nes-text" style="font-size: 12px;">Phase</span>
-            <button class="nes-btn is-success" type="button" id="phase_visible" style="padding: 0;"><i class="material-icons" style="font-size: 20px;">visibility_off</i></button>
+            <button class="nes-btn is-success icons-only" type="button" id="phase_visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i></button>
         </div>
         <div id="type_phase" class="panel-color">
             <form name="form_type_phase">
+                <label class="radio"><input id="custom" type="radio" class="nes-radio" name="phase" value=""><span>Custom : </span><input id="custom_phase" type="text" name="custome_phase" size="10" /></label><br>
                 <label class="radio"><input id="pool" type="radio" class="nes-radio" name="type_phase" value="Pools"><span>Pools</span></label>
                 <label class="radio">
                     <input id="winner" type="radio" class="nes-radio" name="type_phase" value="Winners" checked><span>Winners</span></label>
@@ -367,7 +391,7 @@
         </div>
         <div id="select_phase" class="panel-color center">
             <form name="form_select_phase">
-                <label class="radio"><input id="custom" type="radio" class="nes-radio" name="phase" value=""><span>Custom : </span><input id="custom_phase" type="text" name="custome_phase" size="10" /></label><br>
+                <label class="radio"><input id="custom" type="radio" class="nes-radio" name="phase" value=""><span>Custom : </span><input id="custom_phase2" type="text" name="custome_phase" size="10" /></label><br>
                 <!--                TODO autoriser que number-->
                 <label class="radio"><input id="round" type="radio" class="nes-radio" name="phase" value="Round" checked><span>Round </span><input id="nb_round" type="text" name="nb_round" maxlength="2" size="1" value="1" /></label>
                 <label class="radio"><input id="quarter" type="radio" class="nes-radio" name="phase" value="Quarters"><span>Quarters</span></label>
@@ -390,7 +414,14 @@
     </div>
     <div class="footer back-color"></div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script src="js/dom-to-image.min.js"></script>
 <script src="js/thumbnail.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+<script src="js/google-fonts.js"></script>
 
 </html>
