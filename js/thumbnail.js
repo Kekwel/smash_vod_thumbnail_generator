@@ -1,6 +1,7 @@
 /*jslint browser: true */
 /*global window */
 /*eslint-env browser*/
+
 window.onload = function () {
 
     // TODO init grid perso ?
