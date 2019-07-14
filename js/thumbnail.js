@@ -3,9 +3,6 @@
 /*eslint-env browser*/
 
 window.onload = function () {
-
-    // TODO init grid perso ?
-
     $('#font_select').select2({
         closeOnSelect: true
     });
@@ -18,41 +15,6 @@ window.onload = function () {
         previewAndLoadFont(fontname);
     });
 }
-
-// listen for keyups in both input widget AND dropdown
-//$("body ").on('keydown', ".select2, .select2 - dropdown ", function (e) {
-//    var KEYS = {
-//        UP: 38,
-//        DOWN: 40
-//    };
-//    var $sel2 = $(this).closest(".select2");
-//    // if we can't find it by traveersing the dom, search page for an open container
-//    // ASSUMES only one open at a time - 
-//    // don't really know how to cross walk from dropdown back to coresponding element
-//    if ($sel2.length == 0) {
-//        $sel2 = $(".select2.select2-container--open");
-//    }
-//
-//    // make sure we found the <select> el
-//    var $sel = $sel2.data("element")
-//    if ($sel.length) {
-//        var newValue
-//
-//        if (e.keyCode === KEYS.DOWN && !e.altKey) {
-//            newValue = $sel.find('option:selected').nextAll(":enabled").first().val();
-//        } else if (e.keyCode === KEYS.UP) {
-//            newValue = $sel.find('option:selected').prevAll(":enabled").first().val();
-//        }
-//
-//        // if we got a value, set it and update
-//        if (newValue != undefined) {
-//            $sel.val(newValue);
-//            loadFont(newValue);
-//            document.getElementById('label_police').innerHTML = newValue;
-//            document.getElementById('label_police').style.fontFamily = newValue;
-//        }
-//    }
-//});
 
 function previewAndLoadFont(fontname) {
     loadFont(fontname);
@@ -76,6 +38,16 @@ function previewAndLoadFont(fontname) {
 }
 
 function init(player) {
+    // -- init grid perso
+    $.each(ultimate, function (i, row) {
+        $.each(row, function (j, perso) {
+            if (perso == 'reserved')
+                document.getElementById('stocks-' + player).append(createStockReserved())
+            else
+                document.getElementById('stocks-' + player).append(createStockIcon(perso, player));
+        });
+    });
+
     document.getElementById(player).oninput = function () {
         changeName(this.value, "name-" + player);
     };
@@ -84,9 +56,9 @@ function init(player) {
     };
 
     // listener sur stock icons
-    var characters = document.getElementsByClassName('stocks ' + player);
-    for (var i = 0; i < characters.length; i++)(function (i) {
-        characters[i].onclick = function () {
+    var stocks = document.getElementsByClassName('stocks ' + player);
+    for (var i = 0; i < stocks.length; i++)(function (i) {
+        stocks[i].onclick = function () {
             // delete la classe sur les autres divs
             removeClasse('stocks ' + player, 'selected')
             // toggle classe pour garder border actif
@@ -99,9 +71,9 @@ function init(player) {
             if (divColor) divColor.classList.toggle('selected')
 
             // on met la 1ere couleur par defaut
-            setImgChar(player, '00', characters[i].id);
+            setImgChar(player, '00', stocks[i].id);
             // on modifie les icones couleurs du perso
-            setStockColor(player, characters[i].id);
+            setStockColor(player, stocks[i].id);
         };
     })(i);
 
@@ -301,6 +273,28 @@ function setImgChar(player, idColor, name) {
 }
 
 // --- UTILS ---
+function createStockReserved() {
+    var divReserved = document.createElement('div');
+    divReserved.classList.add('reserved');
+    return divReserved;
+}
+
+function createStockIcon(charName, player) {
+    var folder = charName;
+    var file = charName;
+    if (charName.includes('mii')) folder = 'mii';
+    else file += '_00';
+
+    var img = document.createElement("img");
+    var imgSrc = "img/char/" + folder + "/stock_" + file + ".png";
+
+    img.src = imgSrc;
+    img.id = charName;
+    img.classList.add('stocks');
+    img.classList.add(player);
+
+    return img;
+}
 
 function removeClasse(className, classToRemove) {
     var elems = document.getElementsByClassName(className);
