@@ -152,12 +152,14 @@ function initOther() {
     document.getElementById('phase_visible').onclick = function () {
         if (!this.checked) {
             document.getElementById('phase_visible').getElementsByClassName('material-icons')[0].innerHTML = 'visibility';
+            document.getElementById('phase_visible').getElementsByTagName('span')[0].innerHTML = 'Visible';
 
             document.getElementById('phase').style.display = 'none';
             document.getElementById('phase2').style.display = 'none';
             this.checked = true;
         } else {
             document.getElementById('phase_visible').getElementsByClassName('material-icons')[0].innerHTML = 'visibility_off'
+            document.getElementById('phase_visible').getElementsByTagName('span')[0].innerHTML = 'Invisible';
 
             document.getElementById('phase').style.display = '';
             document.getElementById('phase2').style.display = '';

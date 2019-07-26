@@ -106,9 +106,12 @@
         <form method="dialog">
             <p>Phase</p>
             <div class="center">
-                <button class="nes-btn is-success icons-only" type="button" id="phase_visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i></button>
+                <button class="nes-btn is-success" type="button" id="phase_visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i>
+                    <span>Invisible</span>
+                </button>
             </div>
-            <div id="type_phase" class="panel-color">
+            <hr>
+            <div id="type_phase">
                 <div id="form_type_phase">
                     <label class="radio"><input id="custom" type="radio" class="nes-radio" name="type_phase" value=""><span>Custom : </span><input id="custom_phase" type="text" name="custome_phase" size="10" /></label><br>
                     <label class="radio"><input id="pool" type="radio" class="nes-radio" name="type_phase" value="Pools"><span>Pools</span></label>
@@ -120,7 +123,8 @@
                         <input id="grand" type="radio" class="nes-radio" name="type_phase" value="Grand"><span>Grand</span></label>
                 </div>
             </div>
-            <div id="select_phase" class="panel-color center">
+            <hr>
+            <div id="select_phase" class="center">
                 <div id="form_select_phase">
                     <label class="radio"><input id="custom1" type="radio" class="nes-radio" name="phase" value=""><span>Custom : </span><input id="custom_phase2" type="text" name="custome_phase2" size="10" /></label><br>
                     <!--                TODO autoriser que number-->
