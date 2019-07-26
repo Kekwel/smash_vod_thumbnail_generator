@@ -22,13 +22,131 @@
 </head>
 
 <body>
+    <!-- Dialogs -->
+    <!-- Edit tag J1 -->
+    <dialog class="nes-dialog is-dark" id="dialog-tag-j1">
+        <form method="dialog">
+            <p>Pseudo Joueur 1 : </p>
+            <div class="buttons-rotate">
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
+            </div>
+            <input class="nes-input" id="j1" type="text" value="J1">
+            <menu class="dialog-menu">
+                <button class="nes-btn is-success center">OK</button>
+            </menu>
+        </form>
+    </dialog>
+    <!-- Edit tag J2 -->
+    <dialog class="nes-dialog is-dark" id="dialog-tag-j2">
+        <form method="dialog">
+            <p>Pseudo Joueur 2 : </p>
+            <div class="buttons-rotate">
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
+            </div>
+            <input class="nes-input" id="j2" type="text" value="J2">
+            <menu class="dialog-menu">
+                <button class="nes-btn is-success center">OK</button>
+            </menu>
+        </form>
+    </dialog>
+    <!--    Edit perso J1-->
+    <dialog class="nes-dialog is-dark" id="dialog-char-j1">
+        <form method="dialog">
+            <p>Personnage Joueur 1 : </p>
+            <div class="center margin-auto">
+                <button class="nes-btn is-primary icons-only" type="button" id="reverse-j1"><i class="material-icons">compare_arrows</i></button>
+            </div>
+            <div class="panel-color select-char" id="stocks-j1"></div>
+            <span class="center margin-auto nes-text">Costume</span>
+            <div class="panel-color select-color" id="color-char1">
+                <img class="color-stocks j1" data-char="link" id="j1-00" src="img/char/link/stock_link_00.png">
+                <img class="color-stocks j1" data-char="link" id="j1-01" src="img/char/link/stock_link_01.png">
+                <img class="color-stocks j1 selected" data-char="link" id="j1-02" src="img/char/link/stock_link_02.png">
+                <img class="color-stocks j1" data-char="link" id="j1-03" src="img/char/link/stock_link_03.png">
+                <img class="color-stocks j1" data-char="link" id="j1-04" src="img/char/link/stock_link_04.png">
+                <img class="color-stocks j1" data-char="link" id="j1-05" src="img/char/link/stock_link_05.png">
+                <img class="color-stocks j1" data-char="link" id="j1-06" src="img/char/link/stock_link_06.png">
+                <img class="color-stocks j1" data-char="link" id="j1-07" src="img/char/link/stock_link_07.png">
+            </div>
+            <menu class="dialog-menu">
+                <button class="nes-btn is-success center">OK</button>
+            </menu>
+        </form>
+    </dialog>
+    <!--    Edit perso J2-->
+    <dialog class="nes-dialog is-dark" id="dialog-char-j2">
+        <form method="dialog">
+            <p>Personnage Joueur 2 : </p>
+            <div class="center margin-auto">
+                <button class="nes-btn is-primary icons-only" type="button" id="reverse-j2"><i class="material-icons">compare_arrows</i></button>
+            </div>
+            <div class="panel-color select-char" id="stocks-j2"></div>
+            <span class="center margin-auto nes-text">Costume</span>
+            <div class="panel-color select-color" id="color-char2">
+                <img class="color-stocks j2" data-char="ganon" id="j2-00" src="img/char/ganon/stock_ganon_00.png">
+                <img class="color-stocks j2" data-char="ganon" id="j2-01" src="img/char/ganon/stock_ganon_01.png">
+                <img class="color-stocks j2" data-char="ganon" id="j2-02" src="img/char/ganon/stock_ganon_02.png">
+                <img class="color-stocks j2 selected" data-char="ganon" id="j2-03" src="img/char/ganon/stock_ganon_03.png">
+                <img class="color-stocks j2" data-char="ganon" id="j2-04" src="img/char/ganon/stock_ganon_04.png">
+                <img class="color-stocks j2" data-char="ganon" id="j2-05" src="img/char/ganon/stock_ganon_05.png">
+                <img class="color-stocks j2" data-char="ganon" id="j2-06" src="img/char/ganon/stock_ganon_06.png">
+                <img class="color-stocks j2" data-char="ganon" id="j2-07" src="img/char/ganon/stock_ganon_07.png">
+            </div>
+            <menu class="dialog-menu">
+                <button class="nes-btn is-success center">OK</button>
+            </menu>
+        </form>
+    </dialog>
+    <!--    Edit phases-->
+    <dialog class="nes-dialog is-dark" id="dialog-phases">
+        <form method="dialog">
+            <p>Phase</p>
+            <div class="center">
+                <button class="nes-btn is-success icons-only" type="button" id="phase_visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i></button>
+            </div>
+            <div id="type_phase" class="panel-color">
+                <div id="form_type_phase">
+                    <label class="radio"><input id="custom" type="radio" class="nes-radio" name="type_phase" value=""><span>Custom : </span><input id="custom_phase" type="text" name="custome_phase" size="10" /></label><br>
+                    <label class="radio"><input id="pool" type="radio" class="nes-radio" name="type_phase" value="Pools"><span>Pools</span></label>
+                    <label class="radio">
+                        <input id="winner" type="radio" class="nes-radio" name="type_phase" value="Winners" checked><span>Winners</span></label>
+                    <label class="radio">
+                        <input id="loser" type="radio" class="nes-radio" name="type_phase" value="Losers"><span>Losers</span></label>
+                    <label class="radio">
+                        <input id="grand" type="radio" class="nes-radio" name="type_phase" value="Grand"><span>Grand</span></label>
+                </div>
+            </div>
+            <div id="select_phase" class="panel-color center">
+                <div id="form_select_phase">
+                    <label class="radio"><input id="custom1" type="radio" class="nes-radio" name="phase" value=""><span>Custom : </span><input id="custom_phase2" type="text" name="custome_phase2" size="10" /></label><br>
+                    <!--                TODO autoriser que number-->
+                    <label class="radio"><input id="round" type="radio" class="nes-radio" name="phase" value="Round" checked><span>Round </span><input id="nb_round" type="text" name="nb_round" maxlength="2" size="1" value="1" /></label>
+                    <label class="radio"><input id="quarter" type="radio" class="nes-radio" name="phase" value="Quarters"><span>Quarters</span></label>
+                    <label class="radio"><input id="semi" type="radio" class="nes-radio" name="phase" value="Semis"><span>Semis</span></label>
+                    <label class="radio"><input id="final" type="radio" class="nes-radio" name="phase" value="Finals"><span>Finals</span></label>
+                </div>
+            </div>
+            <menu class="dialog-menu">
+                <button class="nes-btn is-success center">OK</button>
+            </menu>
+        </form>
+    </dialog>
     <!-- TODO nouveau miis -->
     <!-- TODO FR / EN -->
     <div class="center margin-auto"><span id="menu-top" class="center margin-auto nes-text">VoDs Thumbnails Generator for Smash Ultimate</span> | <a href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter"><i class="nes-icon is-medium twitter"></i></a></div>
     <div id="main">
         <div id="thumbnail" style="margin: auto;">
-            <div class="banner rotate-left" id="banner-j1"><span class="nes-text" id="name-j1">J1</span></div>
-            <div class="banner rotate-left" id="banner-j2"><span class="nes-text" id="name-j2">J2</span></div>
+            <section class="section-banner" id="section-j1">
+                <div class="banner rotate-left" id="banner-j1"><span class="nes-text" id="name-j1">J1</span></div>
+            </section>
+
+            <section class="section-banner" id="section-j2">
+                <div class="banner rotate-left" id="banner-j2"><span class="nes-text" id="name-j2">J2</span></div>
+            </section>
             <div class="character background-j1-1" id="div-j1">
                 <img id="char-j1" class="" src="img/char/link/link_02.png">
             </div>
@@ -75,34 +193,6 @@
         </div>
     </div>
     <div id="infos" class="back-color">
-        <div class="center margin-auto tag-j1">
-            <div class="buttons-rotate">
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
-            </div>
-            <div>
-                <input class="nes-input" id="j1" type="text" value="J1">
-            </div>
-        </div>
-        <!--
-        <div class="nes-field is-inline">
-</div>
--->
-        <div class="center margin-auto tag-j2">
-            <div class="buttons-rotate">
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
-            </div>
-            <div>
-                <input class="nes-input" id="j2" type="text" value="J2">
-            </div>
-        </div>
-        <!--
-        <div class="nes-field is-inline">
-        </div>
--->
         <span class="center margin-auto nes-text">Couleur fond</span>
         <div class="panel-color">
             <form id="form_background_color_j1" name="form_background_color_j1">
@@ -175,62 +265,6 @@
                     <input type="radio" class="nes-radio is-dark" name="background_color" value="8" />
                     <span>8</span>
                 </label>
-            </form>
-        </div>
-        <div class="center margin-auto">
-            <button class="nes-btn is-primary icons-only" type="button" id="reverse-j1"><i class="material-icons">compare_arrows</i></button>
-        </div>
-        <div class="panel-color select-char" id="stocks-j1"></div>
-        <div class="center margin-auto">
-            <button class="nes-btn is-primary icons-only" type="button" id="reverse-j2"><i class="material-icons">compare_arrows</i></button>
-        </div>
-        <div class="panel-color select-char" id="stocks-j2"></div>
-        <span class="center margin-auto nes-text">Costume</span>
-        <div class="panel-color select-color" id="color-char1">
-            <img class="color-stocks j1" data-char="link" id="j1-00" src="img/char/link/stock_link_00.png">
-            <img class="color-stocks j1" data-char="link" id="j1-01" src="img/char/link/stock_link_01.png">
-            <img class="color-stocks j1 selected" data-char="link" id="j1-02" src="img/char/link/stock_link_02.png">
-            <img class="color-stocks j1" data-char="link" id="j1-03" src="img/char/link/stock_link_03.png">
-            <img class="color-stocks j1" data-char="link" id="j1-04" src="img/char/link/stock_link_04.png">
-            <img class="color-stocks j1" data-char="link" id="j1-05" src="img/char/link/stock_link_05.png">
-            <img class="color-stocks j1" data-char="link" id="j1-06" src="img/char/link/stock_link_06.png">
-            <img class="color-stocks j1" data-char="link" id="j1-07" src="img/char/link/stock_link_07.png">
-        </div>
-        <span class="center margin-auto nes-text">Costume</span>
-        <div class="panel-color select-color" id="color-char2">
-            <img class="color-stocks j2" data-char="ganon" id="j2-00" src="img/char/ganon/stock_ganon_00.png">
-            <img class="color-stocks j2" data-char="ganon" id="j2-01" src="img/char/ganon/stock_ganon_01.png">
-            <img class="color-stocks j2" data-char="ganon" id="j2-02" src="img/char/ganon/stock_ganon_02.png">
-            <img class="color-stocks j2 selected" data-char="ganon" id="j2-03" src="img/char/ganon/stock_ganon_03.png">
-            <img class="color-stocks j2" data-char="ganon" id="j2-04" src="img/char/ganon/stock_ganon_04.png">
-            <img class="color-stocks j2" data-char="ganon" id="j2-05" src="img/char/ganon/stock_ganon_05.png">
-            <img class="color-stocks j2" data-char="ganon" id="j2-06" src="img/char/ganon/stock_ganon_06.png">
-            <img class="color-stocks j2" data-char="ganon" id="j2-07" src="img/char/ganon/stock_ganon_07.png">
-        </div>
-        <div class="center">
-            <span class="nes-text" style="font-size: 12px;">Phase</span>
-            <button class="nes-btn is-success icons-only" type="button" id="phase_visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i></button>
-        </div>
-        <div id="type_phase" class="panel-color">
-            <form name="form_type_phase">
-                <label class="radio"><input id="custom" type="radio" class="nes-radio" name="phase" value=""><span>Custom : </span><input id="custom_phase" type="text" name="custome_phase" size="10" /></label><br>
-                <label class="radio"><input id="pool" type="radio" class="nes-radio" name="type_phase" value="Pools"><span>Pools</span></label>
-                <label class="radio">
-                    <input id="winner" type="radio" class="nes-radio" name="type_phase" value="Winners" checked><span>Winners</span></label>
-                <label class="radio">
-                    <input id="loser" type="radio" class="nes-radio" name="type_phase" value="Losers"><span>Losers</span></label>
-                <label class="radio">
-                    <input id="grand" type="radio" class="nes-radio" name="type_phase" value="Grand"><span>Grand</span></label>
-            </form>
-        </div>
-        <div id="select_phase" class="panel-color center">
-            <form name="form_select_phase">
-                <label class="radio"><input id="custom" type="radio" class="nes-radio" name="phase" value=""><span>Custom : </span><input id="custom_phase2" type="text" name="custome_phase" size="10" /></label><br>
-                <!--                TODO autoriser que number-->
-                <label class="radio"><input id="round" type="radio" class="nes-radio" name="phase" value="Round" checked><span>Round </span><input id="nb_round" type="text" name="nb_round" maxlength="2" size="1" value="1" /></label>
-                <label class="radio"><input id="quarter" type="radio" class="nes-radio" name="phase" value="Quarters"><span>Quarters</span></label>
-                <label class="radio"><input id="semi" type="radio" class="nes-radio" name="phase" value="Semis"><span>Semis</span></label>
-                <label class="radio"><input id="final" type="radio" class="nes-radio" name="phase" value="Finals"><span>Finals</span></label>
             </form>
         </div>
         <div class="select_logos panel-color" id="select_logo_haut">

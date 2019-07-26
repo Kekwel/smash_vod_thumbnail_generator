@@ -14,6 +14,11 @@ window.onload = function () {
             fontname = e.params.data;
         previewAndLoadFont(fontname);
     });
+
+
+    init("j1");
+    init("j2");
+    initOther();
 }
 
 function previewAndLoadFont(fontname) {
@@ -38,6 +43,19 @@ function previewAndLoadFont(fontname) {
 }
 
 function init(player) {
+    // -- test
+    var banner = document.getElementById('banner-' + player);
+    var char = document.getElementById('char-' + player);
+
+    banner.onclick = function () {
+        document.getElementById('dialog-tag-' + player).showModal();
+        document.getElementById(player).click();
+    };
+    char.onclick = function () {
+        document.getElementById('dialog-char-' + player).showModal();
+    };
+    // --
+
     // -- init grid perso
     $.each(ultimate, function (i, row) {
         $.each(row, function (j, perso) {
@@ -52,6 +70,7 @@ function init(player) {
         changeName(this.value, "name-" + player);
     };
     document.getElementById(player).onclick = function () {
+        this.focus();
         this.setSelectionRange(0, this.value.length)
     };
 
@@ -179,10 +198,6 @@ function initOther() {
     }
 }
 
-init("j1");
-init("j2");
-initOther();
-
 function showHelp(param) {
     console.log('help_' + param);
     // TODO
@@ -209,13 +224,14 @@ function previewFile(logo, idInput) {
 }
 
 function setPhaseListener(nameForm, nameElem, idPhase) {
-    var radios = document.forms[nameForm].elements[nameElem];
+    var radios = document.getElementsByName(nameElem);
+    //    var radios = document.forms[nameForm].elements[nameElem];
     for (var i = 0, max = radios.length; i < max; i++) {
         radios[i].onclick = function () {
             if ('round' == this.id)
                 var nbRound = document.getElementById('nb_round').value;
-            else if ('custom' == this.id)
-                var nbRound = document.getElementById('custom_' + idPhase).value;
+            else if (('custom_' + idPhase) == this.id)
+                var nbRound = document.getElementById('custom_phase_' + idPhase).value;
             document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = this.value + (nbRound ? ' ' + nbRound : '');
 
             // si on appuie sur "Grand", met automatiquement "Finals"
@@ -235,6 +251,11 @@ function setPhaseListener(nameForm, nameElem, idPhase) {
             document.getElementById(idPhase).getElementsByTagName('span')[0].innerHTML = 'Round ' + (this.value ? this.value : '');
         }
     }
+
+    // -- open dialog on click
+    document.getElementById(idPhase).onclick = function () {
+        document.getElementById('dialog-phases').showModal();
+    };
 }
 
 function changeName(tag, inputId) {
