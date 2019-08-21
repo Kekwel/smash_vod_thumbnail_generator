@@ -80,7 +80,34 @@
 
 #char-j1,
 #char-j2 {
+    filter: drop-shadow(-11px 0px 5px black);
     margin-top: 80px;
+}
+
+#char-j1.reverse,
+#char-j2.reverse {
+    filter: drop-shadow(11px 0px 5px black);
+}
+
+#char-j1:hover,
+#char-j2:hover {
+    cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
+    -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
+    filter: drop-shadow(1px 1px 10px black) drop-shadow(-11px -1px 5px black);
+}
+
+#banner-j1:hover,
+#banner-j2:hover,
+#phase:hover,
+#phase2:hover {
+    cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
+    -webkit-filter: drop-shadow(0px 0px 5px black) drop-shadow(0px 0px 5px black);
+    filter: drop-shadow(0px 0px 5px black) drop-shadow(0px 0px 5px black);
+}
+
+#char-j1:hover.reverse {
+    -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
+    filter: drop-shadow(1px 1px 10px black) drop-shadow(11px -1px 5px black);
 }
 
 /* z-index sur la grid */
