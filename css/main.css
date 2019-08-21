@@ -274,20 +274,6 @@
 }
 
 /* sélections perso */
-@media only screen and (max-width: 1400px) {
-    .select-char {
-        grid-template-columns: repeat(13, 30px) !important;
-        grid-template-rows: repeat(6, 30px) !important;
-    }
-}
-
-@media only screen and (max-width: 1280px) {
-    .select-color {
-        padding: 0 5em;
-        text-align: center;
-    }
-}
-
 .select-char {
     width: 100%;
     margin: 5px auto;
