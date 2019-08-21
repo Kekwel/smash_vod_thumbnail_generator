@@ -284,6 +284,11 @@
 }
 
 .stocks,
+.color-stocks {
+    filter: contrast(90%) brightness(105%);
+}
+
+.stocks,
 .color-stocks,
 .reserved {
     width: 100%;
