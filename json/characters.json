@@ -4,5 +4,5 @@ ultimate = {
     2: ["mewtwo", "roy", "chrom", "gamewatch", "metaknight", "pit", "pitb", "szerosuit", "wario", "snake", "ike", "ptrainer", "diddy"],
     3: ["lucas", "sonic", "dedede", "pikmin", "lucario", "robot", "toonlink", "wolf", "murabito", "rockman", "wiifit", "rosetta", "littlemac"],
     4: ["gekkouga", "palutena", "pacman", "reflet", "shulk", "koopajr", "duckhunt", "ryu", "ken", "cloud", "kamui", "bayonetta", "inkling"],
-    5: ["reserved", "ridley", "simon", "richter", "krool", "shizue", "gaogaen", "packun", "jack", "miifighter", "miiswordsman", "miigunner"]
+    5: ["ridley", "simon", "richter", "krool", "shizue", "gaogaen", "packun", "jack", "brave", "miifighter", "miiswordsman", "miigunner"]
 }
