@@ -46,8 +46,6 @@ function init(player) {
     // -- test
     var banner = document.getElementById('banner-' + player);
     var char = document.getElementById('char-' + player);
-    var games = document.getElementById('game_select');
-    var game = games.value;
 
     banner.onclick = function () {
         document.getElementById('dialog-tag-' + player).showModal();
@@ -59,7 +57,14 @@ function init(player) {
     // --
 
     // -- init grid perso
-    createStocksGrid('ult', player);
+    $.each(ultimate, function (i, row) {
+        $.each(row, function (j, perso) {
+            if (perso == 'reserved')
+                document.getElementById('stocks-' + player).append(createStockReserved())
+            else
+                document.getElementById('stocks-' + player).append(createStockIcon(perso, player));
+        });
+    });
 
     document.getElementById(player).oninput = function () {
         changeName(this.value, "name-" + player);
@@ -80,15 +85,14 @@ function init(player) {
 
             var divColor = document.querySelector('#' + player + '-00');
             // delete la classe sur les autres
-            removeClasse('color-stocks ' + player, 'selected');
+            removeClasse('color-stocks ' + player, 'selected')
             // toggle classe pour garder border actif
-            if (divColor) divColor.classList.toggle('selected');
+            if (divColor) divColor.classList.toggle('selected')
 
-            // on met la 1ere couleur (ultimate) par defaut
-            setImgChar(game, player, '00', stocks[i].id);
-
+            // on met la 1ere couleur par defaut
+            setImgChar(player, '00', stocks[i].id);
             // on modifie les icones couleurs du perso
-            setStockColor(game, player, stocks[i].id);
+            setStockColor(player, stocks[i].id);
         };
     })(i);
 
@@ -97,18 +101,11 @@ function init(player) {
         var divColor = document.querySelector('#' + player + '-0' + i);
         divColor.onclick = function () {
             // delete la classe sur les autres
-            removeClasse('color-stocks ' + player, 'selected');
-
+            removeClasse('color-stocks ' + player, 'selected')
             // toggle classe pour garder border actif
-            divColor.classList.toggle('selected');
-
-            // recup jeu
-            var game = document.getElementById('game_select').value;
-
-            // recup ligne 
-
+            divColor.classList.toggle('selected')
             // met la couleur du perso sélectionné dans le thumbnail
-            setImgChar(game, player, '0' + i, divColor.dataset.char);
+            setImgChar(player, '0' + i, divColor.dataset.char);
         };
     })(i);
 
@@ -147,17 +144,6 @@ function init(player) {
 }
 
 function initOther() {
-    // lors changement jeu, changement stock icons
-    var games = document.getElementById('game_select');
-    games.onchange = function () {
-        createStocksGrid(this.value, 'j1');
-        createStocksGrid(this.value, 'j2');
-
-        // TODO random char ou le meme
-        setStockColor(this.value, 'j1', 'link');
-        setStockColor(this.value, 'j2', 'ganondorf');
-    }
-
     document.getElementById('nb_round').onclick = function () {
         this.setSelectionRange(0, this.value.length)
     };
@@ -278,11 +264,59 @@ function changeName(tag, inputId) {
     document.getElementById(inputId).innerHTML = tag;
 }
 
+function setStockColor(player, name) {
+    var i;
+    for (i = 0; i < 8; i++) {
+        var divColor = document.querySelector('#' + player + '-0' + i);
+        // TODO param dans string
+        var src = 'img/char/';
+        if (name.includes('mii')) {
+            src += 'mii/stock_' + name + '.png';
+        } else {
+            src += name + '/stock_' + name + '_0' + i + '.png';
+        }
+        divColor.dataset.char = name;
+        divColor.src = src;
+    }
+}
+
+function setImgChar(player, idColor, name) {
+    var stockname = name + '_';
+    var src = 'img/char/';
+    if (name.includes('mii')) {
+        // TODO autre mii ?
+        stockname = name + '_00';
+        src += 'mii/';
+    } else {
+        src += name + '/';
+        stockname = stockname + idColor;
+    }
+
+    document.getElementById("char-" + player).src = src + stockname + '.png';
+}
+
 // --- UTILS ---
 function createStockReserved() {
     var divReserved = document.createElement('div');
     divReserved.classList.add('reserved');
     return divReserved;
+}
+
+function createStockIcon(charName, player) {
+    var folder = charName;
+    var file = charName;
+    if (charName.includes('mii')) folder = 'mii';
+    else file += '_00';
+
+    var img = document.createElement("img");
+    var imgSrc = "img/char/" + folder + "/stock_" + file + ".png";
+
+    img.src = imgSrc;
+    img.id = charName;
+    img.classList.add('stocks');
+    img.classList.add(player);
+
+    return img;
 }
 
 function removeClasse(className, classToRemove) {
