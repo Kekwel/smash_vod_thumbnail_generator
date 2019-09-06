@@ -28,9 +28,9 @@
         <form method="dialog">
             <p>Pseudo Joueur 1 : </p>
             <div class="buttons-rotate">
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i class="material-icons rotate-left">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i class="material-icons rotate-right">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
             </div>
             <input class="nes-input" id="j1" type="text" value="J1">
             <menu class="dialog-menu">
@@ -43,9 +43,9 @@
         <form method="dialog">
             <p>Pseudo Joueur 2 : </p>
             <div class="buttons-rotate">
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i class="material-icons rotate-left">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i id="rotate-left" class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i class="material-icons rotate-right">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i id="rotate-right" class="material-icons">crop_16_9</i></button>
             </div>
             <input class="nes-input" id="j2" type="text" value="J2">
             <menu class="dialog-menu">
@@ -111,11 +111,6 @@
                 </button>
             </div>
             <hr>
-            <div class="buttons-rotate">
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-phase"><i class="material-icons rotate-left">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-phase"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-phase"><i class="material-icons rotate-right">crop_16_9</i></button>
-            </div>
             <div id="type_phase">
                 <div id="form_type_phase">
                     <label class="radio"><input id="custom" type="radio" class="nes-radio" name="type_phase" value=""><span>Custom : </span><input id="custom_phase" type="text" name="custome_phase" size="10" /></label><br>
@@ -129,11 +124,6 @@
                 </div>
             </div>
             <hr>
-            <div class="buttons-rotate">
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-phase2"><i class="material-icons rotate-left">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-phase2"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-phase2"><i class="material-icons rotate-right">crop_16_9</i></button>
-            </div>
             <div id="select_phase" class="center">
                 <div id="form_select_phase">
                     <label class="radio"><input id="custom1" type="radio" class="nes-radio" name="phase" value=""><span>Custom : </span><input id="custom_phase2" type="text" name="custome_phase2" size="10" /></label><br>
@@ -167,11 +157,11 @@
     <div id="main">
         <div id="thumbnail" style="margin: auto;">
             <section class="section-banner" id="section-j1">
-                <div class="banner rotate-tag-left" id="banner-j1"><span class="nes-text" id="name-j1">J1</span></div>
+                <div class="banner rotate-left" id="banner-j1"><span class="nes-text" id="name-j1">J1</span></div>
             </section>
 
             <section class="section-banner" id="section-j2">
-                <div class="banner rotate-tag-left" id="banner-j2"><span class="nes-text" id="name-j2">J2</span></div>
+                <div class="banner rotate-left" id="banner-j2"><span class="nes-text" id="name-j2">J2</span></div>
             </section>
             <div class="character background-j1-1" id="div-j1">
                 <img id="char-j1" class="" src="img/char/ult/link_02_0.png">
@@ -179,8 +169,8 @@
             <div class="character background-j2-2" id="div-j2">
                 <img id="char-j2" class="" src="img/char/ult/ganondorf_03_0.png">
             </div>
-            <div class="banner rotate-phase-left" id="phase"><span class="nes-text">Winners</span></div>
-            <div class="banner rotate-phase-left" id="phase2"><span class="nes-text">Round 1</span></div>
+            <div class="banner" id="phase"><span class="nes-text">Winners</span></div>
+            <div class="banner" id="phase2"><span class="nes-text">Round 1</span></div>
             <div id="dom-wrap-haut">
                 <div class="logo" id="logo_haut">
                     <img src="">
@@ -206,8 +196,6 @@
                     <!--                    <p class="title">Polices d'écritures</p>-->
                     <p>Retrouvez les polices utilisées ici : </p>
                     <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>
-                    <br>
-                    <p>Si la votre n'apparaît pas, <br>contactez moi et je pourrais l'ajouter !</p>
                     <menu class="dialog-menu">
                         <button class="nes-btn is-primary">Fermer</button>
                     </menu>
@@ -256,14 +244,6 @@
                     <input type="radio" class="nes-radio is-dark" name="background_color" value="8" />
                     <span>8</span>
                 </label>
-                <label class="background-j1-0">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="0" />
-                    <span>Fond vert</span>
-                </label>
-                <label class="background-j1-999">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="999" />
-                    <span>Fond noir</span>
-                </label>
             </form>
         </div>
         <span class="center margin-auto nes-text">Couleur fond</span>
@@ -300,14 +280,6 @@
                 <label class="background-j2-8">
                     <input type="radio" class="nes-radio is-dark" name="background_color" value="8" />
                     <span>8</span>
-                </label>
-                <label class="background-j2-0">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="0" />
-                    <span>Fond vert</span>
-                </label>
-                <label class="background-j2-999">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="999" />
-                    <span>Fond noir</span>
                 </label>
             </form>
         </div>
