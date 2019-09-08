@@ -118,16 +118,16 @@ function init(player) {
 
     /* rotate tag */
     document.getElementById('rotate-left-' + player).onclick = function () {
-        document.getElementById("banner-" + player).classList.remove('rotate-right');
-        document.getElementById("banner-" + player).classList.add('rotate-left');
+        document.getElementById("banner-" + player).classList.remove('rotate-tag-right');
+        document.getElementById("banner-" + player).classList.add('rotate-tag-left');
     }
     document.getElementById('rotate-center-' + player).onclick = function () {
-        document.getElementById("banner-" + player).classList.remove('rotate-right');
-        document.getElementById("banner-" + player).classList.remove('rotate-left');
+        document.getElementById("banner-" + player).classList.remove('rotate-tag-right');
+        document.getElementById("banner-" + player).classList.remove('rotate-tag-left');
     }
     document.getElementById('rotate-right-' + player).onclick = function () {
-        document.getElementById("banner-" + player).classList.remove('rotate-left');
-        document.getElementById("banner-" + player).classList.add('rotate-right');
+        document.getElementById("banner-" + player).classList.remove('rotate-tag-left');
+        document.getElementById("banner-" + player).classList.add('rotate-tag-right');
     }
 
     /* background color */
@@ -160,6 +160,32 @@ function initOther() {
     document.getElementById('nb_round').onclick = function () {
         this.setSelectionRange(0, this.value.length)
     };
+
+    /* rotate phase */
+    document.getElementById('rotate-left-phase').onclick = function () {
+        document.getElementById("phase").classList.remove('rotate-phase-right');
+        document.getElementById("phase").classList.add('rotate-phase-left');
+    }
+    document.getElementById('rotate-center-phase').onclick = function () {
+        document.getElementById("phase").classList.remove('rotate-phase-right');
+        document.getElementById("phase").classList.remove('rotate-phase-left');
+    }
+    document.getElementById('rotate-right-phase').onclick = function () {
+        document.getElementById("phase").classList.remove('rotate-phase-left');
+        document.getElementById("phase").classList.add('rotate-phase-right');
+    }
+    document.getElementById('rotate-left-phase2').onclick = function () {
+        document.getElementById("phase2").classList.remove('rotate-phase-right');
+        document.getElementById("phase2").classList.add('rotate-phase-left');
+    }
+    document.getElementById('rotate-center-phase2').onclick = function () {
+        document.getElementById("phase2").classList.remove('rotate-phase-right');
+        document.getElementById("phase2").classList.remove('rotate-phase-left');
+    }
+    document.getElementById('rotate-right-phase2').onclick = function () {
+        document.getElementById("phase2").classList.remove('rotate-phase-left');
+        document.getElementById("phase2").classList.add('rotate-phase-right');
+    }
 
     /* listener changement de phase */
     document.getElementById('phase_visible').onclick = function () {

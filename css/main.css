@@ -80,20 +80,22 @@
 
 #char-j1,
 #char-j2 {
-    filter: drop-shadow(-11px 0px 5px black);
+    filter: drop-shadow(-1px 0px 0px black) drop-shadow(1px 0px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px 1px 0px black);
     margin-top: 80px;
 }
 
+/*
 #char-j1.reverse,
 #char-j2.reverse {
     filter: drop-shadow(11px 0px 5px black);
 }
+*/
 
 #char-j1:hover,
 #char-j2:hover {
     cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
     -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
-    filter: drop-shadow(1px 1px 10px black) drop-shadow(-11px -1px 5px black);
+    filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
 }
 
 #banner-j1:hover,
@@ -105,7 +107,8 @@
     filter: drop-shadow(0px 0px 5px black) drop-shadow(0px 0px 5px black);
 }
 
-#char-j1:hover.reverse {
+#char-j1:hover.reverse,
+#char-j2:hover.reverse {
     -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
     filter: drop-shadow(1px 1px 10px black) drop-shadow(11px -1px 5px black);
 }
@@ -146,21 +149,31 @@
     justify-content: center;
 }
 
-#rotate-left {
+.rotate-left {
     transform: rotate(-15deg);
 }
 
-#rotate-right {
+.rotate-right {
     transform: rotate(15deg);
 }
 
-.rotate-left {
+.rotate-tag-left {
     transform: rotate(-5deg) translate(0px, 25px);
     margin: 0px -5px;
 }
 
-.rotate-right {
+.rotate-tag-right {
     transform: translate(0px, 25px) rotate(5deg);
+    margin: 0px -5px;
+}
+
+.rotate-phase-left {
+    transform: translate(0px, -30px) rotate(-5deg);
+    margin: 0px -5px;
+}
+
+.rotate-phase-right {
+    transform: translate(0px, -30px) rotate(5deg);
     margin: 0px -5px;
 }
 
@@ -216,7 +229,7 @@
     grid-column-start: 1;
     grid-column-end: 3;
     z-index: 2;
-    text-shadow: 0px 0px 20px white, 0px 0px 20px white, 0px 0px 20px white;
+    text-shadow: 5px 5px 0px white, -5px -5px 0px white, -5px 5px 0px white, 5px -5px 0px white;
     font-size: 5em;
 }
 
@@ -341,16 +354,16 @@
     text-align: center;
     grid-column-start: 3;
     grid-column-end: 5;
-    grid-row-start: 6;
-    grid-row-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
 
 #select_logo_haut {
     text-align: center;
     grid-column-start: 1;
     grid-column-end: 3;
-    grid-row-start: 6;
-    grid-row-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
 
 /* select color background */
@@ -358,7 +371,6 @@
 #form_background_color_j2 {
     text-align: center;
     padding-top: 5px;
-    width: 50%;
     margin: auto;
 }
 
@@ -372,6 +384,11 @@
 #color-background-j2,
 .margin-auto {
     margin: auto;
+}
+
+.background-j1-0,
+.background-j2-0 {
+    background-color: rgb(0, 255, 0);
 }
 
 .background-j1-1 {
@@ -436,4 +453,13 @@
 
 .background-j2-8 {
     background-image: linear-gradient(to bottom right, #552ead, #726eba);
+}
+
+.background-j1-999 {
+    background: black;
+}
+
+.background-j2-999 {
+    background: black;
+
 }
