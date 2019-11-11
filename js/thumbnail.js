@@ -295,6 +295,16 @@ function toggleRepeatBackground(player) {
     bgplayer.classList.toggle('bg-no-repeat')
 }
 
+function setTagFont(player) {
+    var fontsize = document.getElementById('fontsize-' + player).value
+    document.getElementById('name-' + player).style.fontSize = fontsize + "px"
+}
+
+function setPhaseFont(phase) {
+    var fontsize = document.getElementById('fontsize-' + phase).value
+    document.getElementById(phase + '-text').style.fontSize = fontsize + "px";
+}
+
 // --- UTILS ---
 function createStockReserved() {
     var divReserved = document.createElement('div');

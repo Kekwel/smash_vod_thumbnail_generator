@@ -175,6 +175,18 @@
     grid-row-end: 1;
 }
 
+#name-j1,
+#name-j2 {
+    line-height: 75%;
+}
+
+#fontsize-j1,
+#fontsize-j2,
+#fontsize-phase,
+#fontsize-phase2 {
+    width: 90px;
+}
+
 .buttons-rotate {
     display: flex;
     justify-content: center;
