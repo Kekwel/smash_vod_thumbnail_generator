@@ -6,6 +6,37 @@
     /*    src: url('../fonts/8-bit_pusab.ttf') format('truetype');*/
 }
 
+#dialog-char-j1 {
+    margin-right: 15%;
+}
+
+#dialog-char-j2 {
+    margin-left: 15%;
+}
+
+#bg1_file,
+#bg2_file {
+    display: none;
+}
+
+.bg-etendu {
+    background-size: cover;
+}
+
+.bg-no-repeat {
+    background-repeat: no-repeat;
+}
+
+.label-upload,
+.choix-bg {
+    color: black;
+}
+
+.dialog-menu {
+    text-align: center;
+    padding: 0;
+}
+
 .icons-only {
     padding: 0 !important;
 }
@@ -311,8 +342,8 @@
 .stocks,
 .color-stocks,
 .reserved {
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
 }
 
 .stocks:hover,

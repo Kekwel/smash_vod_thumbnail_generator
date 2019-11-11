@@ -57,6 +57,69 @@
     </dialog>
     <!--    Edit perso J1-->
     <dialog class="nes-dialog is-dark" id="dialog-char-j1">
+        <p>Couleur fond : <button type="button" class="nes-btn is-warning icons-only" onclick="resetBG('j1')"><i class="nes-icon close is-small"></i> Reset</button></p>
+        <div class="panel-color">
+            <form id="form_background_color_j1" name="form_background_color_j1">
+                <div class="primary-color">
+                    <label class="background-j1-1">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="1" checked />
+                        <span>1</span>
+                    </label>
+                    <label class="background-j1-2">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="2" />
+                        <span>2</span>
+                    </label>
+                    <label class="background-j1-3">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="3" />
+                        <span>3</span>
+                    </label>
+                    <label class="background-j1-4">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="4" />
+                        <span>4</span>
+                    </label>
+                    <label class="background-j1-5">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="5" />
+                        <span>5</span>
+                    </label>
+                    <label class="background-j1-6">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="6" />
+                        <span>6</span>
+                    </label>
+                    <label class="background-j1-7">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="7" />
+                        <span>7</span>
+                    </label>
+                    <label class="background-j1-8">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="8" />
+                        <span>8</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="background-j1-0">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="0" />
+                        <span>Fond vert</span>
+                    </label>
+                    <label class="background-j1-999">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="999" />
+                        <span>Fond noir</span>
+                    </label>
+                </div>
+                <div class="select_logos" id="select_bg_j1">
+                    <label for="bg1_file" class="label-upload"><i class="material-icons">attachment</i> Ou choisir une image ...</label>
+                    <input id="bg1_file" type="file" onchange="setBackground('j1', 'bg1_file')" accept='image/*'>
+                </div>
+                <div>
+                    <label class="choix-bg">
+                        <input type="checkbox" class="nes-checkbox" onchange="toggleBackgroundSize('j1')" />
+                        <span>Etendre</span>
+                    </label>
+                    <label class="choix-bg">
+                        <input type="checkbox" class="nes-checkbox" onchange="toggleRepeatBackground('j1')" checked />
+                        <span>Répéter</span>
+                    </label>
+                </div>
+            </form>
+        </div>
         <form method="dialog">
             <p>Personnage Joueur 1 : </p>
             <div class="center margin-auto">
@@ -72,6 +135,69 @@
     </dialog>
     <!--    Edit perso J2-->
     <dialog class="nes-dialog is-dark" id="dialog-char-j2">
+        <p>Couleur fond : <button type="button" class="nes-btn is-warning icons-only" onclick="resetBG('j2')"><i class="nes-icon close is-small"></i> Reset</button></p>
+        <div class="panel-color">
+            <form id="form_background_color_j1" name="form_background_color_j2">
+                <div class="primary-color">
+                    <label class="background-j2-1">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="1" />
+                        <span>1</span>
+                    </label>
+                    <label class="background-j2-2">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="2" checked />
+                        <span>2</span>
+                    </label>
+                    <label class="background-j2-3">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="3" />
+                        <span>3</span>
+                    </label>
+                    <label class="background-j2-4">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="4" />
+                        <span>4</span>
+                    </label>
+                    <label class="background-j2-5">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="5" />
+                        <span>5</span>
+                    </label>
+                    <label class="background-j2-6">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="6" />
+                        <span>6</span>
+                    </label>
+                    <label class="background-j2-7">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="7" />
+                        <span>7</span>
+                    </label>
+                    <label class="background-j2-8">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="8" />
+                        <span>8</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="background-j2-0">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="0" />
+                        <span>Fond vert</span>
+                    </label>
+                    <label class="background-j2-999">
+                        <input type="radio" class="nes-radio is-dark" name="background_color" value="999" />
+                        <span>Fond noir</span>
+                    </label>
+                </div>
+                <div class="select_logos" id="select_bg_j2">
+                    <label for="bg2_file" class="label-upload"><i class="material-icons">attachment</i> Ou choisir une image ...</label>
+                    <input id="bg2_file" type="file" onchange="setBackground('j2', 'bg2_file')" accept='image/*'>
+                </div>
+                <div>
+                    <label class="choix-bg">
+                        <input type="checkbox" class="nes-checkbox" onchange="toggleBackgroundSize('j2')" />
+                        <span>Etendre</span>
+                    </label>
+                    <label class="choix-bg">
+                        <input type="checkbox" class="nes-checkbox" onchange="toggleRepeatBackground('j2')" checked />
+                        <span>Répéter</span>
+                    </label>
+                </div>
+            </form>
+        </div>
         <form method="dialog">
             <p>Personnage Joueur 2 : </p>
             <div class="center margin-auto">
@@ -139,7 +265,7 @@
     <div class="center margin-auto"><span id="menu-top" class="center margin-auto nes-text">VoDs Thumbnails Generator for </span>
         <div class="nes-select" style="width: 50%; margin: auto; padding-bottom: 10px">
             <select required id="game_select" name="game">
-                <option value="melee" disabled>Super Smash Bros. Melee</option>
+                <option value="melee">Super Smash Bros. Melee</option>
                 <option value="ult" selected>Super Smash Bros. Ultimate</option>
                 <option value="" disabled> ----- </option>
                 <option value="wiiu" disabled>Super Smash Bros. for Wii U</option>
@@ -206,96 +332,6 @@
         </div>
     </div>
     <div id="infos" class="back-color">
-        <span class="center margin-auto nes-text">Couleur fond</span>
-        <div class="panel-color">
-            <form id="form_background_color_j1" name="form_background_color_j1">
-                <label class="background-j1-1">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="1" checked />
-                    <span>1</span>
-                </label>
-                <label class="background-j1-2">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="2" />
-                    <span>2</span>
-                </label>
-                <label class="background-j1-3">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="3" />
-                    <span>3</span>
-                </label>
-                <label class="background-j1-4">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="4" />
-                    <span>4</span>
-                </label>
-                <label class="background-j1-5">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="5" />
-                    <span>5</span>
-                </label>
-                <label class="background-j1-6">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="6" />
-                    <span>6</span>
-                </label>
-                <label class="background-j1-7">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="7" />
-                    <span>7</span>
-                </label>
-                <label class="background-j1-8">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="8" />
-                    <span>8</span>
-                </label>
-                <label class="background-j1-0">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="0" />
-                    <span>Fond vert</span>
-                </label>
-                <label class="background-j1-999">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="999" />
-                    <span>Fond noir</span>
-                </label>
-            </form>
-        </div>
-        <span class="center margin-auto nes-text">Couleur fond</span>
-        <div class="panel-color">
-            <form id="form_background_color_j1" name="form_background_color_j2">
-                <label class="background-j2-1">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="1" />
-                    <span>1</span>
-                </label>
-                <label class="background-j2-2">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="2" checked />
-                    <span>2</span>
-                </label>
-                <label class="background-j2-3">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="3" />
-                    <span>3</span>
-                </label>
-                <label class="background-j2-4">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="4" />
-                    <span>4</span>
-                </label>
-                <label class="background-j2-5">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="5" />
-                    <span>5</span>
-                </label>
-                <label class="background-j2-6">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="6" />
-                    <span>6</span>
-                </label>
-                <label class="background-j2-7">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="7" />
-                    <span>7</span>
-                </label>
-                <label class="background-j2-8">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="8" />
-                    <span>8</span>
-                </label>
-                <label class="background-j2-0">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="0" />
-                    <span>Fond vert</span>
-                </label>
-                <label class="background-j2-999">
-                    <input type="radio" class="nes-radio is-dark" name="background_color" value="999" />
-                    <span>Fond noir</span>
-                </label>
-            </form>
-        </div>
         <div class="select_logos panel-color" id="select_logo_haut">
             <label for="down_file" class="custom-file-upload">
                 <i class="material-icons">attachment</i> Logo (haut)

@@ -263,6 +263,38 @@ function changeName(tag, inputId) {
     document.getElementById(inputId).innerHTML = tag;
 }
 
+function resetBG(player) {
+    var bgplayer = document.getElementById('div-' + player)
+    bgplayer.style.backgroundImage = ""
+}
+
+function setBackground(player, bgfile) {
+    var bgplayer = document.getElementById('div-' + player)
+
+    var file = document.getElementById(bgfile).files[0]; //sames as here
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+        bgplayer.style.backgroundImage = 'url(' + reader.result + ')';
+    }
+
+    if (file) {
+        reader.readAsDataURL(file); //reads the data as a URL
+    } else {
+        bgplayer.style.backgroundImage = "";
+    }
+}
+
+function toggleBackgroundSize(player) {
+    var bgplayer = document.getElementById('div-' + player)
+    bgplayer.classList.toggle('bg-etendu')
+}
+
+function toggleRepeatBackground(player) {
+    var bgplayer = document.getElementById('div-' + player)
+    bgplayer.classList.toggle('bg-no-repeat')
+}
+
 // --- UTILS ---
 function createStockReserved() {
     var divReserved = document.createElement('div');
