@@ -1,0 +1,96 @@
+.ult-stock {
+    /*    background-image: url(banjo.png);*/
+    background-repeat: no-repeat;
+    display: block;
+    width: 64px;
+    height: 64px;
+}
+
+.melee-stock {
+    /*    background-image: url(spritesheet.png);*/
+    background-repeat: no-repeat;
+    display: block;
+    width: 64px;
+    height: 64px;
+}
+
+.ult-stock_00_0 {
+    background-position: -5px -5px;
+}
+
+.ult-stock_01_0 {
+    background-position: -79px -5px;
+}
+
+.ult-stock_02_0 {
+    background-position: -153px -5px;
+}
+
+.ult-stock_03_0 {
+    background-position: -227px -5px;
+}
+
+.ult-stock_04_0 {
+    background-position: -301px -5px;
+}
+
+.ult-stock_05_0 {
+    background-position: -375px -5px;
+}
+
+.ult-stock_06_0 {
+    background-position: -449px -5px;
+}
+
+.ult-stock_07_0 {
+    background-position: -523px -5px;
+}
+
+/* MELEE */
+.melee-stock_00_0 {
+    background-position: -5px -5px;
+}
+
+.melee-stock_01_0 {
+    background-position: -79px -5px;
+}
+
+.melee-stock_02_0 {
+    background-position: -153px -5px;
+}
+
+.melee-stock_03_0 {
+    background-position: -227px -5px;
+}
+
+.melee-stock_04_0 {
+    background-position: -301px -5px;
+}
+
+.melee-stock_05_0 {
+    background-position: -375px -5px;
+}
+
+.melee-stock_00_1 {
+    background-position: -5px -79px;
+}
+
+.melee-stock_01_1 {
+    background-position: -79px -79px;
+}
+
+.melee-stock_02_1 {
+    background-position: -153px -79px;
+}
+
+.melee-stock_03_1 {
+    background-position: -227px -79px;
+}
+
+.melee-stock_04_1 {
+    background-position: -301px -79px;
+}
+
+.melee-stock_05_1 {
+    background-position: -375px -79px;
+}

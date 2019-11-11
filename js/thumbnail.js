@@ -69,48 +69,6 @@ function init(player) {
         this.setSelectionRange(0, this.value.length)
     };
 
-    // listener sur stock icons
-    var stocks = document.getElementsByClassName('stocks ' + player);
-    for (var i = 0; i < stocks.length; i++)(function (i) {
-        stocks[i].onclick = function () {
-            var divColor = document.querySelector('#' + player + '-00');
-
-            // delete la classe sur les autres divs
-            removeClasse('stocks ' + player, 'selected');
-            // toggle classe pour garder border actif
-            this.classList.toggle('selected')
-
-            // delete la classe sur les autres
-            removeClasse('color-stocks ' + player, 'selected');
-            // toggle classe pour garder border actif
-            if (divColor) divColor.classList.toggle('selected');
-
-            // on met la 1ere couleur par defaut
-            setImgChar(game, player, '00', stocks[i].id);
-            // on modifie les icones couleurs du perso
-            setStockColor(game, player, stocks[i].id);
-        };
-    })(i);
-
-    // ninja JS pour garder la valeur de i
-    for (var i = 0; i < 8; i++)(function (i) {
-        var divColor = document.querySelector('#' + player + '-0' + i);
-        divColor.onclick = function () {
-            // delete la classe sur les autres
-            removeClasse('color-stocks ' + player, 'selected');
-            // toggle classe pour garder border actif
-            divColor.classList.toggle('selected');
-
-            // recup jeu
-            var game = document.getElementById('game_select').value;
-
-            // recup ligne
-
-            // met la couleur du perso sélectionné dans le thumbnail
-            setImgChar(game, player, '0' + i, divColor.dataset.char);
-        };
-    })(i);
-
     /* reverse img */
     document.getElementById('reverse-' + player).onclick = function () {
         document.getElementById("char-" + player).classList.toggle('reverse');
@@ -153,8 +111,10 @@ function initOther() {
         createStocksGrid(this.value, 'j2');
 
         // TODO random char ou le meme
-        setStockColor(this.value, 'j1', 'link');
-        setStockColor(this.value, 'j2', 'ganondorf');
+        //        setStockColor(this.value, 'j1', 1, 'link');
+        //        setStockColor(this.value, 'j2', 1, 'ganondorf');
+        parseStocksJSON(this.value, 'mario', 'j1')
+        parseStocksJSON(this.value, 'captain', 'j2')
     }
 
     document.getElementById('nb_round').onclick = function () {
@@ -310,13 +270,15 @@ function createStockReserved() {
     return divReserved;
 }
 
-
-
 function removeClasse(className, classToRemove) {
     var elems = document.getElementsByClassName(className);
     [].forEach.call(elems, function (el) {
         el.classList.remove(classToRemove);
     });
+}
+
+function log(val) {
+    console.log(val)
 }
 
 /**

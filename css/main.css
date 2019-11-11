@@ -290,10 +290,17 @@
 .select-char {
     width: 100%;
     margin: 5px auto;
-    display: grid;
     justify-content: center;
-    grid-template-columns: repeat(13, 45px);
-    grid-template-rows: repeat(6, 45px);
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.rows-color {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .stocks,
@@ -304,14 +311,17 @@
 .stocks,
 .color-stocks,
 .reserved {
-    width: 100%;
-    height: 100%;
+    width: 64px;
+    height: 64px;
 }
 
 .stocks:hover,
 .color-stocks:hover,
+.new-stock:hover,
 .selected {
-    border: 3px outset;
+    background-color: #909090;
+    /*    border: 3px grey outset;*/
+    /*    margin: 0px !important;*/
 }
 
 /* couleur */
@@ -322,10 +332,7 @@
 }
 
 .select-color .stocks,
-.select-color .color-stocks {
-    width: 50px;
-    height: 50px;
-}
+.select-color .color-stocks {}
 
 /* reverse */
 .reverse {
