@@ -1,9 +1,9 @@
 @font-face {
-    /*    font-family: '8-bit_pusab';*/
+    font-family: 'HACKED';
     /*IE*/
-    /*    src: url('../fonts/8-bit_pusab.ttf');*/
+    src: url('../fonts/HACKED.ttf');
     /*Non-IE*/
-    /*    src: url('../fonts/8-bit_pusab.ttf') format('truetype');*/
+    src: url('../fonts/HACKED.ttf') format('truetype');
 }
 
 #dialog-char-j1 {
@@ -511,5 +511,16 @@
 
 .background-j2-999 {
     background: black;
+}
 
+/* plusieurs perso */
+.second-char {
+    position: absolute;
+    top: 25%;
+    /* right: 25%; */
+}
+
+.first-char {
+    position: absolute;
+    bottom: 15%;
 }

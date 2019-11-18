@@ -8,11 +8,13 @@ window.onload = function () {
     });
     $('#font_select').on('select2:select', function (e) {
         var fontname;
+        var custom = e.params.data.element.dataset.custom;
+
         if (e.params.data.text)
             fontname = e.params.data.text;
         else
             fontname = e.params.data;
-        previewAndLoadFont(fontname);
+        previewAndLoadFont(fontname, custom);
     });
 
 
@@ -21,8 +23,10 @@ window.onload = function () {
     initOther();
 }
 
-function previewAndLoadFont(fontname) {
-    loadFont(fontname);
+function previewAndLoadFont(fontname, custom) {
+    var isCustom = (custom === 'true');
+    if (!isCustom)
+        loadFont(fontname);
 
     fontname = '"' + fontname + '"';
     // change font of banner + VS + phases
@@ -172,6 +176,9 @@ function initOther() {
     var emptyimg = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D';
     document.getElementById('logo_haut').getElementsByTagName('img')[0].src = emptyimg;
     document.getElementById('logo_bas').getElementsByTagName('img')[0].src = emptyimg;
+
+    /* init custom fonts */
+    loadCustomFont()
 
     /* btn download image */
     document.getElementById('download').onclick = function () {

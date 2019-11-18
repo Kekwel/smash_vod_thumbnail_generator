@@ -81,9 +81,7 @@ function createRow(game, player, persos) {
     var rowHTML = document.createElement('div');
     rowHTML.classList.add('row');
 
-    // TODO creer row
     $.each(persos, function (j, perso) {
-        // TODO ajouter icon dans row
         var infos = perso.split('_');
         perso = infos[0];
 

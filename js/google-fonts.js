@@ -6,12 +6,18 @@ var APIurl = 'https://www.googleapis.com/webfonts/v1/webfonts';
 
 var googleUrl = 'https://fonts.googleapis.com/css?family=';
 
+function addFont(family, custom) {
+    var opt = document.createElement('option');
+    opt.appendChild(document.createTextNode(family));
+    if (custom)
+        opt.setAttribute('data-custom', custom)
+    opt.value = family;
+    document.getElementById('font_select').appendChild(opt);
+}
+
 function SetFonts(fonts) {
     for (var i = 0; i < fonts.items.length; i++) {
-        var opt = document.createElement('option');
-        opt.appendChild(document.createTextNode(fonts.items[i].family));
-        opt.value = fonts.items[i].family;
-        document.getElementById('font_select').appendChild(opt);
+        addFont(fonts.items[i].family)
         //        $('#font_select')
         //            .append($("<option></option>")
         //                .attr("value", fonts.items[i].family)
@@ -47,7 +53,7 @@ const fetchFonts = (url) => {
 }
 
 // TODO preparer url ? ' ' en '+'
-const loadFont = (fontname) => {
+const loadFont = (fontname, custom) => {
     //    // the 'fetch ' equivalent has caching issues
     //    var xhr = new XMLHttpRequest();
     //    xhr.open('GET', googleUrl + fontname, true);
@@ -63,13 +69,23 @@ const loadFont = (fontname) => {
     //        }
     //    };
     //    xhr.send();
-
-    WebFont.load({
-        google: {
-            families: [fontname]
-        }
-    });
+    log('yo')
+    if (!custom) {
+        WebFont.load({
+            google: {
+                families: [fontname]
+            }
+        });
+    }
 }
 
+function loadCustomFont() {
+    for (var font in customFonts) {
+        var fontName = font
+        var fontLink = 'fonts/' + customFonts[font] + '.ttf'
+        var bitterFontFace = new FontFace(fontName, 'url(' + fontLink + ')');
+        document.fonts.add(bitterFontFace);
 
-//fetchFonts(APIurl + '?' + APIkey);
+        addFont(fontName, true)
+    }
+}
