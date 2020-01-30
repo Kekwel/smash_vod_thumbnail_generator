@@ -1,9 +1,50 @@
+/* Custom fonts */
+@font-face {
+    font-family: 'HACKED';
+    /*IE*/
+    src: url('../fonts/another_danger.ttf');
+    /*Non-IE*/
+    src: url('../fonts/another_danger.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BlackLister';
+    /*IE*/
+    src: url('../fonts/blacklisted.ttf');
+    /*Non-IE*/
+    src: url('../fonts/blacklisted.ttf') format('truetype');
+}
+
 @font-face {
     font-family: 'HACKED';
     /*IE*/
     src: url('../fonts/HACKED.ttf');
     /*Non-IE*/
     src: url('../fonts/HACKED.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Heroes Legend';
+    /*IE*/
+    src: url('../fonts/heroes_legend.ttf');
+    /*Non-IE*/
+    src: url('../fonts/heroes_legend.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Heroes Legend Hollow';
+    /*IE*/
+    src: url('../fonts/heroes_legend_hollow.ttf');
+    /*Non-IE*/
+    src: url('../fonts/heroes_legend_hollow.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SSF4 ABUCKET';
+    /*IE*/
+    src: url('../fonts/ssf4_abucket.ttf');
+    /*Non-IE*/
+    src: url('../fonts/ssf4_abucket.ttf') format('truetype');
 }
 
 #dialog-char-j1 {
