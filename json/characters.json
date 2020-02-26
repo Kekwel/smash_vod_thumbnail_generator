@@ -25,7 +25,7 @@ brawl = {
 
 melee = {
     0: ["mariod", "mario", "luigi", "bowser", "peach", "yoshi", "donkey", "captain", "ganondorf"],
-    1: ["falco", "fox", "ness", "ice", "kirby", "samus", "zelda", "link", "younglink"],
+    1: ["falco", "fox", "ness", "ice", "kirby", "samus", "zelda", "sheik", "link", "younglink"],
     2: ["pichu", "pikachu", "jigglypuff", "mewtwo", "gamewatch", "marth", "roy"]
 }
 
