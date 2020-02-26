@@ -178,6 +178,7 @@ function initOther() {
     document.getElementById('logo_bas').getElementsByTagName('img')[0].src = emptyimg;
 
     /* init custom fonts */
+    log('load custom font')
     loadCustomFont()
 
     /* btn download image */
