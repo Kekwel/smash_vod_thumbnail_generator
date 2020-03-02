@@ -5,7 +5,7 @@ ult = {
     3: ["ike", "ptrainer", "diddy", "lucas", "sonic", "dedede", "pikmin", "lucario", "rob", "toonlink", "wolf", "villager"],
     4: ["megaman", "wiifit", "rosalina", "littlemac", "greninja", "palutena", "pacman", "robin", "shulk", "bowserjr", "duckhunt", "ryu"],
     5: ["ken", "cloud", "corrin", "bayonetta", "inkling", "ridley", "simon", "richter", "krool", "isabelle", "incineroar", "piranha"],
-    6: ["joker", "hero", "banjo", "terryb", "miifighter", "miiswordsman", "miigunner", "reserved"]
+    6: ["joker", "hero", "banjo", "terryb", "byleth", "miifighter", "miiswordsman", "miigunner"]
 }
 
 wiiu = {
@@ -25,7 +25,7 @@ brawl = {
 
 melee = {
     0: ["mariod", "mario", "luigi", "bowser", "peach", "yoshi", "donkey", "captain", "ganondorf"],
-    1: ["falco", "fox", "ness", "ice", "kirby", "samus", "zelda", "link", "younglink"],
+    1: ["falco", "fox", "ness", "ice", "kirby", "samus", "zelda", "sheik", "link", "younglink"],
     2: ["pichu", "pikachu", "jigglypuff", "mewtwo", "gamewatch", "marth", "roy"]
 }
 
