@@ -4,5 +4,6 @@ customFonts = {
     'HACKED': 'HACKED',
     'Heroes Legend': 'heroes_legend',
     'Heroes Legend Hollow ': 'heroes_legend_hollow',
-    'SSF4 ABUCKET': 'ssf4_abucket'
+    'SSF4 ABUCKET': 'ssf4_abucket',
+    'Android Assassin': 'android_assassin'
 }

@@ -47,6 +47,14 @@
     src: url('../fonts/ssf4_abucket.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Android Assassin';
+    /*IE*/
+    src: url('../fonts/android_assassin.ttf');
+    /*Non-IE*/
+    src: url('../fonts/android_assassin.ttf') format('truetype');
+}
+
 #dialog-char-j1 {
     margin-right: 15%;
 }
