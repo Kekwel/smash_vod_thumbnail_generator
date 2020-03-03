@@ -1,0 +1,11 @@
+/* plusieurs perso */
+.second-char {
+    position: absolute;
+    top: 25%;
+    /* right: 25%; */
+}
+
+.first-char {
+    position: absolute;
+    bottom: 15%;
+}
