@@ -55,6 +55,14 @@
     src: url('../fonts/android_assassin.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Futura Bold';
+    /*IE*/
+    src: url('../fonts/futura_bold.otf');
+    /*Non-IE*/
+    src: url('../fonts/futura_bold.otf') format('truetype');
+}
+
 #dialog-char-j1 {
     margin-right: 15%;
 }
