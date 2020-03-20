@@ -5,7 +5,7 @@ var PM = 'PM';
 var WIIU = 'wiiu';
 var ULT = 'ult';
 
-function createStocksGrid(game, player) {
+function getCharsGame(game) {
     var chars;
     switch (game) {
         case N64:
@@ -28,6 +28,63 @@ function createStocksGrid(game, player) {
             break;
         default:
     }
+    return chars;
+}
+
+function createStockGrid(game, player, libChar) {
+    log('Création grid stock ' + game + ', ' + player + ', ' + libChar)
+    var chars = getCharsGame(game);
+
+    var stockDiv = document.createElement('div');
+    stockDiv.classList.add('panel-color', 'select-char');
+    stockDiv.id = 'stocks-' + player + '-' + libChar;
+
+    $.each(chars, function (i, row) {
+        var rowHTML = createRow(game, player, row, libChar);
+
+        var stocks = rowHTML.children;
+        for (var i = 0; i < stocks.length; i++) {
+            var stock = stocks[i];
+
+            stock.addEventListener('click', function (e) {
+                var stockCrt = e.target || e.srcElement;
+                var charName = stockCrt.id;
+
+                // -- SELECTED
+                removeClassByAttr('type', 'stock', 'selected');
+                stockCrt.classList.toggle('selected');
+
+                // -- set image CHAR
+                var pngChar = getPngChar(game, player, '00', '0', charName);
+                replaceImgChar(pngChar, libChar + '-' + player)
+
+                // -- set image COSTUMES
+                var sprites = getSprites(game, charName);
+                var stocksColor = document.getElementById('color-char-' + player + '-' + libChar);
+                initStocksColor(game, charName, player, libChar, stocksColor, sprites);
+            });
+        }
+        stockDiv.append(rowHTML);
+    });
+
+    // listener sur stock icons
+    //    var stocks = document.getElementsByClassName('stocks ' + player);
+    //    for (var i = 0; i < stocks.length; i++)(function (i) {
+    //        stocks[i].onclick = function () {
+    //            var divColor = document.querySelector('#' + player + '-00');
+    //
+    //            // on met la 1ere couleur par defaut
+    //            setImgChar(game, player, '00', '0', stocks[i].id);
+    //            // on modifie les icones couleurs du perso
+    //            setStockColor(game, player, stocks[i].id);
+    //        };
+    //    })(i);
+
+    return stockDiv;
+}
+
+function createStocksGrid(game, player) {
+    var chars = getCharsGame(game);
 
     var stocksId = document.getElementById('stocks-' + player);
     // -- reset stocks lorsque l'on change de jeu
@@ -77,7 +134,7 @@ function createStocksGrid(game, player) {
     }
 }
 
-function createRow(game, player, persos) {
+function createRow(game, player, persos, libChar) {
     var rowHTML = document.createElement('div');
     rowHTML.classList.add('row');
 
@@ -88,7 +145,7 @@ function createRow(game, player, persos) {
         if (perso == 'reserved')
             rowHTML.append(createStockReserved())
         else
-            rowHTML.append(createStockIcon(game, perso, player));
+            rowHTML.append(createStockIcon(game, perso, player, libChar));
     });
 
     return rowHTML;
@@ -98,6 +155,17 @@ function setStockColor(game, player, name) {
     parseStocksJSON(game, name, player)
 }
 
+function getPngChar(game, player, idColor, idRow, name) {
+    var src = 'img/char/' + game + '/';
+    var stockname = name;
+
+    stockname = stockname + '_' + idColor + '_' + idRow;
+
+    src = src + stockname;
+
+    return src + '.png';
+}
+
 function setImgChar(game, player, idColor, idRow, name) {
     var src = 'img/char/' + game + '/';
     var stockname = name;
@@ -105,10 +173,11 @@ function setImgChar(game, player, idColor, idRow, name) {
     stockname = stockname + '_' + idColor + '_' + idRow;
 
     src = src + stockname;
+
     document.getElementById("char-" + player).src = src + '.png';
 }
 
-function createStockIcon(game, charName, player) {
+function createStockIcon(game, charName, player, libChar) {
     //    console.log(game + ', ' + charName + ', ' + player)
     var file = charName;
     file += '_00';
@@ -117,10 +186,12 @@ function createStockIcon(game, charName, player) {
     var imgSrc = 'img/stock/' + game + '/' + file + '_0.png';
 
     //    img.setAttribute('data-nbRow', nbRow);
+    img.setAttribute('type', 'stock');
+    img.setAttribute('player', player);
+    img.setAttribute('libChar', libChar);
     img.src = imgSrc;
     img.id = charName;
-    img.classList.add('stocks');
-    img.classList.add(player);
+    img.classList.add('stocks', player);
 
     return img;
 }

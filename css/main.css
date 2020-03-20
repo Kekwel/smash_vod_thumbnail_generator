@@ -63,11 +63,14 @@
     src: url('../fonts/futura_bold.otf') format('truetype');
 }
 
-#dialog-char-j1 {
+
+#dialog-char-j1,
+.dialog-j1 {
     margin-right: 15%;
 }
 
-#dialog-char-j2 {
+#dialog-char-j2,
+.dialog-j2 {
     margin-left: 15%;
 }
 
@@ -166,6 +169,13 @@
     overflow: hidden;
 }
 
+#char1-j1,
+#char2-j1,
+#char1-j2,
+#char2-j2 {
+    filter: drop-shadow(-1px 0px 0px black) drop-shadow(1px 0px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px 1px 0px black);
+}
+
 #char-j1,
 #char-j2 {
     filter: drop-shadow(-1px 0px 0px black) drop-shadow(1px 0px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px 1px 0px black);
@@ -180,7 +190,11 @@
 */
 
 #char-j1:hover,
-#char-j2:hover {
+#char1-j1:hover,
+#char2-j1:hover,
+#char-j2:hover,
+#char1-j2:hover,
+#char2-j2:hover {
     cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
     -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
     filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
@@ -196,9 +210,13 @@
 }
 
 #char-j1:hover.reverse,
-#char-j2:hover.reverse {
+#char1-j1:hover.reverse,
+#char2-j1:hover.reverse,
+#char-j2:hover.reverse,
+#char1-j2:hover.reverse,
+#char2-j2:hover.reverse {
     -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
-    filter: drop-shadow(1px 1px 10px black) drop-shadow(11px -1px 5px black);
+    filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
 }
 
 /* z-index sur la grid */
@@ -290,17 +308,25 @@
 }
 
 #div-j1,
-#div-j2 {
+#div-j1-char1,
+#div-j1-char2,
+#div-j2,
+#div-j2-char1,
+#div-j2-char2 {
     grid-row-start: 1;
     grid-row-end: 4;
 }
 
-#div-j1 {
+#div-j1,
+#div-j1-char1,
+#div-j1-char2 {
     grid-column-start: 1;
     grid-column-end: 2;
 }
 
-#div-j2 {
+#div-j2,
+#div-j2-char1,
+#div-j2-char2 {
     grid-column-start: 2;
     grid-column-end: 4;
 }

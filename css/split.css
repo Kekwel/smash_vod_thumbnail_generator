@@ -1,0 +1,42 @@
+.solo > img {
+    margin-top: 80px;
+}
+
+.duo-haut {
+    clip-path: polygon(5px 0%, 100% 0%, 100% 715px)
+}
+
+.duo-haut > img {
+    margin-top: 0%;
+    margin-left: 15%;
+}
+
+.duo-bas {
+    clip-path: polygon(0% 100%, 635px 100%, 0% 5px)
+}
+
+.duo-bas > img {
+    margin-top: 35%;
+    margin-left: -25%;
+}
+
+/* bordure */
+/*.duo-bas:before {
+    content: "";
+    position: absolute;
+    border-top: 5px solid black;
+    width: 100%;
+    transform: rotate(48.35deg);
+    transform-origin: 0% 0%;
+    z-index: 5;
+}
+
+.duo-haut:after {
+    content: "";
+    position: absolute;
+    border-top: 5px solid black;
+    width: 100%;
+    transform: rotate(48.1deg);
+    transform-origin: 0% 0%;
+}
+*/
