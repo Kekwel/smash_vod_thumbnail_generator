@@ -2,75 +2,90 @@ function showModalChar(player) {
     document.getElementById('dialog-char-' + player).showModal();
 }
 
-function createModalChar() {
-    var charDialog = document.createElement('dialog');
-    charDialog.classList.add('nes-dialog', 'is-dark');
-    document.body.appendChild(charDialog);
+var charDialog;
 
-    // Couleurs fond
+/* player : 'j1' ou 'j2'
+    libChar : 'char1', 'char2'
+*/
+function createModalChar(game, player, libChar) {
+    var idDialog = game + '-' + player + '-' + libChar;
+
+    // si la modal existe déjà
+    if (document.getElementById(idDialog)) {
+        log('modal déjà construite')
+        //        document.getElementById(idDialog).hidden = false;
+        document.getElementById(idDialog).showModal();
+    } else {
+        charDialog = document.createElement('dialog');
+        charDialog.id = idDialog;
+        charDialog.classList.add('nes-dialog', 'is-dark', 'dialog-' + player);
+
+        // Couleurs fond
+        createFondColor(player, libChar);
+
+        /* Dans un form */
+        // Personnages & Costumes
+        createCharacters(game, player, libChar);
+
+        // Boutons
+        var divMenu = document.createElement('div');
+        var menu = document.createElement('menu');
+        menu.classList.add('dialog-menu');
+
+        var okBtn = document.createElement('button');
+        okBtn.innerHTML = "OK";
+        okBtn.classList.add('nes-btn', 'is-success', 'center');
+        okBtn.addEventListener('click', function () {
+            log('hop hop on ferme');
+            // TODO recup la bonne dialog
+            //            charDialog.close();
+            document.getElementById(idDialog).close();
+        });
+
+        // -- on ajoute le tout
+        menu.appendChild(okBtn);
+        divMenu.appendChild(menu);
+        charDialog.appendChild(divMenu);
+
+        // TODO
+        document.body.appendChild(charDialog);
+        charDialog.showModal();
+    }
+}
+
+function createFondColor(player, libChar) {
     var titreFond = document.createElement('p');
-    titreFond.appendChild(document.createTextNode('Couleur fond : '));
 
     var resetBtn = document.createElement('button');
     resetBtn.classList.add('nes-btn', 'is-warning', 'icons-only');
     resetBtn.addEventListener('click', function () {
         // TODO
-        log('reset background J?');
+        log('reset background ' + player + ', ' + libChar);
         // reset('j1')
     });
 
     var iconX = document.createElement('i');
     iconX.classList.add('nes-icon', 'close', 'is-small');
 
-    resetBtn.appendChild(iconX);
-    resetBtn.appendChild(document.createTextNode(' Reset'));
-
-    titreFond.appendChild(resetBtn);
-    charDialog.appendChild(titreFond);
-
-    var fondDiv = createFondColor();
-    charDialog.appendChild(fondDiv);
-
-    /* Dans un form */
-    // Personnages
-
-    // Costume
-
-    // Boutons
-    var menu = document.createElement('menu');
-    menu.classList.add('dialog-menu');
-
-    var okBtn = document.createElement('button');
-    okBtn.innerHTML = "OK";
-    okBtn.classList.add('nes-btn', 'is-success', 'center');
-
-    menu.appendChild(okBtn);
-    charDialog.appendChild(menu);
-
-    // TODO
-    charDialog.showModal();
-}
-
-function createFondColor() {
     var mainDiv = document.createElement('div');
     mainDiv.classList.add('panel-color');
 
     var formColor = document.createElement('form');
-    formColor.id = 'form_background_color_j1'; // TODO parametre
-    formColor.setAttribute('name', 'form_background_color_j1'); // TODO parametre
+    formColor.id = 'form_background_color_' + player + '_' + libChar;
+    formColor.setAttribute('name', 'form_background_color_' + player + '_' + libChar);
 
     // couleurs "primaires"
     var primaryColor = document.createElement('div');
     primaryColor.classList.add('primary-color');
 
-    var color1 = createlabelColor('1');
-    var color2 = createlabelColor('2');
-    var color3 = createlabelColor('3');
-    var color4 = createlabelColor('4');
-    var color5 = createlabelColor('5');
-    var color6 = createlabelColor('6');
-    var color7 = createlabelColor('7');
-    var color8 = createlabelColor('8');
+    var color1 = createlabelColor('1', player, libChar);
+    var color2 = createlabelColor('2', player, libChar);
+    var color3 = createlabelColor('3', player, libChar);
+    var color4 = createlabelColor('4', player, libChar);
+    var color5 = createlabelColor('5', player, libChar);
+    var color6 = createlabelColor('6', player, libChar);
+    var color7 = createlabelColor('7', player, libChar);
+    var color8 = createlabelColor('8', player, libChar);
 
     primaryColor.appendChild(color1);
     primaryColor.appendChild(color2);
@@ -84,8 +99,8 @@ function createFondColor() {
     // Autres couleurs
     var otherColor = document.createElement('div');
 
-    var color0 = createlabelColor('0');
-    var color999 = createlabelColor('999');
+    var color0 = createlabelColor('0', player, libChar);
+    var color999 = createlabelColor('999', player, libChar);
 
     otherColor.appendChild(color0);
     otherColor.appendChild(color999);
@@ -111,7 +126,7 @@ function createFondColor() {
     inputBGFile.setAttribute('type', 'file');
     inputBGFile.addEventListener('change', function () {
         // TODO
-        log('set custom background J?');
+        log('set custom background ' + player + ', ' + libChar);
         // setBackground('j1', 'bg1_file')
     });
     inputBGFile.setAttribute('accept', 'image/*');
@@ -131,7 +146,7 @@ function createFondColor() {
     inputExtend.classList.add('nes-checkbox');
     inputExtend.addEventListener('change', function () {
         // TODO
-        log('toggle extend custom background J?');
+        log('toggle extend custom background ' + player + ', ' + libChar);
         // toggleBackgroundSize('j1')
     });
 
@@ -147,13 +162,20 @@ function createFondColor() {
     inputRepeat.classList.add('nes-checkbox');
     inputRepeat.addEventListener('change', function () {
         // TODO
-        log('toggle repeat custom background J?');
+        log('toggle repeat custom background ' + player + ', ' + libChar);
         // toggleRepeatBackground('j1')
     });
     inputRepeat.checked = true;
 
     var spanRepeat = document.createElement('span');
     spanRepeat.innerHTML = 'Répéter';
+
+    // on ajoute le tout
+    resetBtn.appendChild(iconX);
+    resetBtn.appendChild(document.createTextNode(' Reset'));
+
+    titreFond.appendChild(document.createTextNode('Couleur fond : '));
+    titreFond.appendChild(resetBtn);
 
     labelExtend.appendChild(inputExtend)
     labelExtend.appendChild(spanExtend)
@@ -169,10 +191,11 @@ function createFondColor() {
     formColor.appendChild(choixDiv);
     mainDiv.appendChild(formColor);
 
-    return mainDiv;
+    charDialog.appendChild(titreFond);
+    charDialog.appendChild(mainDiv);
 }
 
-function createlabelColor(numColor) {
+function createlabelColor(numColor, player, libChar) {
     var colorLabel = document.createElement('label');
     colorLabel.classList.add('background-j1-' + numColor);
 
@@ -191,38 +214,194 @@ function createlabelColor(numColor) {
     colorLabel.appendChild(libelle);
 
     // TODO listener
+    choix.addEventListener('click', function () {
+        // this.value = numero de la couleur
+        var nbColor = this.value;
+        log('choix couleur numero ' + nbColor + ', pour ' + player + ', ' + libChar);
+        // recup les background du joueur concerné, pour modif la couleur de fond
+        var divBG = document.getElementById('div-' + player + '-' + libChar);
+        var newBGClass = 'background-' + player + '-' + nbColor;
+
+        var tmp = divBG.className;
+        tmp = tmp.replace(/background-j[1-2]-\d+/, newBGClass);
+        //        divBG.className = 'character background-' + player + '-' + nbColor;
+        divBG.className = tmp;
+    });
+    //    var radios = document.forms['form_background_color_' + player].elements['background_color'];
+    //    for (var k = 0, max = radios.length; k < max; k++) {
+    //        radios[k].onclick = function () {
+    //            // this.value = numero de la couleur
+    //            var nbColor = this.value;
+    //            // delete la classe sur les autres
+    //            var elems = document.querySelectorAll('div[class^="character background-' + player + '-"]');
+    //            [].forEach.call(elems, function (el) {
+    //                el.className = 'character background-' + player + '-' + nbColor;
+    //            });
+    //        }
+    //    }
 
     return colorLabel;
 }
 
-/** 
-<dialog class="nes-dialog is-dark" id="dialog-char-j1">
-    <div class="panel-color">
-        <form id="form_background_color_j1" name="form_background_color_j1">
-            <div>
-                <label class="choix-bg">
-                    <input type="checkbox" class="nes-checkbox" onchange="toggleBackgroundSize('j1')" />
-                    <span>Etendre</span>
-                </label>
-                <label class="choix-bg">
-                    <input type="checkbox" class="nes-checkbox" onchange="toggleRepeatBackground('j1')" checked />
-                    <span>Répéter</span>
-                </label>
-            </div>
-        </form>
-    </div>
-    <form method="dialog">
-        <p>Personnage Joueur 1 : </p>
-        <div class="center margin-auto">
-            <button class="nes-btn is-primary icons-only" type="button" id="reverse-j1"><i class="material-icons">compare_arrows</i> Retourner</button>
-        </div>
-        <div class="panel-color select-char" id="stocks-j1"></div>
-        <span class="center margin-auto nes-text">Costume</span>
-        <div class="panel-color select-color" id="color-char-j1"></div>
-        <menu class="dialog-menu">
-            <button class="nes-btn is-success center">OK</button>
-        </menu>
-    </form>
-</dialog>
+function createCharacters(game, player, libChar) {
+    var numJoueur = player.substring(1);
 
-*/
+    var titre = document.createElement('p');
+    titre.appendChild(document.createTextNode('Personnage Joueur ' + numJoueur + ' : '));
+
+    // -- Bouton +, - et reverse
+    var divBtn = document.createElement('div');
+    divBtn.classList.add('center', 'margin-auto');
+
+    var plusBtn = document.createElement('button');
+    plusBtn.classList.add('nes-btn', 'is-success', 'icons-only');
+    var iconAdd = document.createElement('i');
+    iconAdd.classList.add('material-icons');
+    iconAdd.innerHTML = 'add';
+
+    var moinsBtn = document.createElement('button');
+    moinsBtn.classList.add('nes-btn', 'is-error', 'icons-only', 'is-disabled');
+    var iconRemove = document.createElement('i');
+    iconRemove.classList.add('material-icons');
+    iconRemove.innerHTML = 'remove';
+
+    var reverseBtn = document.createElement('button');
+    reverseBtn.classList.add('nes-btn', 'is-primary', 'icons-only');
+    reverseBtn.id = 'reverse-' + player + '-' + libChar;
+    var iconReverse = document.createElement('i');
+    iconReverse.classList.add('material-icons');
+    iconReverse.innerHTML = 'compare_arrows';
+
+    var reverseAllBtn = document.createElement('button');
+    reverseAllBtn.classList.add('nes-btn', 'is-warning', 'icons-only');
+    reverseAllBtn.id = 'reverse-all-' + player + '-' + libChar;
+    var iconReverseAll = document.createElement('i');
+    iconReverseAll.classList.add('material-icons');
+    iconReverseAll.innerHTML = 'compare_arrows';
+
+    // -- listener btn
+    plusBtn.addEventListener('click', function () {
+        log('ajout char');
+
+        // - char1
+        document.getElementById('div-' + player + '-char1').classList.remove('solo');
+        document.getElementById('div-' + player + '-char1').classList.add('duo-haut');
+
+        var newDivChar = createDivChar(game, player);
+        // - on met en reverse si char1 est en reverse
+        if (document.getElementById('div-' + player + '-char1').classList.contains('reverse'))
+            newDivChar.classList.add('reverse');
+
+        document.getElementById('thumbnail').appendChild(newDivChar);
+
+        plusBtn.classList.add('is-disabled');
+        moinsBtn.classList.remove('is-disabled');
+    });
+
+    moinsBtn.addEventListener('click', function () {
+        log('enleve char');
+
+        // - char1
+        document.getElementById('div-' + player + '-char1').classList.remove('duo-haut');
+        document.getElementById('div-' + player + '-char1').classList.add('solo');
+
+        // - char2
+        document.getElementById('div-' + player + '-char2').remove();
+
+        moinsBtn.classList.add('is-disabled');
+        plusBtn.classList.remove('is-disabled');
+    });
+
+    reverseBtn.addEventListener('click', function () {
+        log('reverse char ' + player + ', ' + libChar);
+        document.getElementById(libChar + "-" + player).classList.toggle('reverse');
+    });
+
+    reverseAllBtn.addEventListener('click', function () {
+        log('reverse all char ' + player);
+        document.getElementById('div-' + player + '-char1').classList.toggle('reverse');
+        if (document.getElementById('div-' + player + '-char2'))
+            document.getElementById('div-' + player + '-char2').classList.toggle('reverse');
+    });
+
+    // -- Characters !
+    // init perso > render-char.js
+    var stockDiv = createStockGrid(game, player, libChar);
+
+    // -- Costumes
+    var titreCostume = document.createElement('span');
+    titreCostume.classList.add('centre', 'margin-auto', 'nes-text');
+    titreCostume.innerHTML = 'Costume';
+
+    var colorDiv = document.createElement('div');
+    colorDiv.classList.add('panel-color', 'select-color');
+    colorDiv.id = 'color-char-' + player + '-' + libChar;
+
+    // -- on ajoute le tout
+    plusBtn.appendChild(iconAdd);
+    moinsBtn.appendChild(iconRemove);
+    reverseBtn.appendChild(iconReverse);
+    reverseBtn.appendChild(document.createTextNode(' Retourner'));
+    reverseAllBtn.appendChild(iconReverseAll);
+    reverseAllBtn.appendChild(document.createTextNode(' Tout'))
+
+    divBtn.appendChild(reverseAllBtn);
+    divBtn.appendChild(plusBtn);
+    divBtn.appendChild(moinsBtn);
+    divBtn.appendChild(reverseBtn);
+
+    charDialog.appendChild(titre);
+    charDialog.appendChild(divBtn);
+    charDialog.appendChild(stockDiv);
+    charDialog.appendChild(titreCostume);
+    charDialog.appendChild(colorDiv);
+
+    // TODO init perso
+    // TODO a revoir
+    // select par defaut 
+    var rand = Math.floor(Math.random() * 5)
+    var rand2 = Math.floor(Math.random() * 5)
+    if (player == 'j1') {
+        //        var pngChar = getPngChar(game, player, pad(rand, 2), '0', 'donkey');
+        //        replaceImgChar(pngChar, libChar + '-' + player)
+
+        var sprites = getSprites(game, 'donkey');
+        var stocksColor = document.getElementById('color-char-' + player + '-' + libChar);
+        initStocksColor(game, 'donkey', player, libChar, colorDiv, sprites);
+    } else {
+        //        var pngChar = getPngChar(game, player, pad(rand, 2), '0', 'mario');
+        //        replaceImgChar(pngChar, libChar + '-' + player);
+
+        var sprites = getSprites(game, 'mario');
+        var stocksColor = document.getElementById('color-char-' + player + '-' + libChar);
+        initStocksColor(game, 'mario', player, libChar, colorDiv, sprites);
+    }
+}
+
+function replaceImgChar(pngChar, idChar) {
+    document.getElementById(idChar).src = pngChar;
+}
+
+function createDivChar(game, player) {
+    var mainDiv = document.createElement('div');
+    // TODO couleur background
+    mainDiv.classList.add('character', 'background-' + player + '-1', 'duo-bas');
+    mainDiv.id = 'div-' + player + '-char2';
+
+    var imgDiv = document.createElement('img');
+    imgDiv.id = 'char2-' + player;
+    imgDiv.src = 'img/char/' + game + '/mario_00_0.png';
+
+    mainDiv.onclick = function () {
+        createModalChar(game, player, 'char2');
+    };
+
+    mainDiv.appendChild(imgDiv);
+
+    /*
+<div class="character background-j1-1 duo-bas" id="div-j1-char2">
+                <img id="char2-j1" class="" src="img/char/ult/donkey_00_0.png">
+            </div>
+    */
+    return mainDiv;
+}
