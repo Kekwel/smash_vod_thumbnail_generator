@@ -49,7 +49,8 @@ function previewAndLoadFont(fontname, custom) {
 function init(player) {
     // -- test
     var banner = document.getElementById('banner-' + player);
-    var char = document.getElementById('char-' + player);
+    var char1 = document.getElementById('char1-' + player);
+    var char2 = document.getElementById('char2-' + player);
     var games = document.getElementById('game_select');
     var game = games.value;
 
@@ -57,13 +58,21 @@ function init(player) {
         document.getElementById('dialog-tag-' + player).showModal();
         document.getElementById(player).click();
     };
-    char.onclick = function () {
-        document.getElementById('dialog-char-' + player).showModal();
-    };
+
+    if (char1) {
+        char1.onclick = function () {
+            createModalChar(game, player, 'char1');
+        };
+    }
+    if (char2) {
+        char2.onclick = function () {
+            createModalChar(game, player, 'char2');
+        };
+    }
     // --
 
     // -- init grid perso
-    createStocksGrid(game, player);
+    // fait lors de la création de la modal
 
     document.getElementById(player).oninput = function () {
         changeName(this.value, "name-" + player);
@@ -71,11 +80,6 @@ function init(player) {
     document.getElementById(player).onclick = function () {
         this.focus();
         this.setSelectionRange(0, this.value.length)
-    };
-
-    /* reverse img */
-    document.getElementById('reverse-' + player).onclick = function () {
-        document.getElementById("char-" + player).classList.toggle('reverse');
     };
 
     /* rotate tag */
@@ -91,34 +95,38 @@ function init(player) {
         document.getElementById("banner-" + player).classList.remove('rotate-tag-left');
         document.getElementById("banner-" + player).classList.add('rotate-tag-right');
     }
-
-    /* background color */
-    var radios = document.forms['form_background_color_' + player].elements['background_color'];
-    for (var k = 0, max = radios.length; k < max; k++) {
-        radios[k].onclick = function () {
-            // this.value = numero de la couleur
-            var nbColor = this.value;
-            // delete la classe sur les autres
-            var elems = document.querySelectorAll('div[class^="character background-' + player + '-"]');
-            [].forEach.call(elems, function (el) {
-                el.className = 'character background-' + player + '-' + nbColor;
-            });
-        }
-    }
 }
 
 function initOther() {
     // lors changement jeu, changement stock icons
     var games = document.getElementById('game_select');
     games.onchange = function () {
-        createStocksGrid(this.value, 'j1');
-        createStocksGrid(this.value, 'j2');
+        var game = this.value;
 
-        // TODO random char ou le meme
-        //        setStockColor(this.value, 'j1', 1, 'link');
-        //        setStockColor(this.value, 'j2', 1, 'ganondorf');
-        parseStocksJSON(this.value, 'mario', 'j1')
-        parseStocksJSON(this.value, 'captain', 'j2')
+        // -- set image CHAR
+        var pngCharJ1 = getPngChar(game, 'j1', '00', '0', 'fox');
+        replaceImgChar(pngCharJ1, 'char1-j1');
+        var pngCharJ2 = getPngChar(game, 'j2', '00', '0', 'marth');
+        replaceImgChar(pngCharJ2, 'char1-j2');
+
+        document.getElementById('char1-j1').onclick = function () {
+            createModalChar(game, 'j1', 'char1');
+        };
+        document.getElementById('char1-j2').onclick = function () {
+            createModalChar(game, 'j2', 'char1');
+        };
+
+        // enlever div si 2 persos affiché
+        if (document.getElementById('div-j1-char2')) {
+            document.getElementById('div-j1-char1').classList.remove('duo-haut');
+            document.getElementById('div-j1-char1').classList.add('solo');
+            document.getElementById('div-j1-char2').remove();
+        }
+        if (document.getElementById('div-j2-char2')) {
+            document.getElementById('div-j2-char1').classList.remove('duo-haut');
+            document.getElementById('div-j2-char1').classList.add('solo');
+            document.getElementById('div-j2-char2').remove();
+        }
     }
 
     document.getElementById('nb_round').onclick = function () {
@@ -322,6 +330,13 @@ function createStockReserved() {
 
 function removeClasse(className, classToRemove) {
     var elems = document.getElementsByClassName(className);
+    [].forEach.call(elems, function (el) {
+        el.classList.remove(classToRemove);
+    });
+}
+
+function removeClassByAttr(attrName, value, classToRemove) {
+    var elems = document.querySelectorAll('[' + attrName + '="' + value + '"]');
     [].forEach.call(elems, function (el) {
         el.classList.remove(classToRemove);
     });
