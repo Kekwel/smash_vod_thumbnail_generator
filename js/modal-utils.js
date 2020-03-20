@@ -255,15 +255,22 @@ function createCharacters(game, player, libChar) {
 
     var plusBtn = document.createElement('button');
     plusBtn.classList.add('nes-btn', 'is-success', 'icons-only');
+    plusBtn.id = 'plus-' + player + '-' + libChar;
     var iconAdd = document.createElement('i');
     iconAdd.classList.add('material-icons');
     iconAdd.innerHTML = 'add';
 
     var moinsBtn = document.createElement('button');
-    moinsBtn.classList.add('nes-btn', 'is-error', 'icons-only', 'is-disabled');
+    moinsBtn.classList.add('nes-btn', 'is-error', 'icons-only');
     var iconRemove = document.createElement('i');
     iconRemove.classList.add('material-icons');
     iconRemove.innerHTML = 'remove';
+
+    // - si modal char 2 !
+    if (libChar == 'char2') {
+        // on affiche aps le bouton '+' si c'est le 2eme perso
+        plusBtn.style.display = 'none';
+    }
 
     var reverseBtn = document.createElement('button');
     reverseBtn.classList.add('nes-btn', 'is-primary', 'icons-only');
@@ -295,7 +302,9 @@ function createCharacters(game, player, libChar) {
         document.getElementById('thumbnail').appendChild(newDivChar);
 
         plusBtn.classList.add('is-disabled');
+        plusBtn.disabled = true;
         moinsBtn.classList.remove('is-disabled');
+        moinsBtn.disabled = false;
     });
 
     moinsBtn.addEventListener('click', function () {
@@ -309,7 +318,12 @@ function createCharacters(game, player, libChar) {
         document.getElementById('div-' + player + '-char2').remove();
 
         moinsBtn.classList.add('is-disabled');
+        moinsBtn.disabled = true;
         plusBtn.classList.remove('is-disabled');
+        plusBtn.disabled = false;
+        // -- on desactive aussi le bouton du char 1
+        document.getElementById('plus-' + player + '-char1').classList.remove('is-disabled');
+        document.getElementById('plus-' + player + '-char1').disabled = false;
     });
 
     reverseBtn.addEventListener('click', function () {
