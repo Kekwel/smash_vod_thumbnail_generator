@@ -28,9 +28,9 @@
 <body>
     <!-- Dialogs -->
     <!-- Edit tag J1 -->
-    <dialog class="nes-dialog is-dark" id="dialog-tag-j1">
-        <form method="dialog">
-            <p>Pseudo Joueur 1 : </p>
+    <div class="nes-container is-dark with-title window" id="dialog-tag-j1" style="display: none">
+        <div class="bordure-container">
+            <p class="title-container">Pseudo Joueur 1 : </p>
             <div class="buttons-rotate">
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i class="material-icons rotate-left">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
@@ -42,14 +42,14 @@
                 <input class="nes-input" id="fontsize-j1" type="text" maxlength="3" value="44" oninput="setTagFont('j1')">
             </div>
             <menu class="dialog-menu">
-                <button class="nes-btn is-success center">OK</button>
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j1').style.display = 'none';">OK</button>
             </menu>
-        </form>
-    </dialog>
+        </div>
+    </div>
     <!-- Edit tag J2 -->
-    <dialog class="nes-dialog is-dark" id="dialog-tag-j2">
-        <form method="dialog">
-            <p>Pseudo Joueur 2 : </p>
+    <dialog class="nes-container is-dark with-title window" id="dialog-tag-j2" style="display: none">
+        <div class="bordure-container">
+            <p class="title-container">Pseudo Joueur 2 : </p>
             <div class="buttons-rotate">
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i class="material-icons rotate-left">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
@@ -61,14 +61,14 @@
                 <input class="nes-input" id="fontsize-j2" type="text" maxlength="3" value="44" oninput="setTagFont('j2')">
             </div>
             <menu class="dialog-menu">
-                <button class="nes-btn is-success center">OK</button>
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j2').style.display = 'none';">OK</button>
             </menu>
-        </form>
+        </div>
     </dialog>
     <!--    Edit phases-->
-    <dialog class="nes-dialog is-dark" id="dialog-phases">
-        <form method="dialog">
-            <p>Phase</p>
+    <dialog class="nes-container is-dark with-title window" id="dialog-phases" style="display: none">
+        <div class="bordure-container">
+            <p class="title-container">Phase</p>
             <div class="center">
                 <button class="nes-btn is-success" type="button" id="phase_visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i>
                     <span>Invisible</span>
@@ -117,9 +117,9 @@
                 </div>
             </div>
             <menu class="dialog-menu">
-                <button class="nes-btn is-success center">OK</button>
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-phases').style.display = 'none';">OK</button>
             </menu>
-        </form>
+        </div>
     </dialog>
     <!-- TODO nouveau miis -->
     <!-- TODO FR / EN -->

@@ -59,9 +59,8 @@ function createStockGrid(game, player, libChar) {
                 replaceImgChar(pngChar, libChar + '-' + player)
 
                 // -- set image COSTUMES
-                var sprites = getSprites(game, charName);
-                var stocksColor = document.getElementById('color-char-' + player + '-' + libChar);
-                initStocksColor(game, charName, player, libChar, stocksColor, sprites);
+                var sprites = getSprites(game, charName)
+                initStocksColor(game, charName, player, libChar, sprites);
             });
         }
         stockDiv.append(rowHTML);

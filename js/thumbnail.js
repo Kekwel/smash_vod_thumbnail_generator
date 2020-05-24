@@ -55,7 +55,7 @@ function init(player) {
     var game = games.value;
 
     banner.onclick = function () {
-        document.getElementById('dialog-tag-' + player).showModal();
+        document.getElementById('dialog-tag-' + player).style.display = 'block';
         document.getElementById(player).click();
     };
 
@@ -271,7 +271,7 @@ function setPhaseListener(nameForm, nameElem, idPhase) {
 
     // -- open dialog on click
     document.getElementById(idPhase).onclick = function () {
-        document.getElementById('dialog-phases').showModal();
+        document.getElementById('dialog-phases').style.display = 'block';
     };
 }
 

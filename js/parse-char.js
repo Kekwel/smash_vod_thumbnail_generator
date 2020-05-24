@@ -4,7 +4,9 @@ function getSprites(game, charName) {
     return sprites;
 }
 
-function initStocksColor(game, charName, player, libChar, divColor, sprites) {
+function initStocksColor(game, charName, player, libChar, sprites) {
+    var divColor = document.getElementById('color-char-' + game + '-' + player + '-' + libChar);
+
     while (divColor.firstChild) {
         divColor.removeChild(divColor.firstChild);
     }
