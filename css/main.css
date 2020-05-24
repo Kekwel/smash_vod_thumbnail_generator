@@ -299,6 +299,8 @@
 #fontsize-phase,
 #fontsize-phase2 {
     width: 90px;
+    margin: auto;
+    text-align: center;
 }
 
 .buttons-rotate {
@@ -549,7 +551,7 @@
 #color-background-j1,
 #color-background-j2,
 .center {
-    text-align: center;
+    text-align: center !important;
 }
 
 #color-background-j1,

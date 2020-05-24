@@ -36,11 +36,17 @@
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i class="material-icons rotate-right">crop_16_9</i></button>
             </div>
-            <input class="nes-input" id="j1" type="text" value="J1" size="10">
-            <div class="fontsize-player">
-                <label>Taille police (px) : </label>
-                <input class="nes-input" id="fontsize-j1" type="text" maxlength="3" value="44" oninput="setTagFont('j1')">
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <input type="text" id="j1" class="nes-input is-dark" value="J1" size="10" placeholder="Pseudo">
             </div>
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <label for="fontsize-j1" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-j1" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j1')">
+            </div>
+            <label>
+                <input type="checkbox" class="nes-checkbox is-dark" id="bold-j1" />
+                <span> En gras ?</span>
+            </label>
             <menu class="dialog-menu">
                 <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j1').style.display = 'none';">OK</button>
             </menu>
@@ -55,11 +61,17 @@
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i class="material-icons rotate-right">crop_16_9</i></button>
             </div>
-            <input class="nes-input" id="j2" type="text" value="J2">
-            <div class="fontsize-player">
-                <label>Taille police (px) : </label>
-                <input class="nes-input" id="fontsize-j2" type="text" maxlength="3" value="44" oninput="setTagFont('j2')">
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <input type="text" id="j2" class="nes-input is-dark" value="J2" size="10" placeholder="Pseudo">
             </div>
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <label for="fontsize-j2" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-j2" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j2')">
+            </div>
+            <label>
+                <input type="checkbox" class="nes-checkbox is-dark" id="bold-j2" />
+                <span> En gras ?</span>
+            </label>
             <menu class="dialog-menu">
                 <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j2').style.display = 'none';">OK</button>
             </menu>
@@ -80,9 +92,13 @@
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-phase"><i class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-phase"><i class="material-icons rotate-right">crop_16_9</i></button>
             </div>
-            <div class="fontsize-player">
-                <label>Taille police (px) : </label>
-                <input class="" id="fontsize-phase" type="text" maxlength="3" value="44" oninput="setPhaseFont('phase')">
+            <div style="background-color:#212529; padding: 1rem; display: flex; align-items: center;" class="nes-field">
+                <label for="fontsize-phase" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-phase" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setPhaseFont('phase')">
+                <label>
+                    <input type="checkbox" class="nes-checkbox is-dark" id="bold-phase" />
+                    <span> En gras ?</span>
+                </label>
             </div>
             <div id="type_phase">
                 <div id="form_type_phase">
@@ -102,9 +118,13 @@
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-phase2"><i class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-phase2"><i class="material-icons rotate-right">crop_16_9</i></button>
             </div>
-            <div class="fontsize-player">
-                <label>Taille police (px) : </label>
-                <input class="" id="fontsize-phase2" type="text" maxlength="3" value="44" oninput="setPhaseFont('phase2')">
+            <div style="background-color:#212529; padding: 1rem; display: flex; align-items: center;" class="nes-field">
+                <label for="fontsize-phase2" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-phase2" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setPhaseFont('phase2')">
+                <label>
+                    <input type="checkbox" class="nes-checkbox is-dark" id="bold-phase2" />
+                    <span> En gras ?</span>
+                </label>
             </div>
             <div id="select_phase" class="center">
                 <div id="form_select_phase">

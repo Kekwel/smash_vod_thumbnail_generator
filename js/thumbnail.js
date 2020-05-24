@@ -81,6 +81,13 @@ function init(player) {
         this.focus();
         this.setSelectionRange(0, this.value.length)
     };
+    document.getElementById('bold-' + player).onchange = function () {
+        log(player + ' en gras ? ' + this.checked);
+        if (this.checked)
+            document.getElementById('name-' + player).style.fontWeight = 'bold';
+        else
+            document.getElementById('name-' + player).style.fontWeight = 'normal';
+    };
 
     /* rotate tag */
     document.getElementById('rotate-left-' + player).onclick = function () {
@@ -158,6 +165,22 @@ function initOther() {
         document.getElementById("phase2").classList.remove('rotate-phase-left');
         document.getElementById("phase2").classList.add('rotate-phase-right');
     }
+
+    /* bold */
+    document.getElementById('bold-phase').onchange = function () {
+        log('phase en gras ? ' + this.checked);
+        if (this.checked)
+            document.getElementById('phase').style.fontWeight = 'bold';
+        else
+            document.getElementById('phase').style.fontWeight = 'normal';
+    };
+    document.getElementById('bold-phase2').onchange = function () {
+        log('phase2 en gras ? ' + this.checked);
+        if (this.checked)
+            document.getElementById('phase2').style.fontWeight = 'bold';
+        else
+            document.getElementById('phase2').style.fontWeight = 'normal';
+    };
 
     /* listener changement de phase */
     document.getElementById('phase_visible').onclick = function () {
