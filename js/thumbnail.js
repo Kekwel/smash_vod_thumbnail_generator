@@ -17,6 +17,13 @@ window.onload = function () {
         previewAndLoadFont(fontname, custom);
     });
 
+    // TODO a deplacer
+    // init method last array
+    if (!Array.prototype.last) {
+        Array.prototype.last = function () {
+            return this[this.length - 1];
+        };
+    };
 
     init("j1");
     init("j2");
@@ -102,6 +109,9 @@ function init(player) {
         document.getElementById("banner-" + player).classList.remove('rotate-tag-left');
         document.getElementById("banner-" + player).classList.add('rotate-tag-right');
     }
+
+    /* random char */
+    randomChar(game, player, 'char1');
 }
 
 function initOther() {

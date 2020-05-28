@@ -387,23 +387,17 @@ function createCharacters(game, player, libChar) {
     bordure.appendChild(titreCostume);
     bordure.appendChild(colorDiv);
 
-    // TODO init perso
-    // TODO a revoir
     // select par defaut 
-    var rand = Math.floor(Math.random() * 5)
-    var rand2 = Math.floor(Math.random() * 5)
+    var char = document.getElementById(libChar + '-' + player);
+    var charName = char.src.split('_')[0].split('/').last();
+    charName = charName ? charName : 'mario';
+
     if (player == 'j1') {
-        //        var pngChar = getPngChar(game, player, pad(rand, 2), '0', 'donkey');
-        //        replaceImgChar(pngChar, libChar + '-' + player)
-
-        var sprites = getSprites(game, 'donkey');
-        initStocksColor(game, 'donkey', player, libChar, sprites);
+        var sprites = getSprites(game, charName);
+        initStocksColor(game, charName, player, libChar, sprites);
     } else {
-        //        var pngChar = getPngChar(game, player, pad(rand, 2), '0', 'mario');
-        //        replaceImgChar(pngChar, libChar + '-' + player);
-
-        var sprites = getSprites(game, 'mario');
-        initStocksColor(game, 'mario', player, libChar, sprites);
+        var sprites = getSprites(game, charName);
+        initStocksColor(game, charName, player, libChar, sprites);
     }
 }
 

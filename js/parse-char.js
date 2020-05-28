@@ -1,3 +1,14 @@
+function randomChar(game, player, libChar) {
+    // color random
+    var rand = Math.floor(Math.random() * 5);
+    // char random
+    var randRow = ult[Math.floor(Math.random() * Object.keys(ult).length)];
+    var randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
+
+    var pngChar = getPngChar(game, player, pad(rand, 2), '0', randChar);
+    replaceImgChar(pngChar, libChar + '-' + player);
+}
+
 function getSprites(game, charName) {
     // on recupere la variable dans sprites.json
     var sprites = window[game + '_' + charName];
@@ -32,13 +43,12 @@ function initStocksColor(game, charName, player, libChar, sprites) {
                 var pngChar = getPngChar(game, player, pad(j, 2), i, charName);
                 replaceImgChar(pngChar, libChar + '-' + player)
 
-                log('TODO set char to ' + player + ', ' + libChar);
+                log('set char to ' + player + ', ' + libChar);
             });
         })(j);
     })(i);
 
     // init 1ere stock selected
-    // TODO a revoir
     divColor.firstChild.firstChild.classList.add('selected')
 }
 
