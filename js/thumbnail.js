@@ -302,13 +302,13 @@ function changeName(tag, inputId) {
     document.getElementById(inputId).innerHTML = tag;
 }
 
-function resetBG(player) {
-    var bgplayer = document.getElementById('div-' + player)
+function resetBG(player, libChar) {
+    var bgplayer = document.getElementById('div-' + player + '-' + libChar);
     bgplayer.style.backgroundImage = ""
 }
 
-function setBackground(player, bgfile) {
-    var bgplayer = document.getElementById('div-' + player)
+function setBackground(player, numChar, bgfile) {
+    var bgplayer = document.getElementById('div-' + player + '-' + numChar)
 
     var file = document.getElementById(bgfile).files[0]; //sames as here
     var reader = new FileReader();
@@ -324,23 +324,23 @@ function setBackground(player, bgfile) {
     }
 }
 
-function toggleBackgroundSize(player) {
-    var bgplayer = document.getElementById('div-' + player)
+function toggleBackgroundSize(player, libChar) {
+    var bgplayer = document.getElementById('div-' + player + '-' + libChar);
     bgplayer.classList.toggle('bg-etendu')
 }
 
-function toggleRepeatBackground(player) {
-    var bgplayer = document.getElementById('div-' + player)
+function toggleRepeatBackground(player, libChar) {
+    var bgplayer = document.getElementById('div-' + player + '-' + libChar);
     bgplayer.classList.toggle('bg-no-repeat')
 }
 
 function setTagFont(player) {
-    var fontsize = document.getElementById('fontsize-' + player).value
-    document.getElementById('name-' + player).style.fontSize = fontsize + "px"
+    var fontsize = document.getElementById('fontsize-' + player).value;
+    document.getElementById('name-' + player).style.fontSize = fontsize + "px";
 }
 
 function setPhaseFont(phase) {
-    var fontsize = document.getElementById('fontsize-' + phase).value
+    var fontsize = document.getElementById('fontsize-' + phase).value;
     document.getElementById(phase + '-text').style.fontSize = fontsize + "px";
 }
 

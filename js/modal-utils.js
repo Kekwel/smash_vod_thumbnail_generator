@@ -80,9 +80,8 @@ function createFondColor(player, libChar) {
     var resetBtn = document.createElement('button');
     resetBtn.classList.add('nes-btn', 'is-warning', 'icons-only');
     resetBtn.addEventListener('click', function () {
-        // TODO
         log('reset background ' + player + ', ' + libChar);
-        // reset('j1')
+        resetBG(player, libChar);
     });
 
     var iconX = document.createElement('i');
@@ -129,10 +128,10 @@ function createFondColor(player, libChar) {
     // Upload background
     var uploadDiv = document.createElement('div');
     uploadDiv.classList.add('select_logos');
-    uploadDiv.id = 'select_bg_j1'; // TODO
+    uploadDiv.id = 'select_bg_' + player + '_' + libChar + '_file'; // TODO
 
     var choixImageLabel = document.createElement('label');
-    choixImageLabel.setAttribute('for', 'bg1_file');
+    choixImageLabel.setAttribute('for', 'bg_' + player + '_' + libChar + '_file');
     choixImageLabel.classList.add('label-upload');
 
     var iconPJ = document.createElement('i');
@@ -143,12 +142,11 @@ function createFondColor(player, libChar) {
     choixImageLabel.appendChild(document.createTextNode(' Ou choisir une image ...'));
 
     var inputBGFile = document.createElement('input');
-    inputBGFile.id = 'bg1_file'; // TODO
+    inputBGFile.id = 'bg_' + player + '_' + libChar + '_file';
     inputBGFile.setAttribute('type', 'file');
     inputBGFile.addEventListener('change', function () {
-        // TODO
         log('set custom background ' + player + ', ' + libChar);
-        // setBackground('j1', 'bg1_file')
+        setBackground(player, libChar, 'bg_' + player + '_' + libChar + '_file')
     });
     inputBGFile.setAttribute('accept', 'image/*');
 
@@ -166,9 +164,8 @@ function createFondColor(player, libChar) {
     inputExtend.setAttribute('type', 'checkbox');
     inputExtend.classList.add('nes-checkbox');
     inputExtend.addEventListener('change', function () {
-        // TODO
         log('toggle extend custom background ' + player + ', ' + libChar);
-        // toggleBackgroundSize('j1')
+        toggleBackgroundSize(player, libChar);
     });
 
     var spanExtend = document.createElement('span');
@@ -182,9 +179,8 @@ function createFondColor(player, libChar) {
     inputRepeat.setAttribute('type', 'checkbox');
     inputRepeat.classList.add('nes-checkbox');
     inputRepeat.addEventListener('change', function () {
-        // TODO
         log('toggle repeat custom background ' + player + ', ' + libChar);
-        // toggleRepeatBackground('j1')
+        toggleRepeatBackground(player, libChar);
     });
     inputRepeat.checked = true;
 
@@ -218,7 +214,7 @@ function createFondColor(player, libChar) {
 
 function createlabelColor(numColor, player, libChar) {
     var colorLabel = document.createElement('label');
-    colorLabel.classList.add('background-j1-' + numColor);
+    colorLabel.classList.add('background-' + player + '-' + numColor);
 
     var choix = document.createElement('input');
     choix.classList.add('nes-radio', 'is-dark');

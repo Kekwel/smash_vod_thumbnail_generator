@@ -113,8 +113,10 @@
     margin-left: 15%;
 }
 
-#bg1_file,
-#bg2_file {
+#bg_j1_char1_file,
+#bg_j1_char2_file,
+#bg_j2_char1_file,
+#bg_j2_char2_file {
     display: none;
 }
 
