@@ -2,7 +2,8 @@ function randomChar(game, player, libChar) {
     // color random
     var rand = Math.floor(Math.random() * 5);
     // char random
-    var randRow = ult[Math.floor(Math.random() * Object.keys(ult).length)];
+    var chars = getCharsGame(game);
+    var randRow = chars[Math.floor(Math.random() * Object.keys(chars).length)];
     var randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
 
     var pngChar = getPngChar(game, player, pad(rand, 2), '0', randChar);

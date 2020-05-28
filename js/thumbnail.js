@@ -120,11 +120,9 @@ function initOther() {
     games.onchange = function () {
         var game = this.value;
 
-        // -- set image CHAR
-        var pngCharJ1 = getPngChar(game, 'j1', '00', '0', 'fox');
-        replaceImgChar(pngCharJ1, 'char1-j1');
-        var pngCharJ2 = getPngChar(game, 'j2', '00', '0', 'marth');
-        replaceImgChar(pngCharJ2, 'char1-j2');
+        // -- set image CHAR RANDOM
+        randomChar(game, 'j1', 'char1');
+        randomChar(game, 'j2', 'char1');
 
         document.getElementById('char1-j1').onclick = function () {
             createModalChar(game, 'j1', 'char1');
