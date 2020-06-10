@@ -1,5 +1,4 @@
 .ult-stock {
-    /*    background-image: url(banjo.png);*/
     background-repeat: no-repeat;
     display: block;
     width: 64px;
@@ -7,13 +6,20 @@
 }
 
 .melee-stock {
-    /*    background-image: url(spritesheet.png);*/
     background-repeat: no-repeat;
     display: block;
     width: 64px;
     height: 64px;
 }
 
+.roa-stock {
+    background-repeat: no-repeat;
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+/* ULTIMATE */
 .ult-stock_00_0 {
     background-position: -5px -5px;
 }
@@ -93,4 +99,53 @@
 
 .melee-stock_05_1 {
     background-position: -375px -74px;
+}
+
+/* ROA */
+.roa-stock_00_0 {
+    background-position: 0px 0px;
+}
+
+.roa-stock_01_0 {
+    background-position: -60px 0px;
+}
+
+.roa-stock_02_0 {
+    background-position: -120px 0px;
+}
+
+.roa-stock_03_0 {
+    background-position: -180px 0px;
+}
+
+.roa-stock_04_0 {
+    background-position: -240px 0px;
+}
+
+.roa-stock_05_0 {
+    background-position: -300px 0px;
+}
+
+.roa-stock_00_1 {
+    background-position: 0px -60px;
+}
+
+.roa-stock_01_1 {
+    background-position: -60px -60px;
+}
+
+.roa-stock_02_1 {
+    background-position: -120px -60px;
+}
+
+.roa-stock_03_1 {
+    background-position: -180px -60px;
+}
+
+.roa-stock_04_1 {
+    background-position: -240px -60px;
+}
+
+.roa-stock_05_1 {
+    background-position: -300px -60px;
 }

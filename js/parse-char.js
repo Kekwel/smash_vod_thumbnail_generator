@@ -1,13 +1,24 @@
 function randomChar(game, player, libChar) {
     // color random
-    var rand = Math.floor(Math.random() * 5);
+    var rand = Math.floor(Math.random() * 4);
     // char random
     var chars = getCharsGame(game);
     var randRow = chars[Math.floor(Math.random() * Object.keys(chars).length)];
     var randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
 
+    // si 'reserved'
+    while (randChar === 'reserved') {
+        randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
+    }
+
+
     var pngChar = getPngChar(game, player, pad(rand, 2), '0', randChar);
     replaceImgChar(pngChar, libChar + '-' + player);
+
+    // reversed si J2
+    if (player === 'j2') {
+        document.getElementById('char1-j2').classList.add('reverse');
+    }
 }
 
 function getSprites(game, charName) {

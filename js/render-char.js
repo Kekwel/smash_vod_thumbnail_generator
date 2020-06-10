@@ -4,6 +4,8 @@ var BRAWL = 'brawl';
 var PM = 'PM';
 var WIIU = 'wiiu';
 var ULT = 'ult';
+// ---
+var ROA = 'roa';
 
 function getCharsGame(game) {
     var chars;
@@ -25,6 +27,9 @@ function getCharsGame(game) {
             break;
         case ULT:
             chars = ult;
+            break;
+        case ROA:
+            chars = roa;
             break;
         default:
     }
