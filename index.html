@@ -182,8 +182,9 @@
                     <option value="brawl" disabled>Super Smash Bros. Brawl</option>
                     <option value="n64" disabled>Super Smash Bros. 64</option>
                 </select>
-            </div><a href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter"><i class="nes-icon twitter"></i></a>
+            </div>
         </div>
+        <a href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter">Bug ? Suggestions ? MP sur <i class="nes-icon twitter"></i></a>
     </div>
     <div id="main">
         <div id="thumbnail" style="margin: auto;">
@@ -219,21 +220,23 @@
         <!--        <label id="fontSize"><input type="number" name="fontSize" min="1" max="100" value="44">px,</label>-->
         <label id="label_font" for="font">Police d'écriture</label>
         <section style="display: inline-block">
-            <button type="button" class="nes-btn is-primary icons-only" onclick="document.getElementById('dialog-dark').showModal();">
+            <button type="button" class="nes-btn is-primary icons-only" onclick="document.getElementById('dialog-font   ').style.display = 'block'">
                 <i class="material-icons" id="help_font">help_outline</i>
             </button>
-            <dialog class="nes-dialog is-dark" id="dialog-dark">
-                <form method="dialog">
-                    <!--                    <p class="title">Polices d'écritures</p>-->
-                    <p>Retrouvez les polices utilisées ici : </p>
-                    <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>
-                    <br>
-                    <p>Si la votre n'apparaît pas, <br>contactez moi et je pourrais l'ajouter !</p>
-                    <menu class="dialog-menu">
-                        <button class="nes-btn is-primary">Fermer</button>
-                    </menu>
-                </form>
-            </dialog>
+            <div class="nes-container is-dark with-title window" id="dialog-font" style="display: none">
+                <div class="bordure-container">
+                    <form method="dialog">
+                        <!--                    <p class="title">Polices d'écritures</p>-->
+                        <p>Retrouvez les polices utilisées ici : </p>
+                        <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>
+                        <br>
+                        <p>Si la votre n'apparaît pas, <br>contactez moi et je pourrais l'ajouter !</p>
+                        <menu class="dialog-menu">
+                            <button class="nes-btn is-primary" onclick="document.getElementById('dialog-font').style.display = 'none'">Fermer</button>
+                        </menu>
+                    </form>
+                </div>
+            </div>
         </section>
         <div class="nes-select" style="width: 50%; margin: auto; padding-bottom: 10px">
             <select required id="font_select" name="font">
