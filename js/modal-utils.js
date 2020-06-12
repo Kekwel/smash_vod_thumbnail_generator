@@ -411,9 +411,10 @@ function createDivChar(game, player) {
     mainDiv.classList.add('character', 'background-' + player + '-1', 'duo-bas');
     mainDiv.id = 'div-' + player + '-char2';
 
+    var randChar = randomCharName(game);
     var imgDiv = document.createElement('img');
     imgDiv.id = 'char2-' + player;
-    imgDiv.src = 'img/char/' + game + '/mario_00_0.png';
+    imgDiv.src = 'img/char/' + game + '/' + randChar + '_00_0.png';
 
     mainDiv.onclick = function () {
         createModalChar(game, player, 'char2');

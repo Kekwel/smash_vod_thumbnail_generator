@@ -1,6 +1,4 @@
-function randomChar(game, player, libChar) {
-    // color random
-    var rand = Math.floor(Math.random() * 4);
+function randomCharName(game) {
     // char random
     var chars = getCharsGame(game);
     var randRow = chars[Math.floor(Math.random() * Object.keys(chars).length)];
@@ -11,6 +9,13 @@ function randomChar(game, player, libChar) {
         randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
     }
 
+    return randChar;
+}
+
+function randomChar(game, player, libChar) {
+    var randChar = randomCharName(game);
+    // color random
+    var rand = Math.floor(Math.random() * 4);
 
     var pngChar = getPngChar(game, player, pad(rand, 2), '0', randChar);
     replaceImgChar(pngChar, libChar + '-' + player);
