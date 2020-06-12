@@ -63,6 +63,10 @@
     src: url('../fonts/futura_bold.otf') format('truetype');
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .dialog-j1 {
     top: 50%;
     left: 70%;
@@ -237,10 +241,11 @@
 #char2-j1:hover,
 #char-j2:hover,
 #char1-j2:hover,
-#char2-j2:hover {
+#char2-j2:hover,
+#versus span:hover {
     cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
-    -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
-    filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
+    -webkit-filter: drop-shadow(1px 1px 10px white) drop-shadow(-1px -1px 5px white);
+    filter: drop-shadow(1px 1px 10px white) drop-shadow(-1px -1px 5px white);
 }
 
 #banner-j1:hover,
@@ -248,8 +253,8 @@
 #phase:hover,
 #phase2:hover {
     cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
-    -webkit-filter: drop-shadow(0px 0px 5px black) drop-shadow(0px 0px 5px black);
-    filter: drop-shadow(0px 0px 5px black) drop-shadow(0px 0px 5px black);
+    -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
+    filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
 }
 
 #char-j1:hover.reverse,
@@ -258,8 +263,8 @@
 #char-j2:hover.reverse,
 #char1-j2:hover.reverse,
 #char2-j2:hover.reverse {
-    -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
-    filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
+    -webkit-filter: drop-shadow(1px 1px 10px white) drop-shadow(-1px -1px 5px white);
+    filter: drop-shadow(1px 1px 10px white) drop-shadow(-1px -1px 5px white);
 }
 
 /* z-index sur la grid */
@@ -301,7 +306,8 @@
 #fontsize-j1,
 #fontsize-j2,
 #fontsize-phase,
-#fontsize-phase2 {
+#fontsize-phase2,
+#versus-border-x-offset {
     width: 90px;
     margin: auto;
     text-align: center;
@@ -400,8 +406,21 @@
     grid-column-start: 1;
     grid-column-end: 3;
     z-index: 2;
-    text-shadow: 5px 5px 0px white, -5px -5px 0px white, -5px 5px 0px white, 5px -5px 0px white;
+    /*text-shadow: 5px 5px 0px white, -5px -5px 0px white, -5px 5px 0px white, 5px -5px 0px white;*/
+    text-shadow: 5px 5px 0px white;
     font-size: 5em;
+}
+
+#versus span {
+    pointer-events: all;
+}
+
+#dialog-versus {
+    top: 25%;
+}
+
+.no-border span {
+    text-shadow: none;
 }
 
 #dom-wrap-haut {

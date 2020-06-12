@@ -27,6 +27,31 @@
 
 <body>
     <!-- Dialogs -->
+    <!-- Edit VS -->
+    <div class="nes-container is-dark with-title window" id="dialog-versus" style="display: none">
+        <div class="bordure-container">
+            <p class="title-container">Versus : </p>
+            <div class="center">
+                <button class="nes-btn is-success" type="button" id="versus-visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i>
+                    <span>Invisible</span>
+                </button>
+            </div>
+            <div class="center">
+                <label><input type="checkbox" class="nes-checkbox is-dark" id="versus-bold" />
+                    <span> Gras ? </span>
+                </label>
+            </div>
+            <div class="center">
+                <label>
+                    <input type="checkbox" class="nes-checkbox is-dark" id="versus-border" checked />
+                    <span> Ombre ? </span>
+                </label>
+            </div>
+            <menu class="dialog-menu">
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-versus').style.display = 'none';">OK</button>
+            </menu>
+        </div>
+    </div>
     <!-- Edit tag J1 -->
     <div class="nes-container is-dark with-title window" id="dialog-tag-j1" style="display: none">
         <div class="bordure-container">
@@ -53,7 +78,7 @@
         </div>
     </div>
     <!-- Edit tag J2 -->
-    <dialog class="nes-container is-dark with-title window" id="dialog-tag-j2" style="display: none">
+    <div class="nes-container is-dark with-title window" id="dialog-tag-j2" style="display: none">
         <div class="bordure-container">
             <p class="title-container">Pseudo Joueur 2 : </p>
             <div class="buttons-rotate">
@@ -76,9 +101,9 @@
                 <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j2').style.display = 'none';">OK</button>
             </menu>
         </div>
-    </dialog>
+    </div>
     <!--    Edit phases-->
-    <dialog class="nes-container is-dark with-title window" id="dialog-phases" style="display: none">
+    <div class="nes-container is-dark with-title window" id="dialog-phases" style="display: none">
         <div class="bordure-container">
             <p class="title-container">Phase</p>
             <div class="center">
@@ -140,7 +165,7 @@
                 <button class="nes-btn is-success center" onclick="document.getElementById('dialog-phases').style.display = 'none';">OK</button>
             </menu>
         </div>
-    </dialog>
+    </div>
     <!-- TODO nouveau miis -->
     <!-- TODO FR / EN -->
     <div class="center margin-auto"><span id="menu-top" class="center margin-auto nes-text">VoDs Thumbnails Generator for </span>

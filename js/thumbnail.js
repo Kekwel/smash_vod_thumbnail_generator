@@ -144,8 +144,34 @@ function initOther() {
         }
     }
 
+    /* Versus */
+    document.getElementById('versus').onclick = function () {
+        document.getElementById('dialog-versus').style.display = 'block';
+    };
+    document.getElementById('versus-visible').onclick = function () {
+        if (!this.checked) {
+            document.getElementById('versus-visible').getElementsByClassName('material-icons')[0].innerHTML = 'visibility';
+            document.getElementById('versus-visible').getElementsByTagName('span')[0].innerHTML = 'Visible';
+
+            document.getElementById('versus').style.display = 'none';
+            this.checked = true;
+        } else {
+            document.getElementById('versus-visible').getElementsByClassName('material-icons')[0].innerHTML = 'visibility_off'
+            document.getElementById('versus-visible').getElementsByTagName('span')[0].innerHTML = 'Invisible';
+
+            document.getElementById('versus').style.display = '';
+            this.checked = false;
+        }
+    };
+    document.getElementById('versus-border').onclick = function () {
+        document.getElementById('versus').classList.toggle('no-border');
+    };
+    document.getElementById('versus-bold').onclick = function () {
+        document.getElementById('versus').classList.toggle('bold');
+    };
+
     document.getElementById('nb_round').onclick = function () {
-        this.setSelectionRange(0, this.value.length)
+        this.setSelectionRange(0, this.value.length);
     };
 
     /* rotate phase */
@@ -226,7 +252,12 @@ function initOther() {
 
         // on enleve le margin pour ne pas qu'il soit pris en compte
         node.style.margin = '';
-        domtoimage.toPng(node)
+
+        var options = {
+            width: 1280,
+            height: 720
+        };
+        domtoimage.toPng(node, options)
             .then(function (dataUrl) {
                 var player1 = document.getElementById('j1').value;
                 var player2 = document.getElementById('j2').value;
