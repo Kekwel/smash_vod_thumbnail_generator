@@ -20,10 +20,30 @@ function randomChar(game, player, libChar) {
     var pngChar = getPngChar(game, player, pad(rand, 2), '0', randChar);
     replaceImgChar(pngChar, libChar + '-' + player);
 
-    // reversed si J2
-    if (player === 'j2') {
-        document.getElementById('char1-j2').classList.add('reverse');
+    randomBG(player, libChar);
+
+    // CAS PARTICULIER
+    if (game !== 'ult') {
+        // reversed si J2
+        if (player === 'j2') {
+            document.getElementById('char1-j2').classList.add('reverse');
+        }
     }
+}
+
+function randomBG(player, libChar) {
+    var rand = Math.floor(Math.random() * 8) + 1;
+    log(rand)
+
+    var bg = document.getElementById('div-' + player + '-' + libChar);
+    for (var i = 0; i <= bg.classList.length; i++) {
+        if (bg.classList[i] && bg.classList[i].startsWith('background')) {
+            bg.classList.remove(bg.classList[i]);
+        }
+    }
+
+    var newBg = 'background-' + player + '-' + rand;
+    bg.classList.add(newBg);
 }
 
 function getSprites(game, charName) {
