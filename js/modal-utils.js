@@ -3,6 +3,36 @@ function showModalChar(player) {
 }
 
 var charDialog;
+var bordureContainer;
+
+function createModal(idDialog, player) {
+    // -- pour bordure containter
+    bordure = document.createElement('div');
+    bordure.classList.add('bordure-container');
+
+    charDialog = document.createElement('div');
+    charDialog.id = idDialog;
+    charDialog.classList.add('nes-container', 'is-dark', 'with-title', 'dialog-' + player);
+
+    var title = document.createElement('p');
+    title.classList.add('title-container');
+    title.appendChild(document.createTextNode(player))
+
+    bordure.appendChild(title);
+
+    charDialog.appendChild(bordure);
+    return charDialog;
+}
+
+function showModal(idDialog) {
+    log('modal déjà construite');
+    var x = document.getElementById(idDialog);
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
 
 /* player : 'j1' ou 'j2'
     libChar : 'char1', 'char2'
@@ -12,13 +42,10 @@ function createModalChar(game, player, libChar) {
 
     // si la modal existe déjà
     if (document.getElementById(idDialog)) {
-        log('modal déjà construite')
-        //        document.getElementById(idDialog).hidden = false;
-        document.getElementById(idDialog).showModal();
+        showModal(idDialog);
     } else {
-        charDialog = document.createElement('dialog');
-        charDialog.id = idDialog;
-        charDialog.classList.add('nes-dialog', 'is-dark', 'dialog-' + player);
+        charDialog = createModal(idDialog, player);
+        document.body.appendChild(charDialog);
 
         // Couleurs fond
         createFondColor(player, libChar);
@@ -37,19 +64,13 @@ function createModalChar(game, player, libChar) {
         okBtn.classList.add('nes-btn', 'is-success', 'center');
         okBtn.addEventListener('click', function () {
             log('hop hop on ferme');
-            // TODO recup la bonne dialog
-            //            charDialog.close();
-            document.getElementById(idDialog).close();
+            document.getElementById(idDialog).style.display = 'none';
         });
 
         // -- on ajoute le tout
         menu.appendChild(okBtn);
         divMenu.appendChild(menu);
-        charDialog.appendChild(divMenu);
-
-        // TODO
-        document.body.appendChild(charDialog);
-        charDialog.showModal();
+        bordure.appendChild(divMenu);
     }
 }
 
@@ -59,9 +80,8 @@ function createFondColor(player, libChar) {
     var resetBtn = document.createElement('button');
     resetBtn.classList.add('nes-btn', 'is-warning', 'icons-only');
     resetBtn.addEventListener('click', function () {
-        // TODO
         log('reset background ' + player + ', ' + libChar);
-        // reset('j1')
+        resetBG(player, libChar);
     });
 
     var iconX = document.createElement('i');
@@ -108,10 +128,10 @@ function createFondColor(player, libChar) {
     // Upload background
     var uploadDiv = document.createElement('div');
     uploadDiv.classList.add('select_logos');
-    uploadDiv.id = 'select_bg_j1'; // TODO
+    uploadDiv.id = 'select_bg_' + player + '_' + libChar + '_file'; // TODO
 
     var choixImageLabel = document.createElement('label');
-    choixImageLabel.setAttribute('for', 'bg1_file');
+    choixImageLabel.setAttribute('for', 'bg_' + player + '_' + libChar + '_file');
     choixImageLabel.classList.add('label-upload');
 
     var iconPJ = document.createElement('i');
@@ -122,12 +142,11 @@ function createFondColor(player, libChar) {
     choixImageLabel.appendChild(document.createTextNode(' Ou choisir une image ...'));
 
     var inputBGFile = document.createElement('input');
-    inputBGFile.id = 'bg1_file'; // TODO
+    inputBGFile.id = 'bg_' + player + '_' + libChar + '_file';
     inputBGFile.setAttribute('type', 'file');
     inputBGFile.addEventListener('change', function () {
-        // TODO
         log('set custom background ' + player + ', ' + libChar);
-        // setBackground('j1', 'bg1_file')
+        setBackground(player, libChar, 'bg_' + player + '_' + libChar + '_file')
     });
     inputBGFile.setAttribute('accept', 'image/*');
 
@@ -145,9 +164,8 @@ function createFondColor(player, libChar) {
     inputExtend.setAttribute('type', 'checkbox');
     inputExtend.classList.add('nes-checkbox');
     inputExtend.addEventListener('change', function () {
-        // TODO
         log('toggle extend custom background ' + player + ', ' + libChar);
-        // toggleBackgroundSize('j1')
+        toggleBackgroundSize(player, libChar);
     });
 
     var spanExtend = document.createElement('span');
@@ -161,9 +179,8 @@ function createFondColor(player, libChar) {
     inputRepeat.setAttribute('type', 'checkbox');
     inputRepeat.classList.add('nes-checkbox');
     inputRepeat.addEventListener('change', function () {
-        // TODO
         log('toggle repeat custom background ' + player + ', ' + libChar);
-        // toggleRepeatBackground('j1')
+        toggleRepeatBackground(player, libChar);
     });
     inputRepeat.checked = true;
 
@@ -191,13 +208,13 @@ function createFondColor(player, libChar) {
     formColor.appendChild(choixDiv);
     mainDiv.appendChild(formColor);
 
-    charDialog.appendChild(titreFond);
-    charDialog.appendChild(mainDiv);
+    bordure.appendChild(titreFond);
+    bordure.appendChild(mainDiv);
 }
 
 function createlabelColor(numColor, player, libChar) {
     var colorLabel = document.createElement('label');
-    colorLabel.classList.add('background-j1-' + numColor);
+    colorLabel.classList.add('background-' + player + '-' + numColor);
 
     var choix = document.createElement('input');
     choix.classList.add('nes-radio', 'is-dark');
@@ -349,7 +366,7 @@ function createCharacters(game, player, libChar) {
 
     var colorDiv = document.createElement('div');
     colorDiv.classList.add('panel-color', 'select-color');
-    colorDiv.id = 'color-char-' + player + '-' + libChar;
+    colorDiv.id = 'color-char-' + game + '-' + player + '-' + libChar;
 
     // -- on ajoute le tout
     plusBtn.appendChild(iconAdd);
@@ -364,31 +381,23 @@ function createCharacters(game, player, libChar) {
     divBtn.appendChild(moinsBtn);
     divBtn.appendChild(reverseBtn);
 
-    charDialog.appendChild(titre);
-    charDialog.appendChild(divBtn);
-    charDialog.appendChild(stockDiv);
-    charDialog.appendChild(titreCostume);
-    charDialog.appendChild(colorDiv);
+    bordure.appendChild(titre);
+    bordure.appendChild(divBtn);
+    bordure.appendChild(stockDiv);
+    bordure.appendChild(titreCostume);
+    bordure.appendChild(colorDiv);
 
-    // TODO init perso
-    // TODO a revoir
     // select par defaut 
-    var rand = Math.floor(Math.random() * 5)
-    var rand2 = Math.floor(Math.random() * 5)
+    var char = document.getElementById(libChar + '-' + player);
+    var charName = char.src.split('_')[0].split('/').last();
+    charName = charName ? charName : 'mario';
+
     if (player == 'j1') {
-        //        var pngChar = getPngChar(game, player, pad(rand, 2), '0', 'donkey');
-        //        replaceImgChar(pngChar, libChar + '-' + player)
-
-        var sprites = getSprites(game, 'donkey');
-        var stocksColor = document.getElementById('color-char-' + player + '-' + libChar);
-        initStocksColor(game, 'donkey', player, libChar, colorDiv, sprites);
+        var sprites = getSprites(game, charName);
+        initStocksColor(game, charName, player, libChar, sprites);
     } else {
-        //        var pngChar = getPngChar(game, player, pad(rand, 2), '0', 'mario');
-        //        replaceImgChar(pngChar, libChar + '-' + player);
-
-        var sprites = getSprites(game, 'mario');
-        var stocksColor = document.getElementById('color-char-' + player + '-' + libChar);
-        initStocksColor(game, 'mario', player, libChar, colorDiv, sprites);
+        var sprites = getSprites(game, charName);
+        initStocksColor(game, charName, player, libChar, sprites);
     }
 }
 
@@ -402,9 +411,10 @@ function createDivChar(game, player) {
     mainDiv.classList.add('character', 'background-' + player + '-1', 'duo-bas');
     mainDiv.id = 'div-' + player + '-char2';
 
+    var randChar = randomCharName(game);
     var imgDiv = document.createElement('img');
     imgDiv.id = 'char2-' + player;
-    imgDiv.src = 'img/char/' + game + '/mario_00_0.png';
+    imgDiv.src = 'img/char/' + game + '/' + randChar + '_00_0.png';
 
     mainDiv.onclick = function () {
         createModalChar(game, player, 'char2');

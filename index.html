@@ -27,48 +27,85 @@
 
 <body>
     <!-- Dialogs -->
+    <!-- Edit VS -->
+    <div class="nes-container is-dark with-title window" id="dialog-versus" style="display: none">
+        <div class="bordure-container">
+            <p class="title-container">Versus : </p>
+            <div class="center">
+                <button class="nes-btn is-success" type="button" id="versus-visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i>
+                    <span>Invisible</span>
+                </button>
+            </div>
+            <div class="center">
+                <label><input type="checkbox" class="nes-checkbox is-dark" id="versus-bold" />
+                    <span> Gras ? </span>
+                </label>
+            </div>
+            <div class="center">
+                <label>
+                    <input type="checkbox" class="nes-checkbox is-dark" id="versus-border" checked />
+                    <span> Ombre ? </span>
+                </label>
+            </div>
+            <menu class="dialog-menu">
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-versus').style.display = 'none';">OK</button>
+            </menu>
+        </div>
+    </div>
     <!-- Edit tag J1 -->
-    <dialog class="nes-dialog is-dark" id="dialog-tag-j1">
-        <form method="dialog">
-            <p>Pseudo Joueur 1 : </p>
+    <div class="nes-container is-dark with-title window" id="dialog-tag-j1" style="display: none">
+        <div class="bordure-container">
+            <p class="title-container">Pseudo Joueur 1 : </p>
             <div class="buttons-rotate">
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i class="material-icons rotate-left">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i class="material-icons rotate-right">crop_16_9</i></button>
             </div>
-            <input class="nes-input" id="j1" type="text" value="J1" size="10">
-            <div class="fontsize-player">
-                <label>Taille police (px) : </label>
-                <input class="nes-input" id="fontsize-j1" type="text" maxlength="3" value="44" oninput="setTagFont('j1')">
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <input type="text" id="j1" class="nes-input is-dark" value="J1" size="10" placeholder="Pseudo">
             </div>
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <label for="fontsize-j1" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-j1" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j1')">
+            </div>
+            <label>
+                <input type="checkbox" class="nes-checkbox is-dark" id="bold-j1" />
+                <span> En gras ?</span>
+            </label>
             <menu class="dialog-menu">
-                <button class="nes-btn is-success center">OK</button>
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j1').style.display = 'none';">OK</button>
             </menu>
-        </form>
-    </dialog>
+        </div>
+    </div>
     <!-- Edit tag J2 -->
-    <dialog class="nes-dialog is-dark" id="dialog-tag-j2">
-        <form method="dialog">
-            <p>Pseudo Joueur 2 : </p>
+    <div class="nes-container is-dark with-title window" id="dialog-tag-j2" style="display: none">
+        <div class="bordure-container">
+            <p class="title-container">Pseudo Joueur 2 : </p>
             <div class="buttons-rotate">
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i class="material-icons rotate-left">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i class="material-icons rotate-right">crop_16_9</i></button>
             </div>
-            <input class="nes-input" id="j2" type="text" value="J2">
-            <div class="fontsize-player">
-                <label>Taille police (px) : </label>
-                <input class="nes-input" id="fontsize-j2" type="text" maxlength="3" value="44" oninput="setTagFont('j2')">
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <input type="text" id="j2" class="nes-input is-dark" value="J2" size="10" placeholder="Pseudo">
             </div>
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <label for="fontsize-j2" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-j2" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j2')">
+            </div>
+            <label>
+                <input type="checkbox" class="nes-checkbox is-dark" id="bold-j2" />
+                <span> En gras ?</span>
+            </label>
             <menu class="dialog-menu">
-                <button class="nes-btn is-success center">OK</button>
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j2').style.display = 'none';">OK</button>
             </menu>
-        </form>
-    </dialog>
+        </div>
+    </div>
     <!--    Edit phases-->
-    <dialog class="nes-dialog is-dark" id="dialog-phases">
-        <form method="dialog">
-            <p>Phase</p>
+    <div class="nes-container is-dark with-title window" id="dialog-phases" style="display: none">
+        <div class="bordure-container">
+            <p class="title-container">Phase</p>
             <div class="center">
                 <button class="nes-btn is-success" type="button" id="phase_visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i>
                     <span>Invisible</span>
@@ -80,9 +117,13 @@
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-phase"><i class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-phase"><i class="material-icons rotate-right">crop_16_9</i></button>
             </div>
-            <div class="fontsize-player">
-                <label>Taille police (px) : </label>
-                <input class="" id="fontsize-phase" type="text" maxlength="3" value="44" oninput="setPhaseFont('phase')">
+            <div style="background-color:#212529; padding: 1rem; display: flex; align-items: center;" class="nes-field">
+                <label for="fontsize-phase" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-phase" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setPhaseFont('phase')">
+                <label>
+                    <input type="checkbox" class="nes-checkbox is-dark" id="bold-phase" />
+                    <span> En gras ?</span>
+                </label>
             </div>
             <div id="type_phase">
                 <div id="form_type_phase">
@@ -102,9 +143,13 @@
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-phase2"><i class="material-icons">crop_16_9</i></button>
                 <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-phase2"><i class="material-icons rotate-right">crop_16_9</i></button>
             </div>
-            <div class="fontsize-player">
-                <label>Taille police (px) : </label>
-                <input class="" id="fontsize-phase2" type="text" maxlength="3" value="44" oninput="setPhaseFont('phase2')">
+            <div style="background-color:#212529; padding: 1rem; display: flex; align-items: center;" class="nes-field">
+                <label for="fontsize-phase2" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-phase2" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setPhaseFont('phase2')">
+                <label>
+                    <input type="checkbox" class="nes-checkbox is-dark" id="bold-phase2" />
+                    <span> En gras ?</span>
+                </label>
             </div>
             <div id="select_phase" class="center">
                 <div id="form_select_phase">
@@ -117,10 +162,10 @@
                 </div>
             </div>
             <menu class="dialog-menu">
-                <button class="nes-btn is-success center">OK</button>
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-phases').style.display = 'none';">OK</button>
             </menu>
-        </form>
-    </dialog>
+        </div>
+    </div>
     <!-- TODO nouveau miis -->
     <!-- TODO FR / EN -->
     <div class="center margin-auto"><span id="menu-top" class="center margin-auto nes-text">VoDs Thumbnails Generator for </span>
@@ -130,13 +175,16 @@
                     <option value="melee">Super Smash Bros. Melee</option>
                     <option value="ult" selected>Super Smash Bros. Ultimate</option>
                     <option value="" disabled> ----- </option>
+                    <option value="roa">Rivals of Aether</option>
+                    <option value="" disabled> ----- </option>
                     <option value="wiiu" disabled>Super Smash Bros. for Wii U</option>
                     <option value="PM" disabled>Project M</option>
                     <option value="brawl" disabled>Super Smash Bros. Brawl</option>
                     <option value="n64" disabled>Super Smash Bros. 64</option>
                 </select>
-            </div><a href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter"><i class="nes-icon twitter"></i></a>
+            </div>
         </div>
+        <a href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter">Bug ? Suggestions ? MP sur <i class="nes-icon twitter"></i></a>
     </div>
     <div id="main">
         <div id="thumbnail" style="margin: auto;">
@@ -148,10 +196,10 @@
                 <div class="banner rotate-tag-left" id="banner-j2"><span class="nes-text" id="name-j2">J2</span></div>
             </section>
             <div class="character background-j1-1 solo" id="div-j1-char1">
-                <img id="char1-j1" class="" src="img/char/ult/rob_00_0.png">
+                <img id="char1-j1" class="" src="">
             </div>
             <div class="character background-j2-2 solo" id="div-j2-char1">
-                <img id="char1-j2" class="" src="img/char/ult/mario_00_0.png">
+                <img id="char1-j2" class="" src="">
             </div>
             <div class="banner rotate-phase-left" id="phase"><span class="nes-text" id="phase-text">Winners</span></div>
             <div class="banner rotate-phase-left" id="phase2"><span class="nes-text" id="phase2-text">Round 1</span></div>
@@ -172,21 +220,23 @@
         <!--        <label id="fontSize"><input type="number" name="fontSize" min="1" max="100" value="44">px,</label>-->
         <label id="label_font" for="font">Police d'écriture</label>
         <section style="display: inline-block">
-            <button type="button" class="nes-btn is-primary icons-only" onclick="document.getElementById('dialog-dark').showModal();">
+            <button type="button" class="nes-btn is-primary icons-only" onclick="document.getElementById('dialog-font   ').style.display = 'block'">
                 <i class="material-icons" id="help_font">help_outline</i>
             </button>
-            <dialog class="nes-dialog is-dark" id="dialog-dark">
-                <form method="dialog">
-                    <!--                    <p class="title">Polices d'écritures</p>-->
-                    <p>Retrouvez les polices utilisées ici : </p>
-                    <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>
-                    <br>
-                    <p>Si la votre n'apparaît pas, <br>contactez moi et je pourrais l'ajouter !</p>
-                    <menu class="dialog-menu">
-                        <button class="nes-btn is-primary">Fermer</button>
-                    </menu>
-                </form>
-            </dialog>
+            <div class="nes-container is-dark with-title window" id="dialog-font" style="display: none">
+                <div class="bordure-container">
+                    <form method="dialog">
+                        <!--                    <p class="title">Polices d'écritures</p>-->
+                        <p>Retrouvez les polices utilisées ici : </p>
+                        <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>
+                        <br>
+                        <p>Si la votre n'apparaît pas, <br>contactez moi et je pourrais l'ajouter !</p>
+                        <menu class="dialog-menu">
+                            <button class="nes-btn is-primary" onclick="document.getElementById('dialog-font').style.display = 'none'">Fermer</button>
+                        </menu>
+                    </form>
+                </div>
+            </div>
         </section>
         <div class="nes-select" style="width: 50%; margin: auto; padding-bottom: 10px">
             <select required id="font_select" name="font">

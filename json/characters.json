@@ -43,3 +43,9 @@ pm = {
     3: ["lucas", "ness", "pit", "kirby", "metaknight", "dedede", "ike", "marth", "roy"],
     4: ["pikmin", "rob", "gamewatch", "snake", "sonic"]
 }
+
+// --
+roa = {
+    0: ["clairen", "forsburn", "zetterburn", "reserved", "reserved", "wrastor", "absa", "elliana"],
+    1: ["sylvanos", "maypul", "kragg", "ori", "shovelknight", "orcane", "etalus", "ranno"]
+}

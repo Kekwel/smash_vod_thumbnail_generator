@@ -9,3 +9,9 @@ melee_donkey = melee_ganondorf = melee_jigglypuff = melee_link = melee_mario = m
 
 // -- 2 lignes, 6 éléments
 melee_captain = melee_kirby = melee_yoshi = [[{}, {}, {}, {}, {}, {}], [{}, {}, {}, {}, {}, {}]]
+
+// -- RoA, 2 lignes, 6, 4 et 4 éléments , pour le moment
+// roa_absa = roa_clairen = roa_elliana = roa_etalus = roa_forsburn = roa_kragg = roa_maypul = roa_orcane = roa_ori = roa_ranno = roa_shovelknight = roa_sylvanos = roa_wrastor = roa_zetterburn = [[{}, {}, {}, {}, {}, {}], [{}, {}, {}, {}], [{}, {}, {}, {}]]
+
+// -- RoA, 1 lignes, 6 éléments
+roa_absa = roa_clairen = roa_elliana = roa_etalus = roa_forsburn = roa_kragg = roa_maypul = roa_orcane = roa_ori = roa_ranno = roa_shovelknight = roa_sylvanos = roa_wrastor = roa_zetterburn = [[{}, {}, {}, {}, {}, {}]]

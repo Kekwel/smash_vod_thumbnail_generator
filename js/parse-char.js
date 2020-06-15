@@ -1,10 +1,60 @@
+function randomCharName(game) {
+    // char random
+    var chars = getCharsGame(game);
+    var randRow = chars[Math.floor(Math.random() * Object.keys(chars).length)];
+    var randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
+
+    // si 'reserved'
+    while (randChar === 'reserved') {
+        randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
+    }
+
+    return randChar;
+}
+
+function randomChar(game, player, libChar) {
+    var randChar = randomCharName(game);
+    // color random
+    var rand = Math.floor(Math.random() * 4);
+
+    var pngChar = getPngChar(game, player, pad(rand, 2), '0', randChar);
+    replaceImgChar(pngChar, libChar + '-' + player);
+
+    randomBG(player, libChar);
+
+    // CAS PARTICULIER
+    if (game !== 'ult') {
+        // reversed si J2
+        if (player === 'j2') {
+            document.getElementById('char1-j2').classList.add('reverse');
+        }
+    }
+}
+
+function randomBG(player, libChar) {
+    var rand = Math.floor(Math.random() * 8) + 1;
+    log(rand)
+
+    var bg = document.getElementById('div-' + player + '-' + libChar);
+    for (var i = 0; i <= bg.classList.length; i++) {
+        if (bg.classList[i] && bg.classList[i].startsWith('background')) {
+            bg.classList.remove(bg.classList[i]);
+        }
+    }
+
+    var newBg = 'background-' + player + '-' + rand;
+    bg.classList.add(newBg);
+}
+
 function getSprites(game, charName) {
     // on recupere la variable dans sprites.json
     var sprites = window[game + '_' + charName];
     return sprites;
 }
 
-function initStocksColor(game, charName, player, libChar, divColor, sprites) {
+function initStocksColor(game, charName, player, libChar, sprites) {
+    var divColor = document.getElementById('color-char-' + game + '-' + player + '-' + libChar);
+
     while (divColor.firstChild) {
         divColor.removeChild(divColor.firstChild);
     }
@@ -30,13 +80,12 @@ function initStocksColor(game, charName, player, libChar, divColor, sprites) {
                 var pngChar = getPngChar(game, player, pad(j, 2), i, charName);
                 replaceImgChar(pngChar, libChar + '-' + player)
 
-                log('TODO set char to ' + player + ', ' + libChar);
+                log('set char to ' + player + ', ' + libChar);
             });
         })(j);
     })(i);
 
     // init 1ere stock selected
-    // TODO a revoir
     divColor.firstChild.firstChild.classList.add('selected')
 }
 

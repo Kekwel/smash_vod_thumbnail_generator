@@ -4,6 +4,8 @@ var BRAWL = 'brawl';
 var PM = 'PM';
 var WIIU = 'wiiu';
 var ULT = 'ult';
+// ---
+var ROA = 'roa';
 
 function getCharsGame(game) {
     var chars;
@@ -25,6 +27,9 @@ function getCharsGame(game) {
             break;
         case ULT:
             chars = ult;
+            break;
+        case ROA:
+            chars = roa;
             break;
         default:
     }
@@ -59,9 +64,8 @@ function createStockGrid(game, player, libChar) {
                 replaceImgChar(pngChar, libChar + '-' + player)
 
                 // -- set image COSTUMES
-                var sprites = getSprites(game, charName);
-                var stocksColor = document.getElementById('color-char-' + player + '-' + libChar);
-                initStocksColor(game, charName, player, libChar, stocksColor, sprites);
+                var sprites = getSprites(game, charName)
+                initStocksColor(game, charName, player, libChar, sprites);
             });
         }
         stockDiv.append(rowHTML);

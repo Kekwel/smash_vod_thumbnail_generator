@@ -63,6 +63,49 @@
     src: url('../fonts/futura_bold.otf') format('truetype');
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.dialog-j1 {
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.dialog-j2 {
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.window {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dialog-j1,
+.dialog-j2,
+.window {
+    padding: 0 !important;
+    position: fixed !important;
+    z-index: 10;
+}
+
+.bordure-container {
+    border-style: solid;
+    border-width: 4px;
+    border-color: white;
+    padding: 0.5em;
+}
+
+.title-container {
+    display: table;
+    padding: 0 .5rem;
+    margin: -1.25rem 0 1rem !important;
+    background-color: #212529;
+}
 
 #dialog-char-j1,
 .dialog-j1 {
@@ -74,8 +117,10 @@
     margin-left: 15%;
 }
 
-#bg1_file,
-#bg2_file {
+#bg_j1_char1_file,
+#bg_j1_char2_file,
+#bg_j2_char1_file,
+#bg_j2_char2_file {
     display: none;
 }
 
@@ -167,6 +212,8 @@
 .character > img {
     width: 100%;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 #char1-j1,
@@ -194,10 +241,11 @@
 #char2-j1:hover,
 #char-j2:hover,
 #char1-j2:hover,
-#char2-j2:hover {
+#char2-j2:hover,
+#versus span:hover {
     cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
-    -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
-    filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
+    -webkit-filter: drop-shadow(1px 1px 10px white) drop-shadow(-1px -1px 5px white);
+    filter: drop-shadow(1px 1px 10px white) drop-shadow(-1px -1px 5px white);
 }
 
 #banner-j1:hover,
@@ -205,8 +253,8 @@
 #phase:hover,
 #phase2:hover {
     cursor: url(../img/mouse/cursor-click.png) 14 0, pointer;
-    -webkit-filter: drop-shadow(0px 0px 5px black) drop-shadow(0px 0px 5px black);
-    filter: drop-shadow(0px 0px 5px black) drop-shadow(0px 0px 5px black);
+    -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
+    filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
 }
 
 #char-j1:hover.reverse,
@@ -215,8 +263,8 @@
 #char-j2:hover.reverse,
 #char1-j2:hover.reverse,
 #char2-j2:hover.reverse {
-    -webkit-filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
-    filter: drop-shadow(1px 1px 10px black) drop-shadow(-1px -1px 5px black);
+    -webkit-filter: drop-shadow(1px 1px 10px white) drop-shadow(-1px -1px 5px white);
+    filter: drop-shadow(1px 1px 10px white) drop-shadow(-1px -1px 5px white);
 }
 
 /* z-index sur la grid */
@@ -258,8 +306,11 @@
 #fontsize-j1,
 #fontsize-j2,
 #fontsize-phase,
-#fontsize-phase2 {
+#fontsize-phase2,
+#versus-border-x-offset {
     width: 90px;
+    margin: auto;
+    text-align: center;
 }
 
 .buttons-rotate {
@@ -355,8 +406,21 @@
     grid-column-start: 1;
     grid-column-end: 3;
     z-index: 2;
-    text-shadow: 5px 5px 0px white, -5px -5px 0px white, -5px 5px 0px white, 5px -5px 0px white;
+    /*text-shadow: 5px 5px 0px white, -5px -5px 0px white, -5px 5px 0px white, 5px -5px 0px white;*/
+    text-shadow: 5px 5px 0px white;
     font-size: 5em;
+}
+
+#versus span {
+    pointer-events: all;
+}
+
+#dialog-versus {
+    top: 25%;
+}
+
+.no-border span {
+    text-shadow: none;
 }
 
 #dom-wrap-haut {
@@ -510,7 +574,7 @@
 #color-background-j1,
 #color-background-j2,
 .center {
-    text-align: center;
+    text-align: center !important;
 }
 
 #color-background-j1,

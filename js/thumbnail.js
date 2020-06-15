@@ -17,6 +17,13 @@ window.onload = function () {
         previewAndLoadFont(fontname, custom);
     });
 
+    // TODO a deplacer
+    // init method last array
+    if (!Array.prototype.last) {
+        Array.prototype.last = function () {
+            return this[this.length - 1];
+        };
+    };
 
     init("j1");
     init("j2");
@@ -55,7 +62,7 @@ function init(player) {
     var game = games.value;
 
     banner.onclick = function () {
-        document.getElementById('dialog-tag-' + player).showModal();
+        document.getElementById('dialog-tag-' + player).style.display = 'block';
         document.getElementById(player).click();
     };
 
@@ -81,6 +88,13 @@ function init(player) {
         this.focus();
         this.setSelectionRange(0, this.value.length)
     };
+    document.getElementById('bold-' + player).onchange = function () {
+        log(player + ' en gras ? ' + this.checked);
+        if (this.checked)
+            document.getElementById('name-' + player).style.fontWeight = 'bold';
+        else
+            document.getElementById('name-' + player).style.fontWeight = 'normal';
+    };
 
     /* rotate tag */
     document.getElementById('rotate-left-' + player).onclick = function () {
@@ -95,6 +109,9 @@ function init(player) {
         document.getElementById("banner-" + player).classList.remove('rotate-tag-left');
         document.getElementById("banner-" + player).classList.add('rotate-tag-right');
     }
+
+    /* random char */
+    randomChar(game, player, 'char1');
 }
 
 function initOther() {
@@ -103,11 +120,9 @@ function initOther() {
     games.onchange = function () {
         var game = this.value;
 
-        // -- set image CHAR
-        var pngCharJ1 = getPngChar(game, 'j1', '00', '0', 'fox');
-        replaceImgChar(pngCharJ1, 'char1-j1');
-        var pngCharJ2 = getPngChar(game, 'j2', '00', '0', 'marth');
-        replaceImgChar(pngCharJ2, 'char1-j2');
+        // -- set image CHAR RANDOM
+        randomChar(game, 'j1', 'char1');
+        randomChar(game, 'j2', 'char1');
 
         document.getElementById('char1-j1').onclick = function () {
             createModalChar(game, 'j1', 'char1');
@@ -129,8 +144,34 @@ function initOther() {
         }
     }
 
+    /* Versus */
+    document.getElementById('versus').onclick = function () {
+        document.getElementById('dialog-versus').style.display = 'block';
+    };
+    document.getElementById('versus-visible').onclick = function () {
+        if (!this.checked) {
+            document.getElementById('versus-visible').getElementsByClassName('material-icons')[0].innerHTML = 'visibility';
+            document.getElementById('versus-visible').getElementsByTagName('span')[0].innerHTML = 'Visible';
+
+            document.getElementById('versus').style.display = 'none';
+            this.checked = true;
+        } else {
+            document.getElementById('versus-visible').getElementsByClassName('material-icons')[0].innerHTML = 'visibility_off'
+            document.getElementById('versus-visible').getElementsByTagName('span')[0].innerHTML = 'Invisible';
+
+            document.getElementById('versus').style.display = '';
+            this.checked = false;
+        }
+    };
+    document.getElementById('versus-border').onclick = function () {
+        document.getElementById('versus').classList.toggle('no-border');
+    };
+    document.getElementById('versus-bold').onclick = function () {
+        document.getElementById('versus').classList.toggle('bold');
+    };
+
     document.getElementById('nb_round').onclick = function () {
-        this.setSelectionRange(0, this.value.length)
+        this.setSelectionRange(0, this.value.length);
     };
 
     /* rotate phase */
@@ -158,6 +199,22 @@ function initOther() {
         document.getElementById("phase2").classList.remove('rotate-phase-left');
         document.getElementById("phase2").classList.add('rotate-phase-right');
     }
+
+    /* bold */
+    document.getElementById('bold-phase').onchange = function () {
+        log('phase en gras ? ' + this.checked);
+        if (this.checked)
+            document.getElementById('phase').style.fontWeight = 'bold';
+        else
+            document.getElementById('phase').style.fontWeight = 'normal';
+    };
+    document.getElementById('bold-phase2').onchange = function () {
+        log('phase2 en gras ? ' + this.checked);
+        if (this.checked)
+            document.getElementById('phase2').style.fontWeight = 'bold';
+        else
+            document.getElementById('phase2').style.fontWeight = 'normal';
+    };
 
     /* listener changement de phase */
     document.getElementById('phase_visible').onclick = function () {
@@ -195,7 +252,12 @@ function initOther() {
 
         // on enleve le margin pour ne pas qu'il soit pris en compte
         node.style.margin = '';
-        domtoimage.toPng(node)
+
+        var options = {
+            width: 1280,
+            height: 720
+        };
+        domtoimage.toPng(node, options)
             .then(function (dataUrl) {
                 var player1 = document.getElementById('j1').value;
                 var player2 = document.getElementById('j2').value;
@@ -271,7 +333,7 @@ function setPhaseListener(nameForm, nameElem, idPhase) {
 
     // -- open dialog on click
     document.getElementById(idPhase).onclick = function () {
-        document.getElementById('dialog-phases').showModal();
+        document.getElementById('dialog-phases').style.display = 'block';
     };
 }
 
@@ -279,13 +341,13 @@ function changeName(tag, inputId) {
     document.getElementById(inputId).innerHTML = tag;
 }
 
-function resetBG(player) {
-    var bgplayer = document.getElementById('div-' + player)
+function resetBG(player, libChar) {
+    var bgplayer = document.getElementById('div-' + player + '-' + libChar);
     bgplayer.style.backgroundImage = ""
 }
 
-function setBackground(player, bgfile) {
-    var bgplayer = document.getElementById('div-' + player)
+function setBackground(player, numChar, bgfile) {
+    var bgplayer = document.getElementById('div-' + player + '-' + numChar)
 
     var file = document.getElementById(bgfile).files[0]; //sames as here
     var reader = new FileReader();
@@ -301,23 +363,23 @@ function setBackground(player, bgfile) {
     }
 }
 
-function toggleBackgroundSize(player) {
-    var bgplayer = document.getElementById('div-' + player)
+function toggleBackgroundSize(player, libChar) {
+    var bgplayer = document.getElementById('div-' + player + '-' + libChar);
     bgplayer.classList.toggle('bg-etendu')
 }
 
-function toggleRepeatBackground(player) {
-    var bgplayer = document.getElementById('div-' + player)
+function toggleRepeatBackground(player, libChar) {
+    var bgplayer = document.getElementById('div-' + player + '-' + libChar);
     bgplayer.classList.toggle('bg-no-repeat')
 }
 
 function setTagFont(player) {
-    var fontsize = document.getElementById('fontsize-' + player).value
-    document.getElementById('name-' + player).style.fontSize = fontsize + "px"
+    var fontsize = document.getElementById('fontsize-' + player).value;
+    document.getElementById('name-' + player).style.fontSize = fontsize + "px";
 }
 
 function setPhaseFont(phase) {
-    var fontsize = document.getElementById('fontsize-' + phase).value
+    var fontsize = document.getElementById('fontsize-' + phase).value;
     document.getElementById(phase + '-text').style.fontSize = fontsize + "px";
 }
 
