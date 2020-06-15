@@ -671,3 +671,7 @@
     position: absolute;
     bottom: 15%;
 }
+
+.credits {
+    margin-right: 1em !important;
+}

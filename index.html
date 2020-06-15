@@ -27,6 +27,21 @@
 
 <body>
     <!-- Dialogs -->
+    <!-- Credits -->
+    <div class="nes-container is-dark with-title window" id="dialog-credits" style="display: none;">
+        <div class="bordure-container">
+            <p class="title-container">Credits : </p>
+            <div>
+                <p>Resources : </p>
+                <!--                TODO List-->
+                <a class="" href="https://www.spriters-resource.com/nintendo_switch/supersmashbrosultimate/">Renders Smash Ultimate</a>
+                <br>
+                <a class="" href="https://drive.google.com/drive/folders/1SMjNgynt7c-VdKJJ9_wTcKSasS2NcVSF">Renders RoA</a>
+                <!--                TODO FONTS-->
+            </div>
+            <button class="nes-btn" onclick="document.getElementById('dialog-credits').style.display = 'none'">Ok</button>
+        </div>
+    </div>
     <!-- Edit VS -->
     <div class="nes-container is-dark with-title window" id="dialog-versus" style="display: none">
         <div class="bordure-container">
@@ -183,6 +198,7 @@
                     <option value="n64" disabled>Super Smash Bros. 64</option>
                 </select>
             </div>
+            <button class="credits nes-btn is-warning" href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter" onclick="document.getElementById('dialog-credits').style.display = 'block'">?</button>
         </div>
         <a href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter">Bug ? Suggestions ? MP sur <i class="nes-icon twitter"></i></a>
     </div>
