@@ -278,10 +278,10 @@ function initOther() {
 }
 
 function showHelp(param) {
-    console.log('help_' + param);
+    log('help_' + param);
     // TODO
     if ('font' == param) {
-        console.log("pouet")
+        log("pouet")
     }
 }
 

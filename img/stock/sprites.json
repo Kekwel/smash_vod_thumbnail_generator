@@ -15,3 +15,7 @@ melee_captain = melee_kirby = melee_yoshi = [[{}, {}, {}, {}, {}, {}], [{}, {}, 
 
 // -- RoA, 1 lignes, 6 éléments
 roa_absa = roa_clairen = roa_elliana = roa_etalus = roa_forsburn = roa_kragg = roa_maypul = roa_orcane = roa_ori = roa_ranno = roa_shovelknight = roa_sylvanos = roa_wrastor = roa_zetterburn = [[{}, {}, {}, {}, {}, {}]]
+
+// -- PM, 3 lignes, 5 élements
+// TODO knucles, wario
+pplus_bowser = pplus_captain = pplus_charizard = pplus_dedede = pplus_diddy = pplus_donkey = pplus_falco = pplus_fox = pplus_gamewatch = pplus_ganondorf = pplus_ice = pplus_ike = pplus_icysaur = pplus_jigglypuff = pplus_kirby = pplus_knuckles = pplus_link = pplus_lucario = pplus_lucas = pplus_luigi = pplus_mario = pplus_marth = pplus_metaknight = pplus_mewtwo = pplus_ness = pplus_peach = pplus_pikachu = pplus_pikmin = pplus_pit = pplus_rob = pplus_roy = pplus_samus = pplus_sheik = pplus_snake = pplus_sonic = pplus_squirtle = pplus_szerosuit = pplus_toonlink = pplus_wario = pplus_wolf = pplus_yoshi = pplus_zelda = [[{}, {}, {}, {}, {}], [{}, {}, {}, {}, {}], [{}, {}, {}, {}, {}]]

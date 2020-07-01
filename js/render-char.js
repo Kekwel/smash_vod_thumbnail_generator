@@ -2,6 +2,7 @@ var N64 = 'n64';
 var MELEE = 'melee';
 var BRAWL = 'brawl';
 var PM = 'PM';
+var PPLUS = 'pplus';
 var WIIU = 'wiiu';
 var ULT = 'ult';
 // ---
@@ -21,6 +22,9 @@ function getCharsGame(game) {
             break;
         case PM:
             chars = pm;
+            break;
+        case PPLUS:
+            chars = pplus;
             break;
         case WIIU:
             chars = wiiu;

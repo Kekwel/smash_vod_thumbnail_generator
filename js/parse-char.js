@@ -33,7 +33,6 @@ function randomChar(game, player, libChar) {
 
 function randomBG(player, libChar) {
     var rand = Math.floor(Math.random() * 8) + 1;
-    log(rand)
 
     var bg = document.getElementById('div-' + player + '-' + libChar);
     for (var i = 0; i <= bg.classList.length; i++) {
