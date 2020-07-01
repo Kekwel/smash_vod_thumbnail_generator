@@ -16,7 +16,7 @@ function createModal(idDialog, player) {
 
     var title = document.createElement('p');
     title.classList.add('title-container');
-    title.appendChild(document.createTextNode(player))
+    title.appendChild(document.createTextNode(player));
 
     bordure.appendChild(title);
 

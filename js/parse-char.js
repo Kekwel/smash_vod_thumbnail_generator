@@ -48,6 +48,7 @@ function randomBG(player, libChar) {
 
 function getSprites(game, charName) {
     // on recupere la variable dans sprites.json
+    log('load ' + game + '_' + charName)
     var sprites = window[game + '_' + charName];
     return sprites;
 }
