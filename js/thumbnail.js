@@ -363,6 +363,23 @@ function setBackground(player, numChar, bgfile) {
     }
 }
 
+function setCustomChar(player, libChar) {
+    var char = document.getElementById(libChar + '-' + player);
+
+    var file = document.getElementById('custom_' + player + '_' + libChar + '_file').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+        char.src = reader.result;
+    }
+
+    if (file) {
+        reader.readAsDataURL(file); //reads the data as a URL
+    } else {
+        alert("Impossible d'importer ce fichier")
+    }
+}
+
 function toggleBackgroundSize(player, libChar) {
     var bgplayer = document.getElementById('div-' + player + '-' + libChar);
     bgplayer.classList.toggle('bg-etendu')
