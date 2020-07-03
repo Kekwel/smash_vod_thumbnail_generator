@@ -217,15 +217,27 @@
 }
 
 #char1-j1,
-#char2-j1,
+#char2-j1 {
+    filter: drop-shadow(-10px 10px 3px black);
+}
+
 #char1-j2,
 #char2-j2 {
-    filter: drop-shadow(-1px 0px 0px black) drop-shadow(1px 0px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px 1px 0px black);
+    filter: drop-shadow(10px 10px 3px black);
+}
+
+.reverse#char1-j1,
+.reverse#char2-j1 {
+    filter: drop-shadow(10px 10px 3px black);
+}
+
+.reverse#char1-j2,
+.reverse#char2-j2 {
+    filter: drop-shadow(-10px 10px 3px black);
 }
 
 #char-j1,
 #char-j2 {
-    filter: drop-shadow(-1px 0px 0px black) drop-shadow(1px 0px 0px black) drop-shadow(-1px -1px 0px black) drop-shadow(1px 1px 0px black);
     margin-top: 80px;
 }
 
