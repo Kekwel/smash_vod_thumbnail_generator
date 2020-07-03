@@ -12,6 +12,13 @@
     height: 64px;
 }
 
+.pplus-stock {
+    background-repeat: no-repeat;
+    display: block;
+    width: 64px;
+    height: 64px;
+}
+
 .roa-stock {
     background-repeat: no-repeat;
     display: block;
@@ -99,6 +106,79 @@
 
 .melee-stock_05_1 {
     background-position: -375px -74px;
+}
+
+/* P+ */
+.pplus-stock_00_0 {
+    background-position: 0px 0px;
+}
+
+.pplus-stock_01_0 {
+    background-position: -64px 0px;
+}
+
+.pplus-stock_02_0 {
+    background-position: -128px 0px;
+}
+
+.pplus-stock_03_0 {
+    background-position: -192px 0px;
+}
+
+.pplus-stock_04_0 {
+    background-position: -256px 0px;
+}
+
+.pplus-stock_05_0 {
+    background-position: -320px 0px;
+}
+
+.pplus-stock_00_1 {
+    background-position: 0px -64px;
+}
+
+.pplus-stock_01_1 {
+    background-position: -64px -64px;
+}
+
+.pplus-stock_02_1 {
+    background-position: -128px -64px;
+}
+
+.pplus-stock_03_1 {
+    background-position: -192px -64px;
+}
+
+.pplus-stock_04_1 {
+    background-position: -256px -64px;
+}
+
+.pplus-stock_05_1 {
+    background-position: -320px -64px;
+}
+
+.pplus-stock_00_2 {
+    background-position: 0px -128px;
+}
+
+.pplus-stock_01_2 {
+    background-position: -64px -128px;
+}
+
+.pplus-stock_02_2 {
+    background-position: -128px -128px;
+}
+
+.pplus-stock_03_2 {
+    background-position: -192px -128px;
+}
+
+.pplus-stock_04_2 {
+    background-position: -256px -128px;
+}
+
+.pplus-stock_05_2 {
+    background-position: -320px -128px;
 }
 
 /* ROA */

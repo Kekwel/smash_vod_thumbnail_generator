@@ -44,6 +44,14 @@ pm = {
     4: ["pikmin", "rob", "gamewatch", "snake", "sonic"]
 }
 
+pplus = {
+    1: ["mario", "luigi", "peach", "wario", "yoshi", "bowser", "donkey", "diddy", "captain"],
+    2: ["fox", "falco", "wolf", "link", "toonlink", "zelda", "sheik", "ganondorf"],
+    3: ["pikachu", "jigglypuff", "mewtwo", "squirtle", "ivysaur", "charizard", "lucario", "samus", "szerosuit"],
+    4: ["ness", "lucas", "kirby", "metaknight", "dedede", "marth", "roy", "ike"],
+    5: ["gamewatch", "rob", "ice", "pit", "reserved", "pikmin", "snake", "sonic", "knuckles"]
+}
+
 // --
 roa = {
     0: ["clairen", "forsburn", "zetterburn", "reserved", "reserved", "wrastor", "absa", "elliana"],

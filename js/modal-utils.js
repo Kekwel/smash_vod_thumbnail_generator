@@ -303,6 +303,18 @@ function createCharacters(game, player, libChar) {
     iconReverseAll.classList.add('material-icons');
     iconReverseAll.innerHTML = 'compare_arrows';
 
+    var inputCustom = document.createElement('input');
+    inputCustom.id = 'custom_' + player + '_' + libChar + '_file';
+    inputCustom.setAttribute('type', 'file');
+    inputCustom.style.display = 'none';
+    inputCustom.setAttribute('accept', 'image/*');
+    var customChar = document.createElement('button');
+    customChar.classList.add('nes-btn', 'is-success', 'icons-only')
+    customChar.id = 'custom-' + player + '-' + libChar
+    var iconCustom = document.createElement('i');
+    iconCustom.classList.add('material-icons');
+    iconCustom.innerHTML = 'build';
+
     // -- listener btn
     plusBtn.addEventListener('click', function () {
         log('ajout char');
@@ -355,6 +367,15 @@ function createCharacters(game, player, libChar) {
             document.getElementById('div-' + player + '-char2').classList.toggle('reverse');
     });
 
+    inputCustom.addEventListener('change', function () {
+        log('import custom char ' + player + ', ' + libChar);
+        setCustomChar(player, libChar);
+    });
+    customChar.addEventListener('click', function () {
+        log('custom char ' + player + ', ' + libChar);
+        document.getElementById('custom_' + player + '_' + libChar + '_file').click();
+    });
+
     // -- Characters !
     // init perso > render-char.js
     var stockDiv = createStockGrid(game, player, libChar);
@@ -374,12 +395,16 @@ function createCharacters(game, player, libChar) {
     reverseBtn.appendChild(iconReverse);
     reverseBtn.appendChild(document.createTextNode(' Retourner'));
     reverseAllBtn.appendChild(iconReverseAll);
-    reverseAllBtn.appendChild(document.createTextNode(' Tout'))
+    reverseAllBtn.appendChild(document.createTextNode(' Tout'));
+
+    customChar.appendChild(iconCustom);
 
     divBtn.appendChild(reverseAllBtn);
     divBtn.appendChild(plusBtn);
     divBtn.appendChild(moinsBtn);
     divBtn.appendChild(reverseBtn);
+    divBtn.appendChild(inputCustom);
+    divBtn.appendChild(customChar);
 
     bordure.appendChild(titre);
     bordure.appendChild(divBtn);

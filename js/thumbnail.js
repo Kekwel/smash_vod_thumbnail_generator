@@ -278,10 +278,10 @@ function initOther() {
 }
 
 function showHelp(param) {
-    console.log('help_' + param);
+    log('help_' + param);
     // TODO
     if ('font' == param) {
-        console.log("pouet")
+        log("pouet")
     }
 }
 
@@ -360,6 +360,23 @@ function setBackground(player, numChar, bgfile) {
         reader.readAsDataURL(file); //reads the data as a URL
     } else {
         bgplayer.style.backgroundImage = "";
+    }
+}
+
+function setCustomChar(player, libChar) {
+    var char = document.getElementById(libChar + '-' + player);
+
+    var file = document.getElementById('custom_' + player + '_' + libChar + '_file').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+        char.src = reader.result;
+    }
+
+    if (file) {
+        reader.readAsDataURL(file); //reads the data as a URL
+    } else {
+        alert("Impossible d'importer ce fichier")
     }
 }
 
