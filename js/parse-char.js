@@ -1,7 +1,10 @@
 function randomCharName(game) {
     // char random
     var chars = getCharsGame(game);
-    var randRow = chars[Math.floor(Math.random() * Object.keys(chars).length)];
+    var randRow;
+    while (typeof randRow === 'undefined') {
+        randRow = chars[Math.floor(Math.random() * Object.keys(chars).length)];
+    }
     var randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
 
     // si 'reserved'

@@ -16,6 +16,51 @@ melee_captain = melee_kirby = melee_yoshi = [[{}, {}, {}, {}, {}, {}], [{}, {}, 
 // -- RoA, 1 lignes, 6 éléments
 roa_absa = roa_clairen = roa_elliana = roa_etalus = roa_forsburn = roa_kragg = roa_maypul = roa_orcane = roa_ori = roa_ranno = roa_shovelknight = roa_sylvanos = roa_wrastor = roa_zetterburn = [[{}, {}, {}, {}, {}, {}]]
 
-// -- PM, 3 lignes, 5 élements
-// TODO knucles, wario
-pplus_bowser = pplus_captain = pplus_charizard = pplus_dedede = pplus_diddy = pplus_donkey = pplus_falco = pplus_fox = pplus_gamewatch = pplus_ganondorf = pplus_ice = pplus_ike = pplus_icysaur = pplus_jigglypuff = pplus_kirby = pplus_knuckles = pplus_link = pplus_lucario = pplus_lucas = pplus_luigi = pplus_mario = pplus_marth = pplus_metaknight = pplus_mewtwo = pplus_ness = pplus_peach = pplus_pikachu = pplus_pikmin = pplus_pit = pplus_rob = pplus_roy = pplus_samus = pplus_sheik = pplus_snake = pplus_sonic = pplus_squirtle = pplus_szerosuit = pplus_toonlink = pplus_wario = pplus_wolf = pplus_yoshi = pplus_zelda = [[{}, {}, {}, {}, {}], [{}, {}, {}, {}, {}], [{}, {}, {}, {}, {}]]
+// -- PM, 3 lignes, 6, 4, 5 élements
+pplus_bowser = pplus_captain = pplus_charizard = pplus_dedede = pplus_diddy = pplus_donkey = pplus_ivysaur = pplus_lucario = pplus_metaknight = pplus_ness = pplus_pikmin = pplus_pit = pplus_rob = pplus_snake = pplus_squirtle = [
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}, {}],
+    [{}, {}, {}, {}, {}]
+]
+
+// -- PM, 3 lignes, 6, 3, 6 éléments
+pplus_falco = pplus_fox = pplus_link = pplus_roy = pplus_sheik = pplus_zelda = [
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}],
+    [{}, {}, {}, {}, {}, {}]
+]
+
+// -- PM, 3 lignes, 6, 6, 3 éléments
+pplus_gamewatch = pplus_jigglypuff = pplus_kirby = pplus_mario = pplus_pikachu = pplus_yoshi = [
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}]
+]
+
+// -- PM, 3 lignes, 6, 6, 4 éléments
+pplus_knuckles = [
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}, {}]
+]
+
+// -- PM, 3 lignes, 5, 5, 5 éléments
+pplus_ganondorf = [
+    [{}, {}, {}, {}, {}],
+    [{}, {}, {}, {}, {}],
+    [{}, {}, {}, {}, {}]
+]
+
+// -- PM, 3 lignes, 6, 5, 4 éléments
+pplus_ice = pplus_ike = pplus_lucas = pplus_luigi = pplus_marth = pplus_mewtwo = pplus_peach = pplus_samus = pplus_sonic = pplus_szerosuit = pplus_toonlink = pplus_wolf = [
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}, {}, {}],
+    [{}, {}, {}, {}]
+]
+
+// -- PM, 3 lignes, 6, 6, 6 éléments
+pplus_wario = [
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}, {}, {}, {}]
+]
