@@ -15,6 +15,20 @@ function randomCharName(game) {
     return randChar;
 }
 
+function resetChar() {
+    var games = document.getElementById('game_select');
+    var game = games.value;
+
+    randomChar(game, 'j1', 'char1');
+    randomChar(game, 'j2', 'char1');
+
+    if (document.getElementById('versus').style.display == 'none')
+        document.getElementById('versus-visible').click();
+
+    if (document.getElementById('phase').style.display == 'none')
+        document.getElementById('phase_visible').click();
+}
+
 function randomChar(game, player, libChar) {
     var randChar = randomCharName(game);
     // color random
