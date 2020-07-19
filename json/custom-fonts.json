@@ -6,5 +6,6 @@ customFonts = {
     'Heroes Legend Hollow ': 'heroes_legend_hollow',
     'SSF4 ABUCKET': 'ssf4_abucket',
     'Android Assassin': 'android_assassin',
-    'Futura Bold': 'futura_bold'
+    'Futura Bold': 'futura_bold',
+    'Impacted': 'impacted'
 }

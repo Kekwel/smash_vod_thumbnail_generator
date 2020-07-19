@@ -187,6 +187,9 @@
     <!-- TODO FR / EN -->
     <div class="center margin-auto"><span id="menu-top" class="center margin-auto nes-text">VoDs Thumbnails Generator for </span>
         <div style="display: flex">
+            <button class="nes-btn is-error" target="_blank" rel="noopener" aria-label="twitter" style="margin-left: 1em;" onclick="resetChar()">
+                <i class="material-icons">cached</i>
+            </button>
             <div class="nes-select" style="width: 50%; margin: auto; padding-bottom: 10px">
                 <select required id="game_select" name="game">
                     <option value="pplus">Project +</option>
@@ -201,7 +204,7 @@
                     <option value="n64" disabled>Super Smash Bros. 64</option>
                 </select>
             </div>
-            <button class="credits nes-btn is-warning" href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter" onclick="document.getElementById('dialog-credits').style.display = 'block'">?</button>
+            <button class="credits nes-btn is-warning" target="_blank" rel="noopener" aria-label="twitter" onclick="document.getElementById('dialog-credits').style.display = 'block'">?</button>
         </div>
         <a href="https://twitter.com/Kekwel_SSB" target="_blank" rel="noopener" aria-label="twitter">Bug ? Suggestions ? MP sur <i class="nes-icon twitter"></i></a>
     </div>
@@ -239,8 +242,8 @@
         <!--        <label id="fontSize"><input type="number" name="fontSize" min="1" max="100" value="44">px,</label>-->
         <label id="label_font" for="font">Police d'écriture</label>
         <section style="display: inline-block">
-            <button type="button" class="nes-btn is-primary icons-only" onclick="document.getElementById('dialog-font   ').style.display = 'block'">
-                <i class="material-icons" id="help_font">help_outline</i>
+            <button type="button" class="nes-btn is-primary icons-only" onclick="document.getElementById('dialog-font').style.display = 'block'">
+                ?
             </button>
             <div class="nes-container is-dark with-title window" id="dialog-font" style="display: none">
                 <div class="bordure-container">
@@ -288,6 +291,7 @@
 <script src="js/render-char.js"></script>
 <script src="js/thumbnail.js"></script>
 <script src="js/parse-char.js"></script>
+<script src="js/character/export.js"></script>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
