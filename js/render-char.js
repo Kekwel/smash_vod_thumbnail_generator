@@ -152,6 +152,8 @@ function createRow(game, player, persos, libChar) {
 
         if (perso == 'reserved')
             rowHTML.append(createStockReserved())
+        else if (perso == 'random')
+            rowHTML.append(createStockRandom(game))
         else
             rowHTML.append(createStockIcon(game, perso, player, libChar));
     });

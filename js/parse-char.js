@@ -8,7 +8,7 @@ function randomCharName(game) {
     var randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
 
     // si 'reserved'
-    while (randChar === 'reserved') {
+    while (randChar === 'reserved' || randChar === 'random') {
         randChar = randRow[Math.floor(Math.random() * Object.keys(randRow).length)];
     }
 
