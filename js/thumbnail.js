@@ -407,6 +407,20 @@ function createStockReserved() {
     return divReserved;
 }
 
+function createStockRandom(game) {
+    var img = document.createElement('img');
+    var imgSrc = 'img/stock/' + game + '/random.png';
+
+    img.src = imgSrc;
+    img.id = 'random';
+    img.classList.add('random');
+
+    var divRandom = document.createElement('div');
+    divRandom.appendChild(img)
+    divRandom.classList.add('random');
+    return divRandom;
+}
+
 function removeClasse(className, classToRemove) {
     var elems = document.getElementsByClassName(className);
     [].forEach.call(elems, function (el) {

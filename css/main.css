@@ -512,7 +512,8 @@
 
 .stocks,
 .color-stocks,
-.reserved {
+.reserved,
+.random {
     width: 50px;
     height: 50px;
 }
