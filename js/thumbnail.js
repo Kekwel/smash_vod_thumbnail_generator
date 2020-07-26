@@ -253,20 +253,34 @@ function initOther() {
         // on enleve le margin pour ne pas qu'il soit pris en compte
         node.style.margin = '';
 
-        var options = {
-            width: 1280,
-            height: 720
-        };
-        domtoimage.toPng(node, options)
+        // on recupere l'image
+        domtoimage.toPng(node)
             .then(function (dataUrl) {
-                var player1 = document.getElementById('j1').value;
-                var player2 = document.getElementById('j2').value;
-                var filename = player1 + '_vs_' + player2 + '.png';
+                // MAIS ca prend tout ce qui dépasse !
+                var img = new Image();
+                img.src = dataUrl;
 
-                var link = document.createElement('a');
-                link.download = filename;
-                link.href = dataUrl;
-                simulateClick(link);
+                // du coup on créer un canvas de taille 1280x720
+                var elem = document.createElement('canvas');
+                elem.width = 1280;
+                elem.height = 720;
+
+                // puis on ajoute l'image dans ce canvas --> ~CROP
+                var ctx = elem.getContext('2d')
+                img.onload = function () {
+                    ctx.drawImage(img, 0, 0);
+
+                    const data = ctx.canvas.toDataURL("image/png");
+
+                    var player1 = document.getElementById('j1').value;
+                    var player2 = document.getElementById('j2').value;
+                    var filename = player1 + '_vs_' + player2 + '.png';
+
+                    var link = document.createElement('a');
+                    link.download = filename;
+                    link.href = data;
+                    simulateClick(link);
+                }
 
                 // on remet le margin
                 node.style.margin = 'auto';
