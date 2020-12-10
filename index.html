@@ -73,50 +73,54 @@
     <div class="nes-container is-dark with-title window" id="dialog-tag-j1" style="display: none">
         <div class="bordure-container">
             <p class="title-container">Pseudo Joueur 1 : </p>
-            <div class="buttons-rotate">
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i class="material-icons rotate-left">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i class="material-icons rotate-right">crop_16_9</i></button>
-            </div>
-            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
-                <input type="text" id="j1" class="nes-input is-dark" value="J1" size="10" placeholder="Pseudo">
-            </div>
-            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
-                <label for="fontsize-j1" class="center" style="color:#fff;">Taille (px)</label>
-                <input type="text" id="fontsize-j1" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j1')">
-            </div>
-            <label>
-                <input type="checkbox" class="nes-checkbox is-dark" id="bold-j1" />
-                <span> En gras ?</span>
-            </label>
-            <menu class="dialog-menu">
-                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j1').style.display = 'none';">OK</button>
-            </menu>
+            <form method="dialog">
+                <div class="buttons-rotate">
+                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i class="material-icons rotate-left">crop_16_9</i></button>
+                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
+                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i class="material-icons rotate-right">crop_16_9</i></button>
+                </div>
+                <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                    <input type="text" id="j1" class="nes-input is-dark" value="J1" size="10" placeholder="Pseudo">
+                </div>
+                <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                    <label for="fontsize-j1" class="center" style="color:#fff;">Taille (px)</label>
+                    <input type="text" id="fontsize-j1" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j1')">
+                </div>
+                <label>
+                    <input type="checkbox" class="nes-checkbox is-dark" id="bold-j1" />
+                    <span> En gras ?</span>
+                </label>
+                <menu class="dialog-menu">
+                    <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j1').style.display = 'none';">OK</button>
+                </menu>
+            </form>
         </div>
     </div>
     <!-- Edit tag J2 -->
     <div class="nes-container is-dark with-title window" id="dialog-tag-j2" style="display: none">
         <div class="bordure-container">
             <p class="title-container">Pseudo Joueur 2 : </p>
-            <div class="buttons-rotate">
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i class="material-icons rotate-left">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
-                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i class="material-icons rotate-right">crop_16_9</i></button>
-            </div>
-            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
-                <input type="text" id="j2" class="nes-input is-dark" value="J2" size="10" placeholder="Pseudo">
-            </div>
-            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
-                <label for="fontsize-j2" class="center" style="color:#fff;">Taille (px)</label>
-                <input type="text" id="fontsize-j2" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j2')">
-            </div>
-            <label>
-                <input type="checkbox" class="nes-checkbox is-dark" id="bold-j2" />
-                <span> En gras ?</span>
-            </label>
-            <menu class="dialog-menu">
-                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j2').style.display = 'none';">OK</button>
-            </menu>
+            <form method="dialog">
+                <div class="buttons-rotate">
+                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i class="material-icons rotate-left">crop_16_9</i></button>
+                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
+                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i class="material-icons rotate-right">crop_16_9</i></button>
+                </div>
+                <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                    <input type="text" id="j2" class="nes-input is-dark" value="J2" size="10" placeholder="Pseudo">
+                </div>
+                <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                    <label for="fontsize-j2" class="center" style="color:#fff;">Taille (px)</label>
+                    <input type="text" id="fontsize-j2" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j2')">
+                </div>
+                <label>
+                    <input type="checkbox" class="nes-checkbox is-dark" id="bold-j2" />
+                    <span> En gras ?</span>
+                </label>
+                <menu class="dialog-menu">
+                    <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j2').style.display = 'none';">OK</button>
+                </menu>
+            </form>
         </div>
     </div>
     <!--    Edit phases-->
