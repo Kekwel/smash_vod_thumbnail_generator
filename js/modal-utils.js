@@ -153,10 +153,11 @@ function createFondColor(player, libChar) {
 
     });
     var labelMainBGColor = document.createElement('label');
-    var txtMainBGColor = document.createTextNode("Couleur principale");
+    var txtMainBGColor = document.createTextNode("Principale");
     labelMainBGColor.setAttribute('for', mainBGColor.id);
     labelMainBGColor.style.color = 'black';
     labelMainBGColor.style.padding = '0.5em';
+    labelMainBGColor.style.fontSize = 'small';
     labelMainBGColor.appendChild(txtMainBGColor);
 
     var secondBGColor = document.createElement('input');
@@ -173,10 +174,11 @@ function createFondColor(player, libChar) {
         bg.style.backgroundImage = 'linear-gradient(to bottom ' + rightLeft + ', ' + mainVal + ', ' + this.value + ')';
     });
     var labelSecondBGColor = document.createElement('label');
-    var txtSecondBGColor = document.createTextNode("Couleur secondaire");
+    var txtSecondBGColor = document.createTextNode("Secondaire");
     labelSecondBGColor.setAttribute('for', secondBGColor.id);
     labelSecondBGColor.style.color = 'black';
     labelSecondBGColor.style.padding = '0.5em';
+    labelSecondBGColor.style.fontSize = 'small';
     labelSecondBGColor.appendChild(txtSecondBGColor);
 
     primaryColor.appendChild(color1);
