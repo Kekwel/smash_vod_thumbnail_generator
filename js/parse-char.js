@@ -48,18 +48,29 @@ function randomChar(game, player, libChar) {
     }
 }
 
+//var colorHex1 = '#d41619, #f66e25';
+//var colorHex2 = '#0049b9, #0086ea';
+//var colorHex3 = '#e39802, #ffc603';
+//var colorHex4 = '#038223, #1cc13e';
+//var colorHex5 = '#a24a11, #ff6e36';
+//var colorHex6 = '#0cb7b0, #63c7e3';
+//var colorHex7 = '#df2c87, #b17084';
+//var colorHex8 = '#552ead, #726eba';
 function randomBG(player, libChar) {
+    var colHex = [colorHex0, colorHex1, colorHex2, colorHex3, colorHex4, colorHex5, colorHex6, colorHex7, colorHex8];
     var rand = Math.floor(Math.random() * 8) + 1;
+    var randHex = colHex[rand];
 
     var bg = document.getElementById('div-' + player + '-' + libChar);
-    for (var i = 0; i <= bg.classList.length; i++) {
-        if (bg.classList[i] && bg.classList[i].startsWith('background')) {
-            bg.classList.remove(bg.classList[i]);
-        }
+
+    if (player == 'j1') {
+        bg.style.backgroundImage = 'linear-gradient(to bottom right, ' + randHex + ')';
+    } else {
+        bg.style.backgroundImage = 'linear-gradient(to bottom left, ' + randHex + ')';
     }
 
-    var newBg = 'background-' + player + '-' + rand;
-    bg.classList.add(newBg);
+    //    var lab = document.getElementById('label_' + randHex);
+    //    lab.click();
 }
 
 function getSprites(game, charName) {

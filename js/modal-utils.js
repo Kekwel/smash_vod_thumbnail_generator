@@ -5,6 +5,30 @@ function showModalChar(player) {
 var charDialog;
 var bordureContainer;
 
+var colorHex1 = '#d41619, #f66e25';
+var colorHex2 = '#0049b9, #0086ea';
+var colorHex3 = '#e39802, #ffc603';
+var colorHex4 = '#038223, #1cc13e';
+var colorHex5 = '#a24a11, #ff6e36';
+var colorHex6 = '#0cb7b0, #63c7e3';
+var colorHex7 = '#df2c87, #b17084';
+var colorHex8 = '#552ead, #726eba';
+var colorHex0 = '#00ff00, #00ff00';
+var colorHex999 = 'black, black';
+
+var colorToLibelle = {
+    '#d41619, #f66e25': '1',
+    '#0049b9, #0086ea': '2',
+    '#e39802, #ffc603': '3',
+    '#038223, #1cc13e': '4',
+    '#a24a11, #ff6e36': '5',
+    '#0cb7b0, #63c7e3': '6',
+    '#df2c87, #b17084': '7',
+    '#552ead, #726eba': '8',
+    '#00ff00, #00ff00': '0',
+    'black, black': '999',
+}
+
 function createModal(idDialog, player) {
     // -- pour bordure containter
     bordure = document.createElement('div');
@@ -98,14 +122,62 @@ function createFondColor(player, libChar) {
     var primaryColor = document.createElement('div');
     primaryColor.classList.add('primary-color');
 
-    var color1 = createlabelColor('1', player, libChar);
-    var color2 = createlabelColor('2', player, libChar);
-    var color3 = createlabelColor('3', player, libChar);
-    var color4 = createlabelColor('4', player, libChar);
-    var color5 = createlabelColor('5', player, libChar);
-    var color6 = createlabelColor('6', player, libChar);
-    var color7 = createlabelColor('7', player, libChar);
-    var color8 = createlabelColor('8', player, libChar);
+    var color1 = createlabelColor(colorHex1, player, libChar);
+    var color2 = createlabelColor(colorHex2, player, libChar);
+    var color3 = createlabelColor(colorHex3, player, libChar);
+    var color4 = createlabelColor(colorHex4, player, libChar);
+    var color5 = createlabelColor(colorHex5, player, libChar);
+    var color6 = createlabelColor(colorHex6, player, libChar);
+    var color7 = createlabelColor(colorHex7, player, libChar);
+    var color8 = createlabelColor(colorHex8, player, libChar);
+    var color0 = createlabelColor(colorHex0, player, libChar);
+    var color999 = createlabelColor(colorHex999, player, libChar);
+
+    // Autres couleurs
+    var otherColor = document.createElement('div');
+    otherColor.style.padding = '0.25em';
+
+    var mainBGColor = document.createElement('input');
+    mainBGColor.id = 'color_bg_' + player + '_' + libChar;
+    mainBGColor.name = 'mainBG';
+    mainBGColor.setAttribute('type', 'color');
+    mainBGColor.addEventListener('input', function () {
+        log('set custom color ' + this.value + ' background ' + player + ', ' + libChar);
+        var scndVal = secondBGColor.value;
+        var rightLeft = (player == 'j1' ? 'right' : 'left');
+        log(rightLeft)
+
+        var bg = document.getElementById('div-' + player + '-' + libChar);
+
+        bg.style.backgroundImage = 'linear-gradient(to bottom ' + rightLeft + ', ' + this.value + ', ' + scndVal + ')';
+
+    });
+    var labelMainBGColor = document.createElement('label');
+    var txtMainBGColor = document.createTextNode("Couleur principale");
+    labelMainBGColor.setAttribute('for', mainBGColor.id);
+    labelMainBGColor.style.color = 'black';
+    labelMainBGColor.style.padding = '0.5em';
+    labelMainBGColor.appendChild(txtMainBGColor);
+
+    var secondBGColor = document.createElement('input');
+    secondBGColor.id = 'color2_bg_' + player + '_' + libChar;
+    secondBGColor.name = 'mainBG';
+    secondBGColor.setAttribute('type', 'color');
+    secondBGColor.addEventListener('input', function () {
+        log('set 2nd custom color ' + this.value + ' background ' + player + ', ' + libChar);
+        var mainVal = mainBGColor.value;
+        var rightLeft = (player == 'j1' ? 'right' : 'left');
+
+        var bg = document.getElementById('div-' + player + '-' + libChar);
+        log('linear-gradient(to bottom right, ' + mainVal + ', ' + this.val + ')')
+        bg.style.backgroundImage = 'linear-gradient(to bottom ' + rightLeft + ', ' + mainVal + ', ' + this.value + ')';
+    });
+    var labelSecondBGColor = document.createElement('label');
+    var txtSecondBGColor = document.createTextNode("Couleur secondaire");
+    labelSecondBGColor.setAttribute('for', secondBGColor.id);
+    labelSecondBGColor.style.color = 'black';
+    labelSecondBGColor.style.padding = '0.5em';
+    labelSecondBGColor.appendChild(txtSecondBGColor);
 
     primaryColor.appendChild(color1);
     primaryColor.appendChild(color2);
@@ -115,15 +187,14 @@ function createFondColor(player, libChar) {
     primaryColor.appendChild(color6);
     primaryColor.appendChild(color7);
     primaryColor.appendChild(color8);
+    primaryColor.appendChild(color0);
+    primaryColor.appendChild(color999);
 
-    // Autres couleurs
-    var otherColor = document.createElement('div');
-
-    var color0 = createlabelColor('0', player, libChar);
-    var color999 = createlabelColor('999', player, libChar);
-
-    otherColor.appendChild(color0);
-    otherColor.appendChild(color999);
+    otherColor.appendChild(mainBGColor);
+    otherColor.appendChild(labelMainBGColor);
+    otherColor.appendChild(secondBGColor);
+    otherColor.appendChild(labelSecondBGColor);
+    // --
 
     // Upload background
     var uploadDiv = document.createElement('div');
@@ -214,18 +285,25 @@ function createFondColor(player, libChar) {
 
 function createlabelColor(numColor, player, libChar) {
     var colorLabel = document.createElement('label');
-    colorLabel.classList.add('background-' + player + '-' + numColor);
+    colorLabel.id = 'label_' + numColor;
+    colorLabel.style.backgroundImage = 'linear-gradient(to bottom right, ' + numColor + ')';
+    colorLabel.style.width = '100%';
+    colorLabel.style.height = '2em';
+    colorLabel.style.textAlign = 'center';
+    // TODO
+    //    colorLabel.classList.add('background-' + player + '-' + numColor);
 
     var choix = document.createElement('input');
     choix.classList.add('nes-radio', 'is-dark');
     choix.setAttribute('type', 'radio');
-    choix.setAttribute('name', 'background_color')
+    choix.setAttribute('name', 'background_color');
     choix.setAttribute('value', numColor);
     // TODO checked seulement celui par defaut
+    // TODO taille
     choix.checked = true;
 
     var libelle = document.createElement('span');
-    libelle.innerHTML = numColor; // TODO libellé
+    libelle.innerHTML = colorToLibelle[numColor];
 
     colorLabel.appendChild(choix);
     colorLabel.appendChild(libelle);
@@ -234,28 +312,21 @@ function createlabelColor(numColor, player, libChar) {
     choix.addEventListener('click', function () {
         // this.value = numero de la couleur
         var nbColor = this.value;
+        var rightLeft = (player == 'j1' ? 'right' : 'left');
+
         log('choix couleur numero ' + nbColor + ', pour ' + player + ', ' + libChar);
+
         // recup les background du joueur concerné, pour modif la couleur de fond
         var divBG = document.getElementById('div-' + player + '-' + libChar);
-        var newBGClass = 'background-' + player + '-' + nbColor;
 
-        var tmp = divBG.className;
-        tmp = tmp.replace(/background-j[1-2]-\d+/, newBGClass);
-        //        divBG.className = 'character background-' + player + '-' + nbColor;
-        divBG.className = tmp;
+        divBG.style.backgroundImage = 'linear-gradient(to bottom ' + rightLeft + ', ' + numColor + ')';
+
+        // modifie couleur input
+        var mainColor = document.getElementById('color_bg_' + player + '_' + libChar);
+        mainColor.value = nbColor.split(', ')[0];
+        var scndColor = document.getElementById('color2_bg_' + player + '_' + libChar);
+        scndColor.value = nbColor.split(', ')[1];
     });
-    //    var radios = document.forms['form_background_color_' + player].elements['background_color'];
-    //    for (var k = 0, max = radios.length; k < max; k++) {
-    //        radios[k].onclick = function () {
-    //            // this.value = numero de la couleur
-    //            var nbColor = this.value;
-    //            // delete la classe sur les autres
-    //            var elems = document.querySelectorAll('div[class^="character background-' + player + '-"]');
-    //            [].forEach.call(elems, function (el) {
-    //                el.className = 'character background-' + player + '-' + nbColor;
-    //            });
-    //        }
-    //    }
 
     return colorLabel;
 }

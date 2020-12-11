@@ -500,7 +500,8 @@
     justify-content: center;
 }
 
-.rows-color {
+.rows-color,
+.primary-color {
     display: flex;
     justify-content: space-evenly;
 }
