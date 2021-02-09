@@ -7,5 +7,6 @@ customFonts = {
     'SSF4 ABUCKET': 'ssf4_abucket',
     'Android Assassin': 'android_assassin',
     'Futura Bold': 'futura_bold',
-    'Impacted': 'impacted'
+    'Impact': 'impact',
+    'Gotham Black Regular': 'Gotham_Black_Regular'
 }
