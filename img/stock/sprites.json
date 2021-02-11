@@ -38,7 +38,7 @@ pplus_gamewatch = pplus_jigglypuff = pplus_kirby = pplus_mario = pplus_pikachu =
 ]
 
 // -- PM, 3 lignes, 6, 6, 4 éléments
-pplus_knuckles = pplus_peach = pplus_samus = pplus_szerosuit = [
+pplus_knuckles = [
     [{}, {}, {}, {}, {}, {}],
     [{}, {}, {}, {}, {}, {}],
     [{}, {}, {}, {}]
@@ -52,7 +52,7 @@ pplus_ganondorf = [
 ]
 
 // -- PM, 3 lignes, 6, 5, 4 éléments
-pplus_ice = pplus_ike = pplus_lucas = pplus_luigi = pplus_marth = pplus_mewtwo = pplus_sonic = pplus_toonlink = pplus_wolf = [
+pplus_ice = pplus_ike = pplus_lucas = pplus_luigi = pplus_marth = pplus_mewtwo = pplus_sonic = pplus_toonlink = pplus_wolf = pplus_peach = [
     [{}, {}, {}, {}, {}, {}],
     [{}, {}, {}, {}, {}],
     [{}, {}, {}, {}]
@@ -63,4 +63,11 @@ pplus_wario = [
     [{}, {}, {}, {}, {}, {}],
     [{}, {}, {}, {}, {}, {}],
     [{}, {}, {}, {}, {}, {}]
+]
+
+// -- PM, 3 lignes, 7, 6, 3
+pplus_szerosuit = pplus_samus = [
+    [{}, {}, {}, {}, {}, {}, {}],
+    [{}, {}, {}, {}, {}, {}],
+    [{}, {}, {}]
 ]
