@@ -1,5 +1,7 @@
 // -- une ligne de 8 éléments
 ult_edge = ult_steve = ult_minmin = ult_byleth = ult_banjo = ult_bayonetta = ult_bowser = ult_bowserjr = ult_captain = ult_chrom = ult_cloud = ult_corrin = ult_daisy = ult_dedede = ult_diddy = ult_donkey = ult_duckhunt = ult_falco = ult_fox = ult_gamewatch = ult_ganondorf = ult_greninja = ult_hero = ult_ice = ult_ike = ult_incineroar = ult_inkling = ult_isabelle = ult_jigglypuff = ult_joker = ult_ken = ult_kirby = ult_krool = ult_link = ult_littlemac = ult_lucario = ult_lucas = ult_lucina = ult_luigi = ult_mario = ult_mariod = ult_marth = ult_megaman = ult_metaknight = ult_mewtwo = ult_miifighter = ult_miigunner = ult_miiswordsman = ult_ness = ult_pacman = ult_palutena = ult_pikachu = ult_pichu = ult_peach = ult_pfushigisou = ult_pikmin = ult_piranha = ult_pit = ult_pitb = ult_plizardon = ult_ptrainer = ult_pzenigame = ult_richter = ult_ridley = ult_rob = ult_robin = ult_rosalina = ult_roy = ult_ryu = ult_samus = ult_samusd = ult_sheik = ult_shulk = ult_simon = ult_snake = ult_sonic = ult_szerosuit = ult_terryb = ult_toonlink = ult_villager = ult_wario = ult_wiifit = ult_wolf = ult_yoshi = ult_younglink = ult_zelda = [[{}, {}, {}, {}, {}, {}, {}, {}]]
+// -- 2 lignes, 8 éléments
+ult_pyra = [[{}, {}, {}, {}, {}, {}, {}, {}], [{}, {}, {}, {}, {}, {}, {}, {}]]
 
 // -- 2 lignes, 4 éléments
 melee_bowser = melee_falco = melee_fox = melee_gamewatch = melee_ice = melee_luigi = melee_mewtwo = melee_ness = melee_pichu = melee_pikachu = [[{}, {}, {}, {}], [{}, {}, {}, {}]]

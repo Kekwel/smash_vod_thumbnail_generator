@@ -1,11 +1,11 @@
 ult = {
-    0: ["mario", "donkey", "link", "samus", "samusd", "yoshi", "kirby", "fox", "pikachu", "luigi", "ness", "captain"],
-    1: ["jigglypuff", "peach", "daisy", "bowser", "ice", "sheik", "zelda", "mariod", "pichu", "falco", "marth", "lucina"],
-    2: ["younglink", "ganondorf", "mewtwo", "roy", "chrom", "gamewatch", "metaknight", "pit", "pitb", "szerosuit", "wario", "snake"],
-    3: ["ike", "ptrainer", "diddy", "lucas", "sonic", "dedede", "pikmin", "lucario", "rob", "toonlink", "wolf", "villager"],
-    4: ["megaman", "wiifit", "rosalina", "littlemac", "greninja", "palutena", "pacman", "robin", "shulk", "bowserjr", "duckhunt", "ryu"],
-    5: ["ken", "cloud", "corrin", "bayonetta", "inkling", "ridley", "simon", "richter", "krool", "isabelle", "incineroar", "piranha"],
-    6: ["joker", "hero", "banjo", "terryb", "byleth", "minmin", "steve", "edge", "miifighter", "miiswordsman", "miigunner", "random"]
+    0: ["mario", "donkey", "link", "samus", "samusd", "yoshi", "kirby", "fox", "pikachu", "luigi", "ness", "captain", "jigglypuff"],
+    1: ["peach", "daisy", "bowser", "ice", "sheik", "zelda", "mariod", "pichu", "falco", "marth", "lucina", "younglink", "ganondorf"],
+    2: ["mewtwo", "roy", "chrom", "gamewatch", "metaknight", "pit", "pitb", "szerosuit", "wario", "snake", "ike", "ptrainer", "diddy"],
+    3: ["lucas", "sonic", "dedede", "pikmin", "lucario", "rob", "toonlink", "wolf", "villager", "megaman", "wiifit", "rosalina", "littlemac"],
+    4: ["greninja", "palutena", "pacman", "robin", "shulk", "bowserjr", "duckhunt", "ryu", "ken", "cloud", "corrin", "bayonetta", "inkling"],
+    5: ["ridley", "simon", "richter", "krool", "isabelle", "incineroar", "piranha", "joker", "hero", "banjo", "terryb", "byleth", "minmin"],
+    6: ["steve", "edge", "pyra", "miifighter", "miiswordsman", "miigunner", "random"]
 }
 
 wiiu = {
