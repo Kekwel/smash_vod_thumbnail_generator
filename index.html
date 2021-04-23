@@ -73,6 +73,10 @@
                 </button>
             </div>
             <div class="center">
+                <input type="color" id="versus-color" />
+                <label for="versus-color">Couleur</label>
+            </div>
+            <div class="center">
                 <label><input type="checkbox" class="nes-checkbox is-dark" id="versus-bold" />
                     <span> Gras ? </span>
                 </label>
@@ -92,54 +96,70 @@
     <div class="nes-container is-dark with-title window" id="dialog-tag-j1" style="display: none">
         <div class="bordure-container">
             <p class="title-container">Pseudo Joueur 1 : </p>
-            <form method="dialog">
-                <div class="buttons-rotate">
-                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i class="material-icons rotate-left">crop_16_9</i></button>
-                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
-                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i class="material-icons rotate-right">crop_16_9</i></button>
-                </div>
-                <div style="background-color:#212529; padding: 1rem;" class="nes-field">
-                    <input type="text" id="j1" class="nes-input is-dark" value="J1" size="10" placeholder="Pseudo">
-                </div>
-                <div style="background-color:#212529; padding: 1rem;" class="nes-field">
-                    <label for="fontsize-j1" class="center" style="color:#fff;">Taille (px)</label>
-                    <input type="text" id="fontsize-j1" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j1')">
-                </div>
-                <label>
-                    <input type="checkbox" class="nes-checkbox is-dark" id="bold-j1" />
-                    <span> En gras ?</span>
-                </label>
-                <menu class="dialog-menu">
-                    <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j1').style.display = 'none';">OK</button>
-                </menu>
-            </form>
+            <!--            <form method="dialog">-->
+            <div class="buttons-rotate">
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j1"><i class="material-icons rotate-left">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j1"><i class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j1"><i class="material-icons rotate-right">crop_16_9</i></button>
+            </div>
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <input type="text" id="j1" class="nes-input is-dark" value="J1" size="10" placeholder="Pseudo">
+            </div>
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <label for="fontsize-j1" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-j1" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j1')">
+            </div>
+            <label>
+                <input type="checkbox" class="nes-checkbox is-dark" id="bold-j1" />
+                <span> En gras ?</span>
+            </label>
+            <div>
+                <input type="color" id="color-j1" />
+                <label for="color-j1">Texte</label>
+            </div>
+            <div>
+                <input type="color" id="color-bg-j1" />
+                <label for="color-bg-j1">Fond</label>
+            </div>
+            <menu class="dialog-menu">
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j1').style.display = 'none';">OK</button>
+            </menu>
+            <!--            </form>-->
         </div>
     </div>
     <!-- Edit tag J2 -->
     <div class="nes-container is-dark with-title window" id="dialog-tag-j2" style="display: none">
         <div class="bordure-container">
             <p class="title-container">Pseudo Joueur 2 : </p>
-            <form method="dialog">
-                <div class="buttons-rotate">
-                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i class="material-icons rotate-left">crop_16_9</i></button>
-                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
-                    <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i class="material-icons rotate-right">crop_16_9</i></button>
-                </div>
-                <div style="background-color:#212529; padding: 1rem;" class="nes-field">
-                    <input type="text" id="j2" class="nes-input is-dark" value="J2" size="10" placeholder="Pseudo">
-                </div>
-                <div style="background-color:#212529; padding: 1rem;" class="nes-field">
-                    <label for="fontsize-j2" class="center" style="color:#fff;">Taille (px)</label>
-                    <input type="text" id="fontsize-j2" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j2')">
-                </div>
-                <label>
-                    <input type="checkbox" class="nes-checkbox is-dark" id="bold-j2" />
-                    <span> En gras ?</span>
-                </label>
-                <menu class="dialog-menu">
-                    <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j2').style.display = 'none';">OK</button>
-                </menu>
-            </form>
+            <!--            <form method="dialog">-->
+            <div class="buttons-rotate">
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-left-j2"><i class="material-icons rotate-left">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-center-j2"><i class="material-icons">crop_16_9</i></button>
+                <button class="nes-btn is-primary icons-only" type="button" id="rotate-right-j2"><i class="material-icons rotate-right">crop_16_9</i></button>
+            </div>
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <input type="text" id="j2" class="nes-input is-dark" value="J2" size="10" placeholder="Pseudo">
+            </div>
+            <div style="background-color:#212529; padding: 1rem;" class="nes-field">
+                <label for="fontsize-j2" class="center" style="color:#fff;">Taille (px)</label>
+                <input type="text" id="fontsize-j2" class="nes-input is-dark" maxlength="3" value="44" placeholder="___" oninput="setTagFont('j2')">
+            </div>
+            <label>
+                <input type="checkbox" class="nes-checkbox is-dark" id="bold-j2" />
+                <span> En gras ?</span>
+            </label>
+            <div>
+                <input type="color" id="color-j2" />
+                <label for="color-j2">Texte</label>
+            </div>
+            <div>
+                <input type="color" id="color-bg-j2" />
+                <label for="color-bg-j2">Fond</label>
+            </div>
+            <menu class="dialog-menu">
+                <button class="nes-btn is-success center" onclick="document.getElementById('dialog-tag-j2').style.display = 'none';">OK</button>
+            </menu>
+            <!--            </form>-->
         </div>
     </div>
     <!--    Edit phases-->
@@ -150,6 +170,12 @@
                 <button class="nes-btn is-success" type="button" id="phase_visible"><i class="material-icons" style="font-size: 20px;">visibility_off</i>
                     <span>Invisible</span>
                 </button>
+            </div>
+            <div class="center">
+                <input type="color" id="color-phase" />
+                <label for="color-phase">Texte</label>
+                <input type="color" id="color-bg-phase" />
+                <label for="color-bg-phase">Fond</label>
             </div>
             <hr>
             <div class="buttons-rotate">

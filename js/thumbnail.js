@@ -95,6 +95,14 @@ function init(player) {
         else
             document.getElementById('name-' + player).style.fontWeight = 'normal';
     };
+    // couleur
+    document.getElementById('color-' + player).oninput = function (event) {
+        document.getElementById('name-' + player).style.color = event.target.value;
+    };
+    // fond couleur
+    document.getElementById('color-bg-' + player).oninput = function (event) {
+        document.getElementById('banner-' + player).style.backgroundColor = event.target.value;
+    };
 
     /* rotate tag */
     document.getElementById('rotate-left-' + player).onclick = function () {
@@ -169,6 +177,9 @@ function initOther() {
     document.getElementById('versus-bold').onclick = function () {
         document.getElementById('versus').classList.toggle('bold');
     };
+    document.getElementById('versus-color').oninput = function (event) {
+        document.getElementById('versus').style.color = event.target.value;
+    };
 
     document.getElementById('nb_round').onclick = function () {
         this.setSelectionRange(0, this.value.length);
@@ -199,6 +210,17 @@ function initOther() {
         document.getElementById("phase2").classList.remove('rotate-phase-left');
         document.getElementById("phase2").classList.add('rotate-phase-right');
     }
+
+    // couleur
+    document.getElementById('color-phase').oninput = function (event) {
+        document.getElementById('phase').style.color = event.target.value;
+        document.getElementById('phase2').style.color = event.target.value;
+    };
+    // fond couleur
+    document.getElementById('color-bg-phase').oninput = function (event) {
+        document.getElementById('phase').style.backgroundColor = event.target.value;
+        document.getElementById('phase2').style.backgroundColor = event.target.value;
+    };
 
     /* bold */
     document.getElementById('bold-phase').onchange = function () {
