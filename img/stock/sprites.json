@@ -3,6 +3,17 @@ ult_edge = ult_steve = ult_minmin = ult_byleth = ult_banjo = ult_bayonetta = ult
 // -- 2 lignes, 8 éléments
 ult_pyra = [[{}, {}, {}, {}, {}, {}, {}, {}], [{}, {}, {}, {}, {}, {}, {}, {}]]
 
+// WII U - 1 ligne, 8 elements
+wiiu_bayonetta = wiiu_captain = wiiu_cloud = wiiu_dedede = wiiu_diddy = wiiu_donkey = wiiu_mariod = wiiu_duckhunt = wiiu_falco = wiiu_fox = wiiu_gamewatch = wiiu_ganondorf = wiiu_greninja = wiiu_ike = wiiu_corrin = wiiu_kirby = wiiu_bowser = wiiu_bowserjr = wiiu_link = wiiu_charizard = wiiu_lucario = wiiu_lucas = wiiu_lucina = wiiu_luigi = wiiu_mario = wiiu_marth = wiiu_metaknight = wiiu_mewtwo = wiiu_miifighter = wiiu_miigunner = wiiu_miiswordsman = wiiu_villager = wiiu_ness = wiiu_pacman = wiiu_palutena = wiiu_peach = wiiu_pikachu = wiiu_pikmin = wiiu_pit = wiiu_pitd = wiiu_jigglypuff = wiiu_robin = wiiu_rob = wiiu_megaman = wiiu_rosalina = wiiu_roy = wiiu_ryu = wiiu_samus = wiiu_sheik = wiiu_shulk = wiiu_sonic = wiiu_szerosuit = wiiu_toonlink = wiiu_wario = wiiu_wiifit = wiiu_yoshi = wiiu_zelda = [[{}, {}, {}, {}, {}, {}, {}, {}]]
+// WII U - 2 lignes, 8 elements
+wiiu_littlemac = [[{}, {}, {}, {}, {}, {}, {}, {}], [{}, {}, {}, {}, {}, {}, {}, {}]]
+
+// BRAWL
+//brawl_
+
+// N64
+//n64_
+
 // -- 2 lignes, 4 éléments
 melee_bowser = melee_falco = melee_fox = melee_gamewatch = melee_ice = melee_luigi = melee_mewtwo = melee_ness = melee_pichu = melee_pikachu = [[{}, {}, {}, {}], [{}, {}, {}, {}]]
 

@@ -11,8 +11,8 @@ ult = {
 wiiu = {
     0: ["mario", "luigi", "peach", "bowser", "yoshi", "rosalina", "bowserjr", "wario", "donkey", "diddy", "gamewatch", "littlemac"],
     1: ["link", "zelda", "sheik", "ganondorf", "toonlink", "samus", "szerosuit", "pit", "palutena", "marth", "ike", "robin"],
-    2: ["duckhunt", "kirby", "dedede", "metaknight", "fox", "falco", "pikachu", "lizardon", "lucario", "jigglypuff", "greninja"],
-    3: ["rob", "ness", "captain", "villager", "pikmin", "wiifit", "shulk", "mariod", "pitb", "lucina", "pacman"],
+    2: ["duckhunt", "kirby", "dedede", "metaknight", "fox", "falco", "pikachu", "charizard", "lucario", "jigglypuff", "greninja"],
+    3: ["rob", "ness", "captain", "villager", "pikmin", "wiifit", "shulk", "mariod", "pitd", "lucina", "pacman"],
     4: ["megaman", "sonic", "mewtwo", "lucas", "roy", "ryu", "cloud", "corrin", "bayonetta", "miifighter", "miiswordsman", "miigunner"]
 }
 

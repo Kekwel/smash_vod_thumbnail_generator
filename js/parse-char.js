@@ -167,11 +167,14 @@ function createRowColor(game, player) {
 }
 
 function fetchStockIcon(game, charName, player, indStock, indRow) {
+    console.log(game, charName, player, indStock, indRow)
     var file = charName + '.png';
     indStock = pad(indStock, 2)
+    console.log("file", file)
 
     var imgDiv = document.createElement('div');
     var imgSrc = 'img/stock/' + game + '/' + file;
+    console.log("src", imgSrc)
 
     imgDiv.setAttribute('type', 'costume');
     imgDiv.style.backgroundImage = 'url(' + imgSrc + ')'
