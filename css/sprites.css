@@ -2,6 +2,7 @@
 .wiiu-stock,
 .brawl-stock,
 .melee-stock,
+.n64-stock,
 .pplus-stock {
     background-repeat: no-repeat;
     display: block;
@@ -22,42 +23,48 @@
 .ult-stock_00_0,
 .wiiu-stock_00_0,
 .brawl-stock_00_0,
-.melee-stock_00_0 {
+.melee-stock_00_0,
+.n64-stock_00_0 {
     background-position: -5px -5px;
 }
 
 .ult-stock_01_0,
 .wiiu-stock_01_0,
 .brawl-stock_01_0,
-.melee-stock_01_0 {
+.melee-stock_01_0,
+.n64-stock_01_0 {
     background-position: -79px -5px;
 }
 
 .ult-stock_02_0,
 .wiiu-stock_02_0,
 .brawl-stock_02_0,
-.melee-stock_02_0 {
+.melee-stock_02_0,
+.n64-stock_02_0 {
     background-position: -153px -5px;
 }
 
 .ult-stock_03_0,
 .wiiu-stock_03_0,
 .brawl-stock_03_0,
-.melee-stock_03_0 {
+.melee-stock_03_0,
+.n64-stock_03_0 {
     background-position: -227px -5px;
 }
 
 .ult-stock_04_0,
 .wiiu-stock_04_0,
 .brawl-stock_04_0,
-.melee-stock_04_0 {
+.melee-stock_04_0,
+.n64-stock_04_0 {
     background-position: -301px -5px;
 }
 
 .ult-stock_05_0,
 .wiiu-stock_05_0,
 .brawl-stock_05_0,
-.melee-stock_05_0 {
+.melee-stock_05_0,
+.n64-stock_05_0 {
     background-position: -375px -5px;
 }
 

@@ -27,9 +27,7 @@ n64_pikachu = n64_ness = n64_luigi = n64_link = n64_jigglypuff = n64_fox = [[{},
 // 1l, 5elem
 n64_samus = n64_mario = n64_kirby = n64_donkey = [[{}, {}, {}, {}, {}]]
 // 1l, 6elem
-n64_captain = [[{}, {}, {}, {}, {}, {}]]
-// 1l, 7elem
-n64_yoshi = [[{}, {}, {}, {}, {}, {}, {}]]
+n64_captain = n64_yoshi = [[{}, {}, {}, {}, {}, {}]]
 
 // -- 2 lignes, 4 éléments
 melee_bowser = melee_falco = melee_fox = melee_gamewatch = melee_ice = melee_luigi = melee_mewtwo = melee_ness = melee_pichu = melee_pikachu = [[{}, {}, {}, {}], [{}, {}, {}, {}]]
