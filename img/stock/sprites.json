@@ -9,10 +9,27 @@ wiiu_bayonetta = wiiu_captain = wiiu_cloud = wiiu_dedede = wiiu_diddy = wiiu_don
 wiiu_littlemac = [[{}, {}, {}, {}, {}, {}, {}, {}], [{}, {}, {}, {}, {}, {}, {}, {}]]
 
 // BRAWL
-//brawl_
+// 2l, 6elem
+brawl_wario = [[{}, {}, {}, {}, {}, {}], [{}, {}, {}, {}, {}, {}]]
+
+// 1l, 6elem
+brawl_mario = brawl_donkey = brawl_link = brawl_samus = brawl_yoshi = brawl_kirby = brawl_fox = brawl_luigi = brawl_captain = brawl_ness = brawl_bowser = brawl_peach = brawl_zelda = brawl_sheik = brawl_ice = brawl_marth = brawl_gamewatch = brawl_falco = brawl_ganondorf = brawl_metaknight = brawl_pit = brawl_pikmin = brawl_lucas = brawl_diddy = brawl_dedede = brawl_ike = brawl_rob = brawl_jigglypuff = brawl_toonlink = brawl_wolf = brawl_snake = [[{}, {}, {}, {}, {}, {}]]
+
+// 1l, 5elem
+brawl_ptrainer = brawl_charizard = brawl_squirtle = brawl_ivysaur = brawl_lucario = brawl_sonic = [[{}, {}, {}, {}, {}]]
+
+// 1l, 4elem
+brawl_pikachu = [[{}, {}, {}, {}]]
 
 // N64
-//n64_
+// 1l, 4elem
+n64_pikachu = n64_ness = n64_luigi = n64_link = n64_jigglypuff = n64_fox = [[{}, {}, {}, {}]]
+// 1l, 5elem
+n64_samus = n64_mario = n64_kirby = n64_donkey = [[{}, {}, {}, {}, {}]]
+// 1l, 6elem
+n64_captain = [[{}, {}, {}, {}, {}, {}]]
+// 1l, 7elem
+n64_yoshi = [[{}, {}, {}, {}, {}, {}, {}]]
 
 // -- 2 lignes, 4 éléments
 melee_bowser = melee_falco = melee_fox = melee_gamewatch = melee_ice = melee_luigi = melee_mewtwo = melee_ness = melee_pichu = melee_pikachu = [[{}, {}, {}, {}], [{}, {}, {}, {}]]
