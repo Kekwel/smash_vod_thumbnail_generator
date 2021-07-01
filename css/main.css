@@ -1,3 +1,21 @@
+/* Animation */
+@keyframes changecolor {
+    25% {
+        color: black;
+    }
+}
+
+@-webkit-keyframes changecolor {
+    25% {
+        color: black;
+    }
+}
+
+.changecolor {
+    animation: changecolor 1s step-start 0s infinite;
+    -webkit-animation: changecolor 1s step-start 0s infinite;
+}
+
 /* Custom fonts */
 @font-face {
     font-family: 'HACKED';
