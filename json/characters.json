@@ -5,7 +5,7 @@ ult = {
     3: ["lucas", "sonic", "dedede", "pikmin", "lucario", "rob", "toonlink", "wolf", "villager", "megaman", "wiifit", "rosalina", "littlemac"],
     4: ["greninja", "palutena", "pacman", "robin", "shulk", "bowserjr", "duckhunt", "ryu", "ken", "cloud", "corrin", "bayonetta", "inkling"],
     5: ["ridley", "simon", "richter", "krool", "isabelle", "incineroar", "piranha", "joker", "hero", "banjo", "terryb", "byleth", "minmin"],
-    6: ["steve", "edge", "pyra", "miifighter", "miiswordsman", "miigunner", "random"]
+    6: ["steve", "edge", "pyra", "kazuya", "miifighter", "miiswordsman", "miigunner", "random"]
 }
 
 wiiu = {
